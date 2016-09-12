@@ -4,39 +4,83 @@ using IReach;
 using IReach.Droid;
 using IReach.Services;
 using Xamarin.Forms;
+using SQLite.Net;
+using SQLite.Net.Async;
+using SQLite.Net.Platform.XamarinAndroid;
 
 [assembly: Dependency(typeof(SQLite_Android))]
 namespace IReach
 {
     public class SQLite_Android : ISQLite
     {
-        public SQLite_Android ( ) { }
 
-        public global::SQLite.SQLiteConnection GetConnection ( )
+        private SQLiteConnectionWithLock _conn;
+
+        public SQLite_Android ( )
         {
-            var sqliteFilename = "FoodSQLite.db3";
-            string documentsPath = System.Environment.GetFolderPath ( System.Environment.SpecialFolder.Personal ); // Documents folder
+        }
+
+        private static string GetDatabasePath ( )
+        {
+            const string sqliteFilename = "FoodSQLite.db3";
+
+            string documentsPath = Environment.GetFolderPath ( Environment.SpecialFolder.Personal ); // Documents folder
             var path = Path.Combine ( documentsPath, sqliteFilename );
 
-            // This is where we copy in the prepopulated database
             Console.WriteLine ( path );
             if ( !File.Exists ( path ) )
             {
-                var s = Forms.Context.Resources.OpenRawResource ( Resource.Raw.FoodSQLite );  // RESOURCE NAME ###
-
-                // create a write stream
+                var s = Forms.Context.Resources.OpenRawResource ( IReach.Droid.Resource.Raw.usda_food );
                 FileStream writeStream = new FileStream ( path, FileMode.OpenOrCreate, FileAccess.Write );
-                // write to the stream
+
                 ReadWriteStream ( s, writeStream );
             }
-
-            var conn = new global::SQLite.SQLiteConnection ( path );
-
-            // Return the database connection 
-            return conn;
+            return path;
         }
-        void ReadWriteStream ( Stream readStream, Stream writeStream )
+
+        public SQLiteConnection GetConnection ( )
         {
+            var dbPath = GetDatabasePath ( );
+            return new SQLiteConnection ( new SQLitePlatformAndroid ( ), dbPath );
+        }
+
+        public SQLiteAsyncConnection GetAsyncConnection ( )
+        {
+            var dbPath = GetDatabasePath ( );
+            var platform = new SQLitePlatformAndroid ( );
+
+            var connectionFactory = new Func<SQLiteConnectionWithLock> (
+                ( ) =>
+                {
+                    if ( _conn == null )
+                    {
+                        _conn = new SQLiteConnectionWithLock ( platform,
+                            new SQLiteConnectionString ( dbPath, storeDateTimeAsTicks: true ) );
+                    }
+
+                    return _conn;
+                } );
+
+            return new SQLiteAsyncConnection ( connectionFactory );
+
+        }
+
+        public void CloseConnection ( )
+        {
+            if ( _conn != null )
+            {
+                _conn.Close ( );
+                _conn.Dispose ( );
+                _conn = null;
+
+                GC.Collect ( );
+                GC.WaitForPendingFinalizers ( );
+            }
+        }
+
+        private static void ReadWriteStream ( Stream readStream, FileStream writeStream )
+        {
+
             int Length = 256;
             Byte[ ] buffer = new Byte[ Length ];
             int bytesRead = readStream.Read ( buffer, 0, Length );
@@ -49,6 +93,5 @@ namespace IReach
             readStream.Close ( );
             writeStream.Close ( );
         }
-
     }
 }

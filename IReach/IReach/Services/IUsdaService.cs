@@ -1,16 +1,16 @@
-﻿using System;
+﻿using SQLite.Net;
+using SQLite.Net.Async;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite.Net;
-using SQLite.Net.Async;
 
 namespace IReach.Services
 {
-    public interface ISQLite
+    public interface IUsdaService
     {
-        SQLiteConnection GetConnection();
+        SQLiteConnection GetConnection ( );
         SQLiteAsyncConnection GetAsyncConnection ( );
         void CloseConnection ( );
     }

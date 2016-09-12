@@ -26,6 +26,8 @@ namespace IReach.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::IReach.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::IReach.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::IReach.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -3001,6 +3003,12 @@ namespace IReach.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f090027
+			public const int ApplicationName = 2131296295;
+			
+			// aapt resource value: 0x7f090026
+			public const int Hello = 2131296294;
+			
 			// aapt resource value: 0x7f09000f
 			public const int abc_action_bar_home_description = 2131296271;
 			
@@ -3058,8 +3066,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f090021
 			public const int abc_toolbar_collapse_description = 2131296289;
 			
-			// aapt resource value: 0x7f090027
-			public const int app_name = 2131296295;
+			// aapt resource value: 0x7f090029
+			public const int app_name = 2131296297;
 			
 			// aapt resource value: 0x7f090023
 			public const int appbar_scrolling_view_behavior = 2131296291;
@@ -3070,8 +3078,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f090025
 			public const int character_counter_pattern = 2131296293;
 			
-			// aapt resource value: 0x7f090026
-			public const int hello = 2131296294;
+			// aapt resource value: 0x7f090028
+			public const int hello = 2131296296;
 			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;

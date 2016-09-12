@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IReach.Models;
 using IReach.Services;
-using SQLite;
+using SQLite.Net;
 using Xamarin.Forms;
 
 namespace IReach.Data

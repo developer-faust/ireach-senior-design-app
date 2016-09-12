@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IReach.Controls;
 using Xamarin.Forms;
+using MvvmHelpers;
 
 namespace IReach.Views
 {

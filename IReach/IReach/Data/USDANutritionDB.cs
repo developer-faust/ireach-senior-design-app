@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using IReach.Services;
-using SQLite;
+using SQLite.Net;
 using Xamarin.Forms;
 using IReach.Models;
 namespace IReach.Data
@@ -18,7 +15,7 @@ namespace IReach.Data
 
         public USDANutritionDB()
         {
-            database = DependencyService.Get<IUsda>().GetConnection();
+            database = DependencyService.Get<IUsdaService>().GetConnection();
             database.CreateTable<food>(); 
         }
 
