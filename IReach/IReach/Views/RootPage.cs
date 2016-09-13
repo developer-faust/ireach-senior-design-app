@@ -12,8 +12,10 @@ namespace IReach.Views
 {
 	public class RootPage : MasterDetailPage
 	{
-		public static bool IsUWPDesktop { get; set; }
-		Dictionary<MenuType, NavigationPage> Pages;
+		/* Todo: Windows Phone
+         * public static bool IsUWPDesktop { get; set; }
+         */
+	    private Dictionary<MenuType, NavigationPage> Pages;
 		public RootPage ( )
 		{
 			Pages = new Dictionary<MenuType, NavigationPage> ( );
@@ -31,7 +33,7 @@ namespace IReach.Views
 
 		public async Task NavigateAsync ( MenuType id )
 		{
-			Page newPage;
+			Page newPage = null;
 			if ( !Pages.ContainsKey ( id ) )
 			{
 				switch ( id )
@@ -49,25 +51,22 @@ namespace IReach.Views
                         Pages.Add ( id, new IReachNavigationPage ( new AboutPage ( ) ) );
                         break;
                 }  
-			}
-
-            newPage = Pages[ id ];
-            if ( newPage == null )
-            {
-                return;
-            }
+			} 
+            newPage = Pages[ id ]; 
 
             if ( Detail != null && Device.OS == TargetPlatform.WinPhone )
                 await Detail.Navigation.PopToRootAsync ( );
 
             Detail = newPage;
 
-            if ( IsUWPDesktop )
-                return;
+            /* TODO: Window Universal App
+             * if ( IsUWPDesktop )
+                 return;
+            */
 
             if ( Device.Idiom != TargetIdiom.Tablet )
                 IsPresented = false;
-
+         
         }
 	}
 }

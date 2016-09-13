@@ -12,7 +12,8 @@
       <ListView
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand"
-                    ItemsSource="{Binding FoodGroups}">
+                    ItemsSource="{Binding FoodGroups}"
+                    x:Name="ListviewFoodGrp">
         
         <x:Arguments>
           <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>

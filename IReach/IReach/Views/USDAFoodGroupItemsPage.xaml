@@ -1,26 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IReach.Views.USDAFoodGroupItemsPage">
-  <ListView x:Name="foodGroupListView" ItemSelected="USDAFoodItemSelected">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <ViewCell.View>
-            <StackLayout Padding="20,0,20,0"
-                         Orientation="Horizontal"
-                         HorizontalOptions="FillAndExpand">
+             x:Class="IReach.Views.UsdaFoodGroupItemsPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0" WinPhone="0"/>
+  </ContentPage.Padding>
 
-              <Label Text="{Binding short_desc}"
-                     VerticalTextAlignment="Center"
-                     HorizontalOptions="StartAndExpand" />
-              <Label Text="{Binding id}"
-                     HorizontalOptions="End"/>
+  <ContentPage.Content>
 
-            </StackLayout>
-          </ViewCell.View>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="Start"
+                 Padding="10,20,10,20">
+      <Entry Placeholder="Filter Food Name Or Ingredient" TextChanged="TextFilterChanged"/>
+      <Button Text="Search"></Button>
+      <ListView       
+        x:Name="foodGroupListView"
+        ItemsSource="{Binding Foods}"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Padding="20,0,20,0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand">
+
+                  <Label Text="{Binding short_desc}"
+                         VerticalTextAlignment="Center"
+                         HorizontalOptions="StartAndExpand" />
+                  <Label Text="{Binding id}"
+                         HorizontalOptions="End"/>
+
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+      </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

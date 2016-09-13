@@ -14,14 +14,42 @@ namespace IReach.Views
 {
     public partial class USDASearchPage : ContentPage
     {
-        
+        private BrowseFoodsViewModel ViewModel
+        {
+            get { return BindingContext as BrowseFoodsViewModel; }
+        } 
+         
         public USDASearchPage ( )
         {
             InitializeComponent ( );
-            BindingContext = new BrowseFoodsViewModel(this); 
+            BindingContext = new BrowseFoodsViewModel(  );
+            ListviewFoodGrp.ItemTapped += (sender, args) =>
+            {
+                if (ListviewFoodGrp.SelectedItem == null)
+                {
+                    return;
+                }
+
+                var group = ListviewFoodGrp.SelectedItem as food_group;
+                if ( group != null)
+                {
+                    Debug.WriteLine("Selected: Name = {0} Id = {1}", group.name, group.id);
+                    this.Navigation.PushAsync(new UsdaFoodGroupItemsPage(group));
+                    ListviewFoodGrp.SelectedItem = null;
+                }
+            };
         }
 
-     
+        protected override void OnAppearing ( )
+        {
+            base.OnAppearing ( );
+            if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
+                return;
+
+            ViewModel.LoadItemsCommand.Execute ( null );
+
+        }
+
         /*
 
         private void SearchButtonClicked(object sender, EventArgs e)
@@ -50,5 +78,6 @@ namespace IReach.Views
             Navigation.PushAsync ( usdaFood );
         }
         */
+
     }
 }

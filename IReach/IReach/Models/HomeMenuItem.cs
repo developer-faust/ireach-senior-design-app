@@ -21,7 +21,6 @@ namespace IReach
 		}
 
 		public string Icon { get; set; }
-		public MenuType MenuType { get; set; }
-
+		public MenuType MenuType { get; set; } 
 	}
 }

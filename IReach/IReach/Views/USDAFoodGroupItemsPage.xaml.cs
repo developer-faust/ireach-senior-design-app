@@ -5,24 +5,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IReach.Models;
+using IReach.ViewModels;
 using Xamarin.Forms;
 
 namespace IReach.Views
 {
-    public partial class USDAFoodGroupItemsPage : ContentPage
+    public partial class UsdaFoodGroupItemsPage : ContentPage
     {
-        public USDAFoodGroupItemsPage (int id )
+        private FoodGroupItemsViewModel ViewModel
+        {
+            get { return BindingContext as FoodGroupItemsViewModel; }
+        }
+        public UsdaFoodGroupItemsPage (food_group group)
         {
             InitializeComponent ( );
-            GroupID = id;
-            Debug.WriteLine("Display Foods in Group ID = {0}", GroupID);
-        }
-         
-        public int GroupID { get; set; }
+            BindingContext = new FoodGroupItemsViewModel (  );
+
+            ViewModel.GroupId = group.id;
+            Debug.WriteLine("Display Foods in Group ID = {0}", group.id); 
+        } 
+     
         protected override void OnAppearing()
         {
             base.OnAppearing();
-           // foodGroupListView.ItemsSource = App.NutritionDb.GetFoodsWithGroupID(GroupID);
+            if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
+                return;
+
+            ViewModel.LoadItemsCommand.Execute ( null );
         }
 
         private void USDAFoodItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -38,6 +47,13 @@ namespace IReach.Views
             usdaFoodPage.BindingContext = usdaFood;
 
             Navigation.PushAsync(usdaFoodPage);*/
+        }
+
+        private void TextFilterChanged(object sender, TextChangedEventArgs e)
+        {
+            Debug.WriteLine("{0}", e.NewTextValue);
+            ViewModel.SearchText = e.NewTextValue;
+            ViewModel.SearchCommand.Execute(null);
         }
     }
 }
