@@ -30,7 +30,7 @@ namespace IReach
             Console.WriteLine ( path );
             if ( !File.Exists ( path ) )
             {
-                var s = Forms.Context.Resources.OpenRawResource ( IReach.Droid.Resource.Raw.usda_food );
+                var s = Forms.Context.Resources.OpenRawResource ( IReach.Droid.Resource.Raw.FoodSQLite);
                 FileStream writeStream = new FileStream ( path, FileMode.OpenOrCreate, FileAccess.Write );
 
                 ReadWriteStream ( s, writeStream );

@@ -1,17 +1,15 @@
 using System;
 using System.IO;
 using IReach;
-using IReach.Droid;
-using IReach.Services;
 using Xamarin.Forms;
 using SQLite.Net;
 using SQLite.Net.Platform.XamarinAndroid;
 using SQLite.Net.Async;
 
-[assembly: Dependency(typeof(USDALite_Android))]
+[assembly: Dependency ( typeof ( USDALite_Android ) )]
 namespace IReach
 {
-    public class USDALite_Android : IUsdaService
+    public class USDALite_Android : ISQLiteUsda
     {
 
         private SQLiteConnectionWithLock _conn;
@@ -22,15 +20,14 @@ namespace IReach
 
         private static string GetDatabasePath ( )
         {
-            const string sqliteFilename = "usda_food.sqlite3";
-
+            const string sqliteFilename = "usda.sql3"; 
             string documentsPath = Environment.GetFolderPath ( Environment.SpecialFolder.Personal ); // Documents folder
             var path = Path.Combine ( documentsPath, sqliteFilename );
 
             Console.WriteLine ( path );
             if ( !File.Exists ( path ) )
             {
-                var s = Forms.Context.Resources.OpenRawResource ( IReach.Droid.Resource.Raw.usda_food );
+                var s = Forms.Context.Resources.OpenRawResource ( Droid.Resource.Raw.usda );
                 FileStream writeStream = new FileStream ( path, FileMode.OpenOrCreate, FileAccess.Write );
 
                 ReadWriteStream ( s, writeStream );
@@ -55,7 +52,7 @@ namespace IReach
                     if ( _conn == null )
                     {
                         _conn = new SQLiteConnectionWithLock ( platform,
-                            new SQLiteConnectionString ( dbPath, storeDateTimeAsTicks: true ) );
+                            new SQLiteConnectionString ( dbPath, storeDateTimeAsTicks: false ) );
                     }
 
                     return _conn;

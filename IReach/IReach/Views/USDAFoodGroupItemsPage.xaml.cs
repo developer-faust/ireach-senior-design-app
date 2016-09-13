@@ -22,11 +22,12 @@ namespace IReach.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            foodGroupListView.ItemsSource = App.NutritionDb.GetFoodsWithGroupID(GroupID);
+           // foodGroupListView.ItemsSource = App.NutritionDb.GetFoodsWithGroupID(GroupID);
         }
 
         private void USDAFoodItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            /*
             var selected = (food) e.SelectedItem;
             Debug.WriteLine("Selected Food: {0} ID = {1}", selected.short_desc, selected.id); 
             var usdaFood = App.NutritionDb.GetFoodWithID(selected.id);
@@ -36,7 +37,7 @@ namespace IReach.Views
             var usdaFoodPage = new USDAFoodItemPage();
             usdaFoodPage.BindingContext = usdaFood;
 
-            Navigation.PushAsync(usdaFoodPage);
+            Navigation.PushAsync(usdaFoodPage);*/
         }
     }
 }

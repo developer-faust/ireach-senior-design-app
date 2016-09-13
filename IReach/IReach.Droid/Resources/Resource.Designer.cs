@@ -2988,7 +2988,7 @@ namespace IReach.Droid
 			public const int FoodSQLite = 2131099648;
 			
 			// aapt resource value: 0x7f060001
-			public const int usda_food = 2131099649;
+			public const int usda = 2131099649;
 			
 			static Raw()
 			{

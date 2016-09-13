@@ -38,10 +38,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AsyncSemaphore.cs" />
     <Compile Include="Controls\IReachNavigationPage.cs" />
     <Compile Include="Controls\NativeListView.cs" />
     <Compile Include="Data\FoodItemDatabase.cs" />
-    <Compile Include="Data\USDANutritionDB.cs" />
+    <Compile Include="Services\USDANutritionDB.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\FoodItem.cs" />
     <Compile Include="Models\HomeMenuItem.cs" />
@@ -49,9 +50,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
-    <Compile Include="Services\ISQLite.cs" />
+    <Compile Include="ISQLite.cs" />
     <Compile Include="Services\ITextToSpeech.cs" />
-    <Compile Include="Services\IUsdaService.cs" />
+    <Compile Include="ISQLiteUsda.cs" />
+    <Compile Include="Services\IUsdaFoodService.cs" />
+    <Compile Include="ViewModels\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\UserFoodViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>

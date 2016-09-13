@@ -6,11 +6,10 @@ namespace IReach.Models
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
     }
-
-    [Table("food")]
+     
     public class food
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; } 
         public int food_group_id { get; set; } 
         public string long_desc { get; set; }
@@ -23,16 +22,14 @@ namespace IReach.Models
         public double fat_factor { get; set; }
         public double calorie_factor { get; set; }  
     }
-
-    [Table("food_group")]
+     
     public class food_group
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public string name { get; set; }
     }
-
-    [Table("nutrient")]
+     
     public class nutrient
     {
         [PrimaryKey, AutoIncrement] 
@@ -43,8 +40,7 @@ namespace IReach.Models
         public int num_decimal_places { get; set; }
         public int sr_order { get; set; }
     }
-
-    [Table("nutrition")]
+     
     public class nutrition
     {
         [PrimaryKey, AutoIncrement]

@@ -8,6 +8,7 @@ using IReach.Data;
 using IReach.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using IReach.ViewModels;
 
 namespace IReach.Views
 {
@@ -16,19 +17,12 @@ namespace IReach.Views
         
         public USDASearchPage ( )
         {
-            InitializeComponent ( );  
-            this.Title = "USDA Food Database Search"; 
+            InitializeComponent ( );
+            BindingContext = new BrowseFoodsViewModel(this); 
         }
 
-        public string SearchText { set; get; } 
-        public int SearchFoodGroupID { set; get; }
-
-        private string _foodGroupName; 
-        public string FoodGroupName
-        {
-            get { return _foodGroupName; }
-            set { _foodGroupName = value; }
-        }
+     
+        /*
 
         private void SearchButtonClicked(object sender, EventArgs e)
         {
@@ -55,5 +49,6 @@ namespace IReach.Views
             var usdaFood = new USDAFoodGroupItemsPage ( SearchFoodGroupID );
             Navigation.PushAsync ( usdaFood );
         }
+        */
     }
 }

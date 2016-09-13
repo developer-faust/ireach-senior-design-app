@@ -155,10 +155,10 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\raw\FoodSQLite.db3" />
-    <AndroidResource Include="Resources\raw\usda_food.sqlite3" />
     <AndroidResource Include="Resources\layout\AboutPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\raw\usda.sql3" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />

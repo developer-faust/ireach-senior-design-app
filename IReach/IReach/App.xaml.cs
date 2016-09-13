@@ -5,6 +5,7 @@ using IReach.Services;
 using IReach.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using IReach.Service;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace IReach
@@ -55,15 +56,14 @@ namespace IReach
             }
         }
 
-        private static USDANutritionDB nutritionDb;
-
-        public static USDANutritionDB NutritionDb
+        private static USDAFoodService nutritionDb;
+        public static USDAFoodService NutritionDb
         {
             get
             {
                 if (nutritionDb == null)
                 {
-                    nutritionDb = new USDANutritionDB();
+                    nutritionDb = new USDAFoodService();
                 }
 
                 return nutritionDb;
