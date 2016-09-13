@@ -10,7 +10,8 @@ namespace IReach
 	{
 		Home,
         Diet,
-        Usda,
+        BrowseGroup,
+        SearchFood,
         About
     }
 	public class HomeMenuItem : BaseModel

@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FoodViewTemplateSelector.cs" />
     <Compile Include="Helpers\AsyncSemaphore.cs" />
     <Compile Include="Controls\IReachNavigationPage.cs" />
     <Compile Include="Controls\NativeListView.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Services\IUsdaFoodService.cs" />
     <Compile Include="ViewModels\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\FoodGroupItemsViewModel.cs" />
+    <Compile Include="ViewModels\USDASearchFoodViewModel.cs" />
     <Compile Include="ViewModels\UserFoodViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
@@ -82,8 +84,11 @@
     <Compile Include="Views\USDAFoodItemPage.xaml.cs">
       <DependentUpon>USDAFoodItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\USDASearchPage.xaml.cs">
-      <DependentUpon>USDASearchPage.xaml</DependentUpon>
+    <Compile Include="Views\USDABrowseFoodsPage.xaml.cs">
+      <DependentUpon>USDABrowseFoodsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\USDASearchFoodPage.xaml.cs">
+      <DependentUpon>USDASearchFoodPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +176,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\USDASearchPage.xaml">
+    <EmbeddedResource Include="Views\USDABrowseFoodsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -187,6 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\USDAFoodItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\USDASearchFoodPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

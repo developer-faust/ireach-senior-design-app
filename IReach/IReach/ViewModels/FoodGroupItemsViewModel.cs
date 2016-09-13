@@ -88,16 +88,7 @@ namespace IReach.ViewModels
                 Foods = await FoodService.SearchFoods(SearchText);
             }
 
-            /* var testList = Foods.Where(o => o.short_desc.Contains(SearchText.ToUpper()));
-            var enumerable = testList as IList<food> ?? testList.ToList();
-            Debug.WriteLine("Results of Filter: Count = {0}", enumerable.Count());
-
-            if (string.IsNullOrWhiteSpace(SearchText))
-                Foods = previousList;
-            else
-            {
-                Foods = enumerable;
-            } */
+           
             IsBusy = false;
         }
  

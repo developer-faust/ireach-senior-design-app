@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IReach.Views.UsdaFoodGroupItemsPage">
+             x:Class="IReach.Views.USDASearchFoodPage">
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0" WinPhone="0"/>
   </ContentPage.Padding>
@@ -12,9 +12,9 @@
                  VerticalOptions="Start"
                  Padding="10,20,10,20">
       <Entry Placeholder="Filter Food Name Or Ingredient" TextChanged="TextFilterChanged"/>
-      
-      <ListView       
-        x:Name="foodGroupListView"
+
+      <ListView
+        x:Name="FoodAutoCompleteListView"
         ItemsSource="{Binding Foods}"
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand">
@@ -37,7 +37,7 @@
             </ViewCell>
           </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
-      </StackLayout>
-    </ContentPage.Content>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

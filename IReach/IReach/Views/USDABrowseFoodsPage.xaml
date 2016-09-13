@@ -1,19 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IReach.Views.USDASearchPage"
+             x:Class="IReach.Views.USDABrowseFoodsPage"
              Padding="0,20,0,0">
-  
   <ContentPage.Content> 
+    
     <StackLayout
       HorizontalOptions="FillAndExpand"
       VerticalOptions="FillAndExpand">
-
+      
       <ListView
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand"
                     ItemsSource="{Binding FoodGroups}"
                     x:Name="ListviewFoodGrp">
+        <ListView.Header>
+          <StackLayout Padding="10,5,0,5"
+                       BackgroundColor="#cccccc">
+            <Label Text="Browse For Food or Ingredient" FontAttributes="Bold" FontSize="Medium"></Label>
+          </StackLayout>
+        </ListView.Header>
         
         <x:Arguments>
           <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>

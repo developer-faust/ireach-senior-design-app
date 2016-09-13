@@ -52,7 +52,7 @@ namespace IReach.Views
         private void TextFilterChanged(object sender, TextChangedEventArgs e)
         {
             Debug.WriteLine("{0}", e.NewTextValue);
-            ViewModel.SearchText = e.NewTextValue;
+            ViewModel.SearchText = e.NewTextValue + " ";
             ViewModel.SearchCommand.Execute(null);
         }
     }

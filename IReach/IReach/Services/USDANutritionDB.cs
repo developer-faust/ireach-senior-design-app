@@ -35,9 +35,8 @@ namespace IReach.Service
         {
             using ( await Locker.LockAsync() )
             {
-                return await (from s in Database.Table<food_group> ( )
-                              orderby  s.id 
-                              select s).ToListAsync ( );
+                var result = await Database.QueryAsync<food_group>("SELECT * FROM food_group"); 
+                return result;
             }
         }
 
@@ -68,14 +67,15 @@ namespace IReach.Service
 
         public async Task<IList<food>> SearchFoods ( string searchString)
         {
-            var words = (IEnumerable<string>) searchString.Split(' ').ToList();
+            Debug.WriteLine("Search string = {0}", searchString);
+            var words = (IEnumerable<string>) searchString.Split(' ').ToList(); 
+
             const string SqlClause = "short_desc LIKE '%{0}%'";
             words = words.Select(word => string.Format(SqlClause, word.Replace("'", "''")));
             var joined = string.Join(" AND ", words.ToArray());
             const string SqlQuery = "SELECT * FROM food WHERE {0}";
 
-            var tableSearch = await Database.QueryAsync<food>(string.Format(SqlQuery, joined));
-
+            var tableSearch = await Database.QueryAsync<food>(string.Format(SqlQuery, joined)); 
             Debug.WriteLine("Found Count = {0}", tableSearch.Count);
 
            return tableSearch;
