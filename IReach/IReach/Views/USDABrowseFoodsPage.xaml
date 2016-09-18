@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IReach.Views.USDABrowseFoodsPage"
-             Padding="0,20,0,0">
+             Padding="0,20,0,0"
+             Title="Browse Food Groups">
   <ContentPage.Content> 
     
     <StackLayout

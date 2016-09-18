@@ -9,16 +9,14 @@ namespace IReach
 	public enum MenuType
 	{
 		Home,
-        Diet,
-        BrowseGroup,
-        SearchFood,
+        FoodLog, 
         About
     }
 	public class HomeMenuItem : BaseModel
 	{
 		public HomeMenuItem ( )
 		{
-			MenuType = MenuType.About;
+			MenuType = MenuType.Home;
 		}
 
 		public string Icon { get; set; }

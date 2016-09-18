@@ -40,16 +40,10 @@ namespace IReach.Views
 				{
 					case MenuType.Home:
 						Pages.Add ( id, new IReachNavigationPage ( new HomePage ( ) ) );
-						break;  
-                    case MenuType.Diet:
-                        Pages.Add(id, new IReachNavigationPage(new FoodListPage()));
-				        break;
-                    case MenuType.BrowseGroup:
-                        Pages.Add(id, new IReachNavigationPage(new USDABrowseFoodsPage( ) ) );
-                        break;
-                    case MenuType.SearchFood:
-                        Pages.Add ( id, new IReachNavigationPage ( new USDASearchFoodPage ( ) ) );
-                        break;
+						break;
+                    case MenuType.FoodLog:
+                        Pages.Add(id, new IReachNavigationPage(new FoodLogPage()));
+                        break; 
                     case MenuType.About:
                         Pages.Add ( id, new IReachNavigationPage ( new AboutPage ( ) ) );
                         break;
