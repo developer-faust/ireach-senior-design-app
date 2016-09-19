@@ -29,24 +29,18 @@ namespace IReach.Views
         {
             base.OnAppearing();
             if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
-                return;
+                return; 
 
             ViewModel.LoadItemsCommand.Execute ( null );
         }
 
         private void USDAFoodItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            /*
-            var selected = (food) e.SelectedItem;
-            Debug.WriteLine("Selected Food: {0} ID = {1}", selected.short_desc, selected.id); 
-            var usdaFood = App.NutritionDb.GetFoodWithID(selected.id);
+            var foodItem = (food)e.SelectedItem;
+            var foodPage = new USDAFoodItemPage(foodItem); 
 
-            Debug.WriteLine("Retrieved Food short desc: {0}", usdaFood.short_desc);
+            Navigation.PushAsync(foodPage);
 
-            var usdaFoodPage = new USDAFoodItemPage();
-            usdaFoodPage.BindingContext = usdaFood;
-
-            Navigation.PushAsync(usdaFoodPage);*/
         }
 
         private void TextFilterChanged(object sender, TextChangedEventArgs e)

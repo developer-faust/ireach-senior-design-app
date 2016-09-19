@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IReach.Models;
 using IReach.ViewModels;
 using Xamarin.Forms;
 
@@ -32,6 +33,15 @@ namespace IReach.Views
         {
             base.OnAppearing();
             ViewModel.SearchText = string.Empty;
+        }
+
+        private void FoodItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var foodItem = (food)e.SelectedItem;
+            var foodPage = new USDAFoodItemPage(foodItem);
+            foodPage.BindingContext = foodItem; 
+          
+            Navigation.PushAsync(foodPage);
         }
     }
 }

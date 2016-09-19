@@ -17,7 +17,8 @@
         x:Name="foodGroupListView"
         ItemsSource="{Binding Foods}"
         HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        VerticalOptions="FillAndExpand"
+        ItemSelected="USDAFoodItemSelected">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>

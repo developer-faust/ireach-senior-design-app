@@ -34,7 +34,6 @@ namespace IReach.ViewModels
             get { return _foods; }
             private set { SetProperty(ref _foods, value); }
         }
-         
 
         public int GroupId { get; set; }
 
@@ -57,8 +56,19 @@ namespace IReach.ViewModels
             IsBusy = false;
         }
 
-        private Command _searchCommand;
+        private Command _filterCommand;
 
+        public Command FilterCommand
+        {
+            get { return _filterCommand ?? (_filterCommand = new Command(async () => await ExecuteFilterCommand())); }
+        }
+
+        private async Task ExecuteFilterCommand()
+        {
+            throw new NotImplementedException();
+        }
+
+        private Command _searchCommand; 
         public Command SearchCommand
         {
             get
@@ -85,12 +95,9 @@ namespace IReach.ViewModels
             else
             { 
                 Debug.WriteLine("Searching for {0}", SearchText);
-                Foods = await FoodService.SearchFoods(SearchText);
-            }
-
-           
+                Foods = await FoodService.SearchFoods(SearchText, GroupId);
+            }  
             IsBusy = false;
-        }
- 
+        } 
     }
 }

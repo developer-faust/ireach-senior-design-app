@@ -18,7 +18,8 @@
         x:Name="FoodAutoCompleteListView"
         ItemsSource="{Binding Foods}"
         HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        VerticalOptions="FillAndExpand"
+        ItemSelected="FoodItemSelected">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>

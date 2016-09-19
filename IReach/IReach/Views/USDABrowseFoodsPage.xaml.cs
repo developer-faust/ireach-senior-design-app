@@ -14,6 +14,14 @@ namespace IReach.Views
 {
     public partial class USDABrowseFoodsPage : ContentPage
     {
+
+        /// <summary>
+        /// USDABrowseFoodsPage:
+        /// 
+        /// This is a xaml page that uses a ViewModel to bind all of its properties.
+        /// The BrowseFoodsViewModel has all the properties and event trigers required to
+        /// display this page. The view Model also contains the calls to the sqlite database.
+        /// </summary>
         private BrowseFoodsViewModel ViewModel
         {
             get { return BindingContext as BrowseFoodsViewModel; }
@@ -46,9 +54,9 @@ namespace IReach.Views
             if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
                 return;
 
-            ViewModel.LoadItemsCommand.Execute ( null );
-
+            ViewModel.LoadItemsCommand.Execute ( null ); 
         }  
+
        
     }
 }

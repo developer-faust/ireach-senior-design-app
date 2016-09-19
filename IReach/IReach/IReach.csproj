@@ -57,6 +57,7 @@
     <Compile Include="Services\IUsdaFoodService.cs" />
     <Compile Include="ViewModels\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\FoodGroupItemsViewModel.cs" />
+    <Compile Include="ViewModels\UsdaFoodItemViewModel.cs" />
     <Compile Include="ViewModels\USDASearchFoodViewModel.cs" />
     <Compile Include="ViewModels\UserFoodViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">

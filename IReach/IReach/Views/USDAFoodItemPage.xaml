@@ -6,7 +6,7 @@
   <ContentPage.Content >
     <StackLayout VerticalOptions="StartAndExpand">
       <Label Text="Name"/>
-      <Entry x:Name= "nameEntry" Text="{Binding short_desc}" Placeholder="Food Name"/>
+      <Entry x:Name= "nameEntry" Text="{Binding FoodName}" Placeholder="Food Name"/>
       <ScrollView>
         <StackLayout VerticalOptions="FillAndExpand" Padding="10,0,0,0">
           <Label Text="Nutrition Facts" FontSize="Large"></Label>
