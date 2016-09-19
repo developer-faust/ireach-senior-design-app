@@ -26,6 +26,111 @@ namespace IReach.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circleColor = global::IReach.Droid.Resource.Attribute.circleColor;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circularProgressBarStyle = global::IReach.Droid.Resource.Attribute.circularProgressBarStyle;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_gravity = global::IReach.Droid.Resource.Attribute.circular_gravity;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_indeterminate = global::IReach.Droid.Resource.Attribute.circular_indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_indeterminate_interval = global::IReach.Droid.Resource.Attribute.circular_indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_marker_progress = global::IReach.Droid.Resource.Attribute.circular_marker_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_progress = global::IReach.Droid.Resource.Attribute.circular_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_progress_background_color = global::IReach.Droid.Resource.Attribute.circular_progress_background_color;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_progress_color = global::IReach.Droid.Resource.Attribute.circular_progress_color;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_stroke_width = global::IReach.Droid.Resource.Attribute.circular_stroke_width;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.indeterminate = global::IReach.Droid.Resource.Attribute.indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.indeterminate_interval = global::IReach.Droid.Resource.Attribute.indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.innerSize = global::IReach.Droid.Resource.Attribute.innerSize;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.max = global::IReach.Droid.Resource.Attribute.max;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.pinned = global::IReach.Droid.Resource.Attribute.pinned;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.pinnedDrawable = global::IReach.Droid.Resource.Attribute.pinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.progress = global::IReach.Droid.Resource.Attribute.progress;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.progressButtonStyle = global::IReach.Droid.Resource.Attribute.progressButtonStyle;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.progressColor = global::IReach.Droid.Resource.Attribute.progressColor;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.shadowDrawable = global::IReach.Droid.Resource.Attribute.shadowDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.unpinnedDrawable = global::IReach.Droid.Resource.Attribute.unpinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Color.progress_default_circle_color = global::IReach.Droid.Resource.Color.progress_default_circle_color;
+			global::com.refractored.monodroidtoolkit.Resource.Color.progress_default_progress_color = global::IReach.Droid.Resource.Color.progress_default_progress_color;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_dark = global::IReach.Droid.Resource.Color.refractored_background_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_holo_dark = global::IReach.Droid.Resource.Color.refractored_background_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_holo_light = global::IReach.Droid.Resource.Color.refractored_background_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_light = global::IReach.Droid.Resource.Color.refractored_background_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_dark = global::IReach.Droid.Resource.Color.refractored_bright_foreground_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_dark_disabled = global::IReach.Droid.Resource.Color.refractored_bright_foreground_dark_disabled;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_disabled_holo_dark = global::IReach.Droid.Resource.Color.refractored_bright_foreground_disabled_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_disabled_holo_light = global::IReach.Droid.Resource.Color.refractored_bright_foreground_disabled_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_holo_dark = global::IReach.Droid.Resource.Color.refractored_bright_foreground_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_holo_light = global::IReach.Droid.Resource.Color.refractored_bright_foreground_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_light = global::IReach.Droid.Resource.Color.refractored_bright_foreground_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_disabled_holo_dark = global::IReach.Droid.Resource.Color.refractored_dim_foreground_disabled_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_disabled_holo_light = global::IReach.Droid.Resource.Color.refractored_dim_foreground_disabled_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_holo_dark = global::IReach.Droid.Resource.Color.refractored_dim_foreground_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_holo_light = global::IReach.Droid.Resource.Color.refractored_dim_foreground_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_highlighted_text_holo_dark = global::IReach.Droid.Resource.Color.refractored_highlighted_text_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_highlighted_text_holo_light = global::IReach.Droid.Resource.Color.refractored_highlighted_text_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_hint_foreground_holo_dark = global::IReach.Droid.Resource.Color.refractored_hint_foreground_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_hint_foreground_holo_light = global::IReach.Droid.Resource.Color.refractored_hint_foreground_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_blue_bright = global::IReach.Droid.Resource.Color.refractored_holo_blue_bright;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_blue_dark = global::IReach.Droid.Resource.Color.refractored_holo_blue_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_blue_light = global::IReach.Droid.Resource.Color.refractored_holo_blue_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_green_dark = global::IReach.Droid.Resource.Color.refractored_holo_green_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_green_light = global::IReach.Droid.Resource.Color.refractored_holo_green_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_orange_dark = global::IReach.Droid.Resource.Color.refractored_holo_orange_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_orange_light = global::IReach.Droid.Resource.Color.refractored_holo_orange_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_purple = global::IReach.Droid.Resource.Color.refractored_holo_purple;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_red_dark = global::IReach.Droid.Resource.Color.refractored_holo_red_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_red_light = global::IReach.Droid.Resource.Color.refractored_holo_red_light;
+			global::com.refractored.monodroidtoolkit.Resource.Dimension.progress_inner_size = global::IReach.Droid.Resource.Dimension.progress_inner_size;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.pin_progress_pinned = global::IReach.Droid.Resource.Drawable.pin_progress_pinned;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.pin_progress_shadow = global::IReach.Droid.Resource.Drawable.pin_progress_shadow;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.pin_progress_unpinned = global::IReach.Droid.Resource.Drawable.pin_progress_unpinned;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.scrubber_control_normal_holo = global::IReach.Droid.Resource.Drawable.scrubber_control_normal_holo;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.scrubber_control_pressed_holo = global::IReach.Droid.Resource.Drawable.scrubber_control_pressed_holo;
+			global::com.refractored.monodroidtoolkit.Resource.Id.bottom = global::IReach.Droid.Resource.Id.bottom;
+			global::com.refractored.monodroidtoolkit.Resource.Id.center = global::IReach.Droid.Resource.Id.center;
+			global::com.refractored.monodroidtoolkit.Resource.Id.center_horizontal = global::IReach.Droid.Resource.Id.center_horizontal;
+			global::com.refractored.monodroidtoolkit.Resource.Id.center_vertical = global::IReach.Droid.Resource.Id.center_vertical;
+			global::com.refractored.monodroidtoolkit.Resource.Id.clip = global::IReach.Droid.Resource.Id.clip;
+			global::com.refractored.monodroidtoolkit.Resource.Id.clip_horizontal = global::IReach.Droid.Resource.Id.clip_horizontal;
+			global::com.refractored.monodroidtoolkit.Resource.Id.clip_vertical = global::IReach.Droid.Resource.Id.clip_vertical;
+			global::com.refractored.monodroidtoolkit.Resource.Id.end = global::IReach.Droid.Resource.Id.end;
+			global::com.refractored.monodroidtoolkit.Resource.Id.fill = global::IReach.Droid.Resource.Id.fill;
+			global::com.refractored.monodroidtoolkit.Resource.Id.fill_horizontal = global::IReach.Droid.Resource.Id.fill_horizontal;
+			global::com.refractored.monodroidtoolkit.Resource.Id.fill_vertical = global::IReach.Droid.Resource.Id.fill_vertical;
+			global::com.refractored.monodroidtoolkit.Resource.Id.left = global::IReach.Droid.Resource.Id.left;
+			global::com.refractored.monodroidtoolkit.Resource.Id.right = global::IReach.Droid.Resource.Id.right;
+			global::com.refractored.monodroidtoolkit.Resource.Id.start = global::IReach.Droid.Resource.Id.start;
+			global::com.refractored.monodroidtoolkit.Resource.Id.top = global::IReach.Droid.Resource.Id.top;
+			global::com.refractored.monodroidtoolkit.Resource.Integer.circular_indeterminent_interval = global::IReach.Droid.Resource.Integer.circular_indeterminent_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Integer.progressbutton_indeterminent_interval = global::IReach.Droid.Resource.Integer.progressbutton_indeterminent_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Style.CircularProgressBar = global::IReach.Droid.Resource.Style.CircularProgressBar;
+			global::com.refractored.monodroidtoolkit.Resource.Style.CircularProgressBarLight = global::IReach.Droid.Resource.Style.CircularProgressBarLight;
+			global::com.refractored.monodroidtoolkit.Resource.Style.ProgressButton = global::IReach.Droid.Resource.Style.ProgressButton;
+			global::com.refractored.monodroidtoolkit.Resource.Style.ProgressButton_Pin = global::IReach.Droid.Resource.Style.ProgressButton_Pin;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_gravity = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_gravity;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate_interval = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_marker_progress = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_marker_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_progress = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_progress_background_color = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_progress_background_color;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_progress_color = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_progress_color;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_stroke_width = global::IReach.Droid.Resource.Styleable.HoloCircularProgressBar_circular_stroke_width;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton = global::IReach.Droid.Resource.Styleable.ProgressButton;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_android_clickable = global::IReach.Droid.Resource.Styleable.ProgressButton_android_clickable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_android_focusable = global::IReach.Droid.Resource.Styleable.ProgressButton_android_focusable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_android_selectableItemBackground = global::IReach.Droid.Resource.Styleable.ProgressButton_android_selectableItemBackground;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_circleColor = global::IReach.Droid.Resource.Styleable.ProgressButton_circleColor;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_indeterminate = global::IReach.Droid.Resource.Styleable.ProgressButton_indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_indeterminate_interval = global::IReach.Droid.Resource.Styleable.ProgressButton_indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_innerSize = global::IReach.Droid.Resource.Styleable.ProgressButton_innerSize;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_max = global::IReach.Droid.Resource.Styleable.ProgressButton_max;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_pinned = global::IReach.Droid.Resource.Styleable.ProgressButton_pinned;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_pinnedDrawable = global::IReach.Droid.Resource.Styleable.ProgressButton_pinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_progress = global::IReach.Droid.Resource.Styleable.ProgressButton_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_progressColor = global::IReach.Droid.Resource.Styleable.ProgressButton_progressColor;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_shadowDrawable = global::IReach.Droid.Resource.Styleable.ProgressButton_shadowDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_unpinnedDrawable = global::IReach.Droid.Resource.Styleable.ProgressButton_unpinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.Theme = global::IReach.Droid.Resource.Styleable.Theme;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.Theme_circularProgressBarStyle = global::IReach.Droid.Resource.Styleable.Theme_circularProgressBarStyle;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::IReach.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::IReach.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::IReach.Droid.Resource.Attribute.actionBarSize;
@@ -317,6 +422,36 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0100b1
 			public const int checkedTextViewStyle = 2130772145;
 			
+			// aapt resource value: 0x7f01013f
+			public const int circleColor = 2130772287;
+			
+			// aapt resource value: 0x7f010150
+			public const int circularProgressBarStyle = 2130772304;
+			
+			// aapt resource value: 0x7f010148
+			public const int circular_gravity = 2130772296;
+			
+			// aapt resource value: 0x7f01014e
+			public const int circular_indeterminate = 2130772302;
+			
+			// aapt resource value: 0x7f01014f
+			public const int circular_indeterminate_interval = 2130772303;
+			
+			// aapt resource value: 0x7f01014b
+			public const int circular_marker_progress = 2130772299;
+			
+			// aapt resource value: 0x7f01014a
+			public const int circular_progress = 2130772298;
+			
+			// aapt resource value: 0x7f01014d
+			public const int circular_progress_background_color = 2130772301;
+			
+			// aapt resource value: 0x7f01014c
+			public const int circular_progress_color = 2130772300;
+			
+			// aapt resource value: 0x7f010149
+			public const int circular_stroke_width = 2130772297;
+			
 			// aapt resource value: 0x7f0100d3
 			public const int closeIcon = 2130772179;
 			
@@ -542,11 +677,20 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f01008a
 			public const int imageButtonStyle = 2130772106;
 			
+			// aapt resource value: 0x7f010146
+			public const int indeterminate = 2130772294;
+			
 			// aapt resource value: 0x7f010038
 			public const int indeterminateProgressStyle = 2130772024;
 			
+			// aapt resource value: 0x7f010147
+			public const int indeterminate_interval = 2130772295;
+			
 			// aapt resource value: 0x7f010043
 			public const int initialActivityCount = 2130772035;
+			
+			// aapt resource value: 0x7f010144
+			public const int innerSize = 2130772292;
 			
 			// aapt resource value: 0x7f010120
 			public const int insetForeground = 2130772256;
@@ -637,6 +781,9 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0x7f0100ef
 			public const int logoDescription = 2130772207;
+			
+			// aapt resource value: 0x7f01013e
+			public const int max = 2130772286;
 			
 			// aapt resource value: 0x7f010122
 			public const int maxActionInlineWidth = 2130772258;
@@ -743,6 +890,12 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f010099
 			public const int panelMenuListWidth = 2130772121;
 			
+			// aapt resource value: 0x7f010145
+			public const int pinned = 2130772293;
+			
+			// aapt resource value: 0x7f010141
+			public const int pinnedDrawable = 2130772289;
+			
 			// aapt resource value: 0x7f010086
 			public const int popupMenuStyle = 2130772102;
 			
@@ -758,11 +911,20 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f010116
 			public const int pressedTranslationZ = 2130772246;
 			
+			// aapt resource value: 0x7f01013d
+			public const int progress = 2130772285;
+			
 			// aapt resource value: 0x7f010039
 			public const int progressBarPadding = 2130772025;
 			
 			// aapt resource value: 0x7f010037
 			public const int progressBarStyle = 2130772023;
+			
+			// aapt resource value: 0x7f01013c
+			public const int progressButtonStyle = 2130772284;
+			
+			// aapt resource value: 0x7f010140
+			public const int progressColor = 2130772288;
 			
 			// aapt resource value: 0x7f0100da
 			public const int queryBackground = 2130772186;
@@ -805,6 +967,9 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0x7f01007f
 			public const int selectableItemBackgroundBorderless = 2130772095;
+			
+			// aapt resource value: 0x7f010143
+			public const int shadowDrawable = 2130772291;
 			
 			// aapt resource value: 0x7f0100c8
 			public const int showAsAction = 2130772168;
@@ -1007,6 +1172,9 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0100dc
 			public const int track = 2130772188;
 			
+			// aapt resource value: 0x7f010142
+			public const int unpinnedDrawable = 2130772290;
+			
 			// aapt resource value: 0x7f010118
 			public const int useCompatPadding = 2130772248;
 			
@@ -1093,32 +1261,32 @@ namespace IReach.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004c
-			public const int abc_background_cache_hint_selector_material_dark = 2131492940;
+			// aapt resource value: 0x7f0c006b
+			public const int abc_background_cache_hint_selector_material_dark = 2131492971;
 			
-			// aapt resource value: 0x7f0c004d
-			public const int abc_background_cache_hint_selector_material_light = 2131492941;
+			// aapt resource value: 0x7f0c006c
+			public const int abc_background_cache_hint_selector_material_light = 2131492972;
 			
-			// aapt resource value: 0x7f0c004e
-			public const int abc_color_highlight_material = 2131492942;
+			// aapt resource value: 0x7f0c006d
+			public const int abc_color_highlight_material = 2131492973;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int abc_input_method_navigation_guard = 2131492868;
 			
-			// aapt resource value: 0x7f0c004f
-			public const int abc_primary_text_disable_only_material_dark = 2131492943;
+			// aapt resource value: 0x7f0c006e
+			public const int abc_primary_text_disable_only_material_dark = 2131492974;
 			
-			// aapt resource value: 0x7f0c0050
-			public const int abc_primary_text_disable_only_material_light = 2131492944;
+			// aapt resource value: 0x7f0c006f
+			public const int abc_primary_text_disable_only_material_light = 2131492975;
 			
-			// aapt resource value: 0x7f0c0051
-			public const int abc_primary_text_material_dark = 2131492945;
+			// aapt resource value: 0x7f0c0070
+			public const int abc_primary_text_material_dark = 2131492976;
 			
-			// aapt resource value: 0x7f0c0052
-			public const int abc_primary_text_material_light = 2131492946;
+			// aapt resource value: 0x7f0c0071
+			public const int abc_primary_text_material_light = 2131492977;
 			
-			// aapt resource value: 0x7f0c0053
-			public const int abc_search_url_text = 2131492947;
+			// aapt resource value: 0x7f0c0072
+			public const int abc_search_url_text = 2131492978;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int abc_search_url_text_normal = 2131492869;
@@ -1129,14 +1297,14 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0c0007
 			public const int abc_search_url_text_selected = 2131492871;
 			
-			// aapt resource value: 0x7f0c0054
-			public const int abc_secondary_text_material_dark = 2131492948;
+			// aapt resource value: 0x7f0c0073
+			public const int abc_secondary_text_material_dark = 2131492979;
 			
-			// aapt resource value: 0x7f0c0055
-			public const int abc_secondary_text_material_light = 2131492949;
+			// aapt resource value: 0x7f0c0074
+			public const int abc_secondary_text_material_light = 2131492980;
 			
-			// aapt resource value: 0x7f0c004a
-			public const int accent = 2131492938;
+			// aapt resource value: 0x7f0c0069
+			public const int accent = 2131492969;
 			
 			// aapt resource value: 0x7f0c0008
 			public const int accent_material_dark = 2131492872;
@@ -1288,11 +1456,11 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0c002b
 			public const int material_grey_900 = 2131492907;
 			
-			// aapt resource value: 0x7f0c0048
-			public const int primary = 2131492936;
+			// aapt resource value: 0x7f0c0067
+			public const int primary = 2131492967;
 			
-			// aapt resource value: 0x7f0c0049
-			public const int primaryDark = 2131492937;
+			// aapt resource value: 0x7f0c0068
+			public const int primaryDark = 2131492968;
 			
 			// aapt resource value: 0x7f0c002c
 			public const int primary_dark_material_dark = 2131492908;
@@ -1318,6 +1486,99 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0c0033
 			public const int primary_text_disabled_material_light = 2131492915;
 			
+			// aapt resource value: 0x7f0c0048
+			public const int progress_default_circle_color = 2131492936;
+			
+			// aapt resource value: 0x7f0c0049
+			public const int progress_default_progress_color = 2131492937;
+			
+			// aapt resource value: 0x7f0c004a
+			public const int refractored_background_dark = 2131492938;
+			
+			// aapt resource value: 0x7f0c004f
+			public const int refractored_background_holo_dark = 2131492943;
+			
+			// aapt resource value: 0x7f0c0050
+			public const int refractored_background_holo_light = 2131492944;
+			
+			// aapt resource value: 0x7f0c004b
+			public const int refractored_background_light = 2131492939;
+			
+			// aapt resource value: 0x7f0c004c
+			public const int refractored_bright_foreground_dark = 2131492940;
+			
+			// aapt resource value: 0x7f0c004e
+			public const int refractored_bright_foreground_dark_disabled = 2131492942;
+			
+			// aapt resource value: 0x7f0c0053
+			public const int refractored_bright_foreground_disabled_holo_dark = 2131492947;
+			
+			// aapt resource value: 0x7f0c0054
+			public const int refractored_bright_foreground_disabled_holo_light = 2131492948;
+			
+			// aapt resource value: 0x7f0c0051
+			public const int refractored_bright_foreground_holo_dark = 2131492945;
+			
+			// aapt resource value: 0x7f0c0052
+			public const int refractored_bright_foreground_holo_light = 2131492946;
+			
+			// aapt resource value: 0x7f0c004d
+			public const int refractored_bright_foreground_light = 2131492941;
+			
+			// aapt resource value: 0x7f0c0056
+			public const int refractored_dim_foreground_disabled_holo_dark = 2131492950;
+			
+			// aapt resource value: 0x7f0c0059
+			public const int refractored_dim_foreground_disabled_holo_light = 2131492953;
+			
+			// aapt resource value: 0x7f0c0055
+			public const int refractored_dim_foreground_holo_dark = 2131492949;
+			
+			// aapt resource value: 0x7f0c0058
+			public const int refractored_dim_foreground_holo_light = 2131492952;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int refractored_highlighted_text_holo_dark = 2131492955;
+			
+			// aapt resource value: 0x7f0c005c
+			public const int refractored_highlighted_text_holo_light = 2131492956;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int refractored_hint_foreground_holo_dark = 2131492951;
+			
+			// aapt resource value: 0x7f0c005a
+			public const int refractored_hint_foreground_holo_light = 2131492954;
+			
+			// aapt resource value: 0x7f0c0066
+			public const int refractored_holo_blue_bright = 2131492966;
+			
+			// aapt resource value: 0x7f0c0060
+			public const int refractored_holo_blue_dark = 2131492960;
+			
+			// aapt resource value: 0x7f0c005d
+			public const int refractored_holo_blue_light = 2131492957;
+			
+			// aapt resource value: 0x7f0c0061
+			public const int refractored_holo_green_dark = 2131492961;
+			
+			// aapt resource value: 0x7f0c005e
+			public const int refractored_holo_green_light = 2131492958;
+			
+			// aapt resource value: 0x7f0c0065
+			public const int refractored_holo_orange_dark = 2131492965;
+			
+			// aapt resource value: 0x7f0c0064
+			public const int refractored_holo_orange_light = 2131492964;
+			
+			// aapt resource value: 0x7f0c0063
+			public const int refractored_holo_purple = 2131492963;
+			
+			// aapt resource value: 0x7f0c0062
+			public const int refractored_holo_red_dark = 2131492962;
+			
+			// aapt resource value: 0x7f0c005f
+			public const int refractored_holo_red_light = 2131492959;
+			
 			// aapt resource value: 0x7f0c0034
 			public const int ripple_material_dark = 2131492916;
 			
@@ -1342,11 +1603,11 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0c003b
 			public const int switch_thumb_disabled_material_light = 2131492923;
 			
-			// aapt resource value: 0x7f0c0056
-			public const int switch_thumb_material_dark = 2131492950;
+			// aapt resource value: 0x7f0c0075
+			public const int switch_thumb_material_dark = 2131492981;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int switch_thumb_material_light = 2131492951;
+			// aapt resource value: 0x7f0c0076
+			public const int switch_thumb_material_light = 2131492982;
 			
 			// aapt resource value: 0x7f0c003c
 			public const int switch_thumb_normal_material_dark = 2131492924;
@@ -1354,8 +1615,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0c003d
 			public const int switch_thumb_normal_material_light = 2131492925;
 			
-			// aapt resource value: 0x7f0c004b
-			public const int window_background = 2131492939;
+			// aapt resource value: 0x7f0c006a
+			public const int window_background = 2131492970;
 			
 			static Color()
 			{
@@ -1717,6 +1978,9 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0x7f070056
 			public const int notification_subtext_size = 2131165270;
+			
+			// aapt resource value: 0x7f070074
+			public const int progress_inner_size = 2131165300;
 			
 			static Dimension()
 			{
@@ -2232,17 +2496,32 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0200a6
 			public const int mr_ic_play_light = 2130837670;
 			
-			// aapt resource value: 0x7f0200aa
-			public const int notification_template_icon_bg = 2130837674;
+			// aapt resource value: 0x7f0200af
+			public const int notification_template_icon_bg = 2130837679;
 			
 			// aapt resource value: 0x7f0200a7
-			public const int plus = 2130837671;
+			public const int pin_progress_pinned = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int search = 2130837672;
+			public const int pin_progress_shadow = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int slideout = 2130837673;
+			public const int pin_progress_unpinned = 2130837673;
+			
+			// aapt resource value: 0x7f0200aa
+			public const int plus = 2130837674;
+			
+			// aapt resource value: 0x7f0200ab
+			public const int scrubber_control_normal_holo = 2130837675;
+			
+			// aapt resource value: 0x7f0200ac
+			public const int scrubber_control_pressed_holo = 2130837676;
+			
+			// aapt resource value: 0x7f0200ad
+			public const int search = 2130837677;
+			
+			// aapt resource value: 0x7f0200ae
+			public const int slideout = 2130837678;
 			
 			static Drawable()
 			{
@@ -2257,35 +2536,35 @@ namespace IReach.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f08008e
-			public const int action0 = 2131230862;
+			// aapt resource value: 0x7f08008f
+			public const int action0 = 2131230863;
 			
-			// aapt resource value: 0x7f08005a
-			public const int action_bar = 2131230810;
+			// aapt resource value: 0x7f08005b
+			public const int action_bar = 2131230811;
 			
 			// aapt resource value: 0x7f080001
 			public const int action_bar_activity_content = 2131230721;
 			
-			// aapt resource value: 0x7f080059
-			public const int action_bar_container = 2131230809;
+			// aapt resource value: 0x7f08005a
+			public const int action_bar_container = 2131230810;
 			
-			// aapt resource value: 0x7f080055
-			public const int action_bar_root = 2131230805;
+			// aapt resource value: 0x7f080056
+			public const int action_bar_root = 2131230806;
 			
 			// aapt resource value: 0x7f080002
 			public const int action_bar_spinner = 2131230722;
 			
+			// aapt resource value: 0x7f08003c
+			public const int action_bar_subtitle = 2131230780;
+			
 			// aapt resource value: 0x7f08003b
-			public const int action_bar_subtitle = 2131230779;
+			public const int action_bar_title = 2131230779;
 			
-			// aapt resource value: 0x7f08003a
-			public const int action_bar_title = 2131230778;
+			// aapt resource value: 0x7f08005c
+			public const int action_context_bar = 2131230812;
 			
-			// aapt resource value: 0x7f08005b
-			public const int action_context_bar = 2131230811;
-			
-			// aapt resource value: 0x7f080092
-			public const int action_divider = 2131230866;
+			// aapt resource value: 0x7f080093
+			public const int action_divider = 2131230867;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2293,20 +2572,20 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080004
 			public const int action_menu_presenter = 2131230724;
 			
+			// aapt resource value: 0x7f080058
+			public const int action_mode_bar = 2131230808;
+			
 			// aapt resource value: 0x7f080057
-			public const int action_mode_bar = 2131230807;
-			
-			// aapt resource value: 0x7f080056
-			public const int action_mode_bar_stub = 2131230806;
-			
-			// aapt resource value: 0x7f08003c
-			public const int action_mode_close_button = 2131230780;
+			public const int action_mode_bar_stub = 2131230807;
 			
 			// aapt resource value: 0x7f08003d
-			public const int activity_chooser_view_content = 2131230781;
+			public const int action_mode_close_button = 2131230781;
 			
-			// aapt resource value: 0x7f080049
-			public const int alertTitle = 2131230793;
+			// aapt resource value: 0x7f08003e
+			public const int activity_chooser_view_content = 2131230782;
+			
+			// aapt resource value: 0x7f08004a
+			public const int alertTitle = 2131230794;
 			
 			// aapt resource value: 0x7f08001e
 			public const int always = 2131230750;
@@ -2317,11 +2596,11 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f08002a
 			public const int bottom = 2131230762;
 			
-			// aapt resource value: 0x7f080044
-			public const int buttonPanel = 2131230788;
+			// aapt resource value: 0x7f080045
+			public const int buttonPanel = 2131230789;
 			
-			// aapt resource value: 0x7f08008f
-			public const int cancel_action = 2131230863;
+			// aapt resource value: 0x7f080090
+			public const int cancel_action = 2131230864;
 			
 			// aapt resource value: 0x7f08002b
 			public const int center = 2131230763;
@@ -2332,11 +2611,14 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f08002d
 			public const int center_vertical = 2131230765;
 			
-			// aapt resource value: 0x7f080052
-			public const int checkbox = 2131230802;
+			// aapt resource value: 0x7f080053
+			public const int checkbox = 2131230803;
 			
-			// aapt resource value: 0x7f080095
-			public const int chronometer = 2131230869;
+			// aapt resource value: 0x7f080096
+			public const int chronometer = 2131230870;
+			
+			// aapt resource value: 0x7f08003a
+			public const int clip = 2131230778;
 			
 			// aapt resource value: 0x7f080033
 			public const int clip_horizontal = 2131230771;
@@ -2347,47 +2629,47 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f08001f
 			public const int collapseActionView = 2131230751;
 			
-			// aapt resource value: 0x7f08004a
-			public const int contentPanel = 2131230794;
+			// aapt resource value: 0x7f08004b
+			public const int contentPanel = 2131230795;
+			
+			// aapt resource value: 0x7f080051
+			public const int custom = 2131230801;
 			
 			// aapt resource value: 0x7f080050
-			public const int custom = 2131230800;
+			public const int customPanel = 2131230800;
 			
-			// aapt resource value: 0x7f08004f
-			public const int customPanel = 2131230799;
+			// aapt resource value: 0x7f080059
+			public const int decor_content_parent = 2131230809;
 			
-			// aapt resource value: 0x7f080058
-			public const int decor_content_parent = 2131230808;
+			// aapt resource value: 0x7f080041
+			public const int default_activity_button = 2131230785;
 			
-			// aapt resource value: 0x7f080040
-			public const int default_activity_button = 2131230784;
+			// aapt resource value: 0x7f08006e
+			public const int design_bottom_sheet = 2131230830;
 			
-			// aapt resource value: 0x7f08006d
-			public const int design_bottom_sheet = 2131230829;
+			// aapt resource value: 0x7f080075
+			public const int design_menu_item_action_area = 2131230837;
 			
 			// aapt resource value: 0x7f080074
-			public const int design_menu_item_action_area = 2131230836;
+			public const int design_menu_item_action_area_stub = 2131230836;
 			
 			// aapt resource value: 0x7f080073
-			public const int design_menu_item_action_area_stub = 2131230835;
+			public const int design_menu_item_text = 2131230835;
 			
 			// aapt resource value: 0x7f080072
-			public const int design_menu_item_text = 2131230834;
-			
-			// aapt resource value: 0x7f080071
-			public const int design_navigation_view = 2131230833;
+			public const int design_navigation_view = 2131230834;
 			
 			// aapt resource value: 0x7f08000e
 			public const int disableHome = 2131230734;
 			
-			// aapt resource value: 0x7f08005c
-			public const int edit_query = 2131230812;
+			// aapt resource value: 0x7f08005d
+			public const int edit_query = 2131230813;
 			
 			// aapt resource value: 0x7f08001c
 			public const int end = 2131230748;
 			
-			// aapt resource value: 0x7f08009a
-			public const int end_padder = 2131230874;
+			// aapt resource value: 0x7f08009b
+			public const int end_padder = 2131230875;
 			
 			// aapt resource value: 0x7f080023
 			public const int enterAlways = 2131230755;
@@ -2398,11 +2680,11 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080025
 			public const int exitUntilCollapsed = 2131230757;
 			
-			// aapt resource value: 0x7f08003e
-			public const int expand_activities_button = 2131230782;
+			// aapt resource value: 0x7f08003f
+			public const int expand_activities_button = 2131230783;
 			
-			// aapt resource value: 0x7f080051
-			public const int expanded_menu = 2131230801;
+			// aapt resource value: 0x7f080052
+			public const int expanded_menu = 2131230802;
 			
 			// aapt resource value: 0x7f080035
 			public const int fill = 2131230773;
@@ -2422,20 +2704,20 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f08000f
 			public const int homeAsUp = 2131230735;
 			
-			// aapt resource value: 0x7f080042
-			public const int icon = 2131230786;
+			// aapt resource value: 0x7f080043
+			public const int icon = 2131230787;
 			
 			// aapt resource value: 0x7f080020
 			public const int ifRoom = 2131230752;
 			
-			// aapt resource value: 0x7f08003f
-			public const int image = 2131230783;
+			// aapt resource value: 0x7f080040
+			public const int image = 2131230784;
 			
-			// aapt resource value: 0x7f08006a
-			public const int imageView = 2131230826;
+			// aapt resource value: 0x7f08006b
+			public const int imageView = 2131230827;
 			
-			// aapt resource value: 0x7f080099
-			public const int info = 2131230873;
+			// aapt resource value: 0x7f08009a
+			public const int info = 2131230874;
 			
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
@@ -2443,20 +2725,20 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f08002f
 			public const int left = 2131230767;
 			
-			// aapt resource value: 0x7f080093
-			public const int line1 = 2131230867;
+			// aapt resource value: 0x7f080094
+			public const int line1 = 2131230868;
 			
-			// aapt resource value: 0x7f080097
-			public const int line3 = 2131230871;
+			// aapt resource value: 0x7f080098
+			public const int line3 = 2131230872;
 			
 			// aapt resource value: 0x7f08000b
 			public const int listMode = 2131230731;
 			
-			// aapt resource value: 0x7f080041
-			public const int list_item = 2131230785;
+			// aapt resource value: 0x7f080042
+			public const int list_item = 2131230786;
 			
-			// aapt resource value: 0x7f080091
-			public const int media_actions = 2131230865;
+			// aapt resource value: 0x7f080092
+			public const int media_actions = 2131230866;
 			
 			// aapt resource value: 0x7f08001d
 			public const int middle = 2131230749;
@@ -2464,86 +2746,86 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080037
 			public const int mini = 2131230775;
 			
-			// aapt resource value: 0x7f080080
-			public const int mr_art = 2131230848;
-			
-			// aapt resource value: 0x7f080075
-			public const int mr_chooser_list = 2131230837;
-			
-			// aapt resource value: 0x7f080078
-			public const int mr_chooser_route_desc = 2131230840;
+			// aapt resource value: 0x7f080081
+			public const int mr_art = 2131230849;
 			
 			// aapt resource value: 0x7f080076
-			public const int mr_chooser_route_icon = 2131230838;
-			
-			// aapt resource value: 0x7f080077
-			public const int mr_chooser_route_name = 2131230839;
-			
-			// aapt resource value: 0x7f08007d
-			public const int mr_close = 2131230845;
-			
-			// aapt resource value: 0x7f080083
-			public const int mr_control_divider = 2131230851;
-			
-			// aapt resource value: 0x7f080089
-			public const int mr_control_play_pause = 2131230857;
-			
-			// aapt resource value: 0x7f08008c
-			public const int mr_control_subtitle = 2131230860;
-			
-			// aapt resource value: 0x7f08008b
-			public const int mr_control_title = 2131230859;
-			
-			// aapt resource value: 0x7f08008a
-			public const int mr_control_title_container = 2131230858;
-			
-			// aapt resource value: 0x7f08007e
-			public const int mr_custom_control = 2131230846;
-			
-			// aapt resource value: 0x7f08007f
-			public const int mr_default_control = 2131230847;
-			
-			// aapt resource value: 0x7f08007a
-			public const int mr_dialog_area = 2131230842;
+			public const int mr_chooser_list = 2131230838;
 			
 			// aapt resource value: 0x7f080079
-			public const int mr_expandable_area = 2131230841;
+			public const int mr_chooser_route_desc = 2131230841;
 			
-			// aapt resource value: 0x7f08008d
-			public const int mr_group_expand_collapse = 2131230861;
+			// aapt resource value: 0x7f080077
+			public const int mr_chooser_route_icon = 2131230839;
 			
-			// aapt resource value: 0x7f080081
-			public const int mr_media_main_control = 2131230849;
+			// aapt resource value: 0x7f080078
+			public const int mr_chooser_route_name = 2131230840;
 			
-			// aapt resource value: 0x7f08007c
-			public const int mr_name = 2131230844;
-			
-			// aapt resource value: 0x7f080082
-			public const int mr_playback_control = 2131230850;
-			
-			// aapt resource value: 0x7f08007b
-			public const int mr_title_bar = 2131230843;
+			// aapt resource value: 0x7f08007e
+			public const int mr_close = 2131230846;
 			
 			// aapt resource value: 0x7f080084
-			public const int mr_volume_control = 2131230852;
+			public const int mr_control_divider = 2131230852;
+			
+			// aapt resource value: 0x7f08008a
+			public const int mr_control_play_pause = 2131230858;
+			
+			// aapt resource value: 0x7f08008d
+			public const int mr_control_subtitle = 2131230861;
+			
+			// aapt resource value: 0x7f08008c
+			public const int mr_control_title = 2131230860;
+			
+			// aapt resource value: 0x7f08008b
+			public const int mr_control_title_container = 2131230859;
+			
+			// aapt resource value: 0x7f08007f
+			public const int mr_custom_control = 2131230847;
+			
+			// aapt resource value: 0x7f080080
+			public const int mr_default_control = 2131230848;
+			
+			// aapt resource value: 0x7f08007b
+			public const int mr_dialog_area = 2131230843;
+			
+			// aapt resource value: 0x7f08007a
+			public const int mr_expandable_area = 2131230842;
+			
+			// aapt resource value: 0x7f08008e
+			public const int mr_group_expand_collapse = 2131230862;
+			
+			// aapt resource value: 0x7f080082
+			public const int mr_media_main_control = 2131230850;
+			
+			// aapt resource value: 0x7f08007d
+			public const int mr_name = 2131230845;
+			
+			// aapt resource value: 0x7f080083
+			public const int mr_playback_control = 2131230851;
+			
+			// aapt resource value: 0x7f08007c
+			public const int mr_title_bar = 2131230844;
 			
 			// aapt resource value: 0x7f080085
-			public const int mr_volume_group_list = 2131230853;
+			public const int mr_volume_control = 2131230853;
 			
-			// aapt resource value: 0x7f080087
-			public const int mr_volume_item_icon = 2131230855;
+			// aapt resource value: 0x7f080086
+			public const int mr_volume_group_list = 2131230854;
 			
 			// aapt resource value: 0x7f080088
-			public const int mr_volume_slider = 2131230856;
+			public const int mr_volume_item_icon = 2131230856;
+			
+			// aapt resource value: 0x7f080089
+			public const int mr_volume_slider = 2131230857;
 			
 			// aapt resource value: 0x7f080016
 			public const int multiply = 2131230742;
 			
-			// aapt resource value: 0x7f08006b
-			public const int myButton = 2131230827;
+			// aapt resource value: 0x7f08006c
+			public const int myButton = 2131230828;
 			
-			// aapt resource value: 0x7f080070
-			public const int navigation_header_container = 2131230832;
+			// aapt resource value: 0x7f080071
+			public const int navigation_header_container = 2131230833;
 			
 			// aapt resource value: 0x7f080021
 			public const int never = 2131230753;
@@ -2557,8 +2839,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080028
 			public const int parallax = 2131230760;
 			
-			// aapt resource value: 0x7f080046
-			public const int parentPanel = 2131230790;
+			// aapt resource value: 0x7f080047
+			public const int parentPanel = 2131230791;
 			
 			// aapt resource value: 0x7f080029
 			public const int pin = 2131230761;
@@ -2569,8 +2851,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080007
 			public const int progress_horizontal = 2131230727;
 			
-			// aapt resource value: 0x7f080054
-			public const int radio = 2131230804;
+			// aapt resource value: 0x7f080055
+			public const int radio = 2131230805;
 			
 			// aapt resource value: 0x7f080030
 			public const int right = 2131230768;
@@ -2581,53 +2863,53 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080026
 			public const int scroll = 2131230758;
 			
-			// aapt resource value: 0x7f08004e
-			public const int scrollIndicatorDown = 2131230798;
-			
-			// aapt resource value: 0x7f08004b
-			public const int scrollIndicatorUp = 2131230795;
+			// aapt resource value: 0x7f08004f
+			public const int scrollIndicatorDown = 2131230799;
 			
 			// aapt resource value: 0x7f08004c
-			public const int scrollView = 2131230796;
+			public const int scrollIndicatorUp = 2131230796;
+			
+			// aapt resource value: 0x7f08004d
+			public const int scrollView = 2131230797;
 			
 			// aapt resource value: 0x7f080039
 			public const int scrollable = 2131230777;
 			
-			// aapt resource value: 0x7f08005e
-			public const int search_badge = 2131230814;
-			
-			// aapt resource value: 0x7f08005d
-			public const int search_bar = 2131230813;
-			
 			// aapt resource value: 0x7f08005f
-			public const int search_button = 2131230815;
+			public const int search_badge = 2131230815;
 			
-			// aapt resource value: 0x7f080064
-			public const int search_close_btn = 2131230820;
+			// aapt resource value: 0x7f08005e
+			public const int search_bar = 2131230814;
 			
 			// aapt resource value: 0x7f080060
-			public const int search_edit_frame = 2131230816;
+			public const int search_button = 2131230816;
 			
-			// aapt resource value: 0x7f080066
-			public const int search_go_btn = 2131230822;
+			// aapt resource value: 0x7f080065
+			public const int search_close_btn = 2131230821;
 			
 			// aapt resource value: 0x7f080061
-			public const int search_mag_icon = 2131230817;
-			
-			// aapt resource value: 0x7f080062
-			public const int search_plate = 2131230818;
-			
-			// aapt resource value: 0x7f080063
-			public const int search_src_text = 2131230819;
+			public const int search_edit_frame = 2131230817;
 			
 			// aapt resource value: 0x7f080067
-			public const int search_voice_btn = 2131230823;
+			public const int search_go_btn = 2131230823;
+			
+			// aapt resource value: 0x7f080062
+			public const int search_mag_icon = 2131230818;
+			
+			// aapt resource value: 0x7f080063
+			public const int search_plate = 2131230819;
+			
+			// aapt resource value: 0x7f080064
+			public const int search_src_text = 2131230820;
 			
 			// aapt resource value: 0x7f080068
-			public const int select_dialog_listview = 2131230824;
+			public const int search_voice_btn = 2131230824;
 			
-			// aapt resource value: 0x7f080053
-			public const int shortcut = 2131230803;
+			// aapt resource value: 0x7f080069
+			public const int select_dialog_listview = 2131230825;
+			
+			// aapt resource value: 0x7f080054
+			public const int shortcut = 2131230804;
 			
 			// aapt resource value: 0x7f080011
 			public const int showCustom = 2131230737;
@@ -2638,17 +2920,17 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080013
 			public const int showTitle = 2131230739;
 			
-			// aapt resource value: 0x7f08006f
-			public const int snackbar_action = 2131230831;
+			// aapt resource value: 0x7f080070
+			public const int snackbar_action = 2131230832;
 			
-			// aapt resource value: 0x7f08006e
-			public const int snackbar_text = 2131230830;
+			// aapt resource value: 0x7f08006f
+			public const int snackbar_text = 2131230831;
 			
 			// aapt resource value: 0x7f080027
 			public const int snap = 2131230759;
 			
-			// aapt resource value: 0x7f080045
-			public const int spacer = 2131230789;
+			// aapt resource value: 0x7f080046
+			public const int spacer = 2131230790;
 			
 			// aapt resource value: 0x7f080008
 			public const int split_action_bar = 2131230728;
@@ -2665,47 +2947,47 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f080031
 			public const int start = 2131230769;
 			
-			// aapt resource value: 0x7f080090
-			public const int status_bar_latest_event_content = 2131230864;
+			// aapt resource value: 0x7f080091
+			public const int status_bar_latest_event_content = 2131230865;
 			
-			// aapt resource value: 0x7f080065
-			public const int submit_area = 2131230821;
+			// aapt resource value: 0x7f080066
+			public const int submit_area = 2131230822;
 			
 			// aapt resource value: 0x7f08000d
 			public const int tabMode = 2131230733;
 			
-			// aapt resource value: 0x7f080098
-			public const int text = 2131230872;
+			// aapt resource value: 0x7f080099
+			public const int text = 2131230873;
 			
-			// aapt resource value: 0x7f080096
-			public const int text2 = 2131230870;
+			// aapt resource value: 0x7f080097
+			public const int text2 = 2131230871;
 			
-			// aapt resource value: 0x7f08004d
-			public const int textSpacerNoButtons = 2131230797;
+			// aapt resource value: 0x7f08004e
+			public const int textSpacerNoButtons = 2131230798;
 			
-			// aapt resource value: 0x7f080069
-			public const int textView1 = 2131230825;
+			// aapt resource value: 0x7f08006a
+			public const int textView1 = 2131230826;
 			
-			// aapt resource value: 0x7f080094
-			public const int time = 2131230868;
+			// aapt resource value: 0x7f080095
+			public const int time = 2131230869;
 			
-			// aapt resource value: 0x7f080043
-			public const int title = 2131230787;
+			// aapt resource value: 0x7f080044
+			public const int title = 2131230788;
 			
-			// aapt resource value: 0x7f080048
-			public const int title_template = 2131230792;
+			// aapt resource value: 0x7f080049
+			public const int title_template = 2131230793;
 			
-			// aapt resource value: 0x7f08009b
-			public const int toolbar = 2131230875;
+			// aapt resource value: 0x7f08009c
+			public const int toolbar = 2131230876;
 			
 			// aapt resource value: 0x7f080032
 			public const int top = 2131230770;
 			
-			// aapt resource value: 0x7f080047
-			public const int topPanel = 2131230791;
+			// aapt resource value: 0x7f080048
+			public const int topPanel = 2131230792;
 			
-			// aapt resource value: 0x7f08006c
-			public const int touch_outside = 2131230828;
+			// aapt resource value: 0x7f08006d
+			public const int touch_outside = 2131230829;
 			
 			// aapt resource value: 0x7f080009
 			public const int up = 2131230729;
@@ -2716,8 +2998,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f08000a
 			public const int view_offset_helper = 2131230730;
 			
-			// aapt resource value: 0x7f080086
-			public const int volume_item_container = 2131230854;
+			// aapt resource value: 0x7f080087
+			public const int volume_item_container = 2131230855;
 			
 			// aapt resource value: 0x7f080022
 			public const int withText = 2131230754;
@@ -2753,6 +3035,9 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0a0006
 			public const int cancel_button_image_alpha = 2131361798;
 			
+			// aapt resource value: 0x7f0a000b
+			public const int circular_indeterminent_interval = 2131361803;
+			
 			// aapt resource value: 0x7f0a0008
 			public const int design_snackbar_text_max_lines = 2131361800;
 			
@@ -2764,6 +3049,9 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0x7f0a0002
 			public const int mr_controller_volume_group_list_fade_out_duration_ms = 2131361794;
+			
+			// aapt resource value: 0x7f0a000a
+			public const int progressbutton_indeterminent_interval = 2131361802;
 			
 			// aapt resource value: 0x7f0a0007
 			public const int status_bar_notification_info_maxnum = 2131361799;
@@ -3157,11 +3445,11 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0b015a
 			public const int Animation_Design_BottomSheetDialog = 2131427674;
 			
-			// aapt resource value: 0x7f0b0172
-			public const int AppTheme = 2131427698;
+			// aapt resource value: 0x7f0b0176
+			public const int AppTheme = 2131427702;
 			
-			// aapt resource value: 0x7f0b0173
-			public const int AppTheme_Base = 2131427699;
+			// aapt resource value: 0x7f0b0177
+			public const int AppTheme_Base = 2131427703;
 			
 			// aapt resource value: 0x7f0b00a5
 			public const int Base_AlertDialog_AppCompat = 2131427493;
@@ -3604,6 +3892,12 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0b001a
 			public const int CardView_Light = 2131427354;
 			
+			// aapt resource value: 0x7f0b0174
+			public const int CircularProgressBar = 2131427700;
+			
+			// aapt resource value: 0x7f0b0175
+			public const int CircularProgressBarLight = 2131427701;
+			
 			// aapt resource value: 0x7f0b0032
 			public const int Platform_AppCompat = 2131427378;
 			
@@ -3633,6 +3927,12 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0x7f0b0036
 			public const int Platform_Widget_AppCompat_Spinner = 2131427382;
+			
+			// aapt resource value: 0x7f0b0172
+			public const int ProgressButton = 2131427698;
+			
+			// aapt resource value: 0x7f0b0173
+			public const int ProgressButton_Pin = 2131427699;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131427395;
@@ -5231,6 +5531,40 @@ namespace IReach.Droid
 			// aapt resource value: 2
 			public const int ForegroundLinearLayout_foregroundInsidePadding = 2;
 			
+			public static int[] HoloCircularProgressBar = new int[] {
+					2130772296,
+					2130772297,
+					2130772298,
+					2130772299,
+					2130772300,
+					2130772301,
+					2130772302,
+					2130772303};
+			
+			// aapt resource value: 0
+			public const int HoloCircularProgressBar_circular_gravity = 0;
+			
+			// aapt resource value: 6
+			public const int HoloCircularProgressBar_circular_indeterminate = 6;
+			
+			// aapt resource value: 7
+			public const int HoloCircularProgressBar_circular_indeterminate_interval = 7;
+			
+			// aapt resource value: 3
+			public const int HoloCircularProgressBar_circular_marker_progress = 3;
+			
+			// aapt resource value: 2
+			public const int HoloCircularProgressBar_circular_progress = 2;
+			
+			// aapt resource value: 5
+			public const int HoloCircularProgressBar_circular_progress_background_color = 5;
+			
+			// aapt resource value: 4
+			public const int HoloCircularProgressBar_circular_progress_color = 4;
+			
+			// aapt resource value: 1
+			public const int HoloCircularProgressBar_circular_stroke_width = 1;
+			
 			public static int[] LinearLayoutCompat = new int[] {
 					16842927,
 					16842948,
@@ -5498,6 +5832,64 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
+			
+			public static int[] ProgressButton = new int[] {
+					16842970,
+					16842981,
+					16843534,
+					2130772285,
+					2130772286,
+					2130772287,
+					2130772288,
+					2130772289,
+					2130772290,
+					2130772291,
+					2130772292,
+					2130772293,
+					2130772294,
+					2130772295};
+			
+			// aapt resource value: 1
+			public const int ProgressButton_android_clickable = 1;
+			
+			// aapt resource value: 0
+			public const int ProgressButton_android_focusable = 0;
+			
+			// aapt resource value: 2
+			public const int ProgressButton_android_selectableItemBackground = 2;
+			
+			// aapt resource value: 5
+			public const int ProgressButton_circleColor = 5;
+			
+			// aapt resource value: 12
+			public const int ProgressButton_indeterminate = 12;
+			
+			// aapt resource value: 13
+			public const int ProgressButton_indeterminate_interval = 13;
+			
+			// aapt resource value: 10
+			public const int ProgressButton_innerSize = 10;
+			
+			// aapt resource value: 4
+			public const int ProgressButton_max = 4;
+			
+			// aapt resource value: 11
+			public const int ProgressButton_pinned = 11;
+			
+			// aapt resource value: 7
+			public const int ProgressButton_pinnedDrawable = 7;
+			
+			// aapt resource value: 3
+			public const int ProgressButton_progress = 3;
+			
+			// aapt resource value: 6
+			public const int ProgressButton_progressColor = 6;
+			
+			// aapt resource value: 9
+			public const int ProgressButton_shadowDrawable = 9;
+			
+			// aapt resource value: 8
+			public const int ProgressButton_unpinnedDrawable = 8;
 			
 			public static int[] RecyclerView = new int[] {
 					16842948,
@@ -5844,6 +6236,12 @@ namespace IReach.Droid
 			
 			// aapt resource value: 2
 			public const int TextInputLayout_hintTextAppearance = 2;
+			
+			public static int[] Theme = new int[] {
+					2130772304};
+			
+			// aapt resource value: 0
+			public const int Theme_circularProgressBarStyle = 0;
 			
 			public static int[] Toolbar = new int[] {
 					16842927,

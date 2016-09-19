@@ -19,7 +19,6 @@ namespace IReach.Controls
 
 			BarBackgroundColor = Color.FromHex ( "#03A9F4" );
 			BarTextColor = Color.White;
-		}
-
+		} 
 	}
 }

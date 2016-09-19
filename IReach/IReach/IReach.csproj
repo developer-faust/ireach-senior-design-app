@@ -39,6 +39,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\FoodViewTemplateSelector.cs" />
+    <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
+    <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
     <Compile Include="Helpers\AsyncSemaphore.cs" />
     <Compile Include="Controls\IReachNavigationPage.cs" />
     <Compile Include="Controls\NativeListView.cs" />
@@ -186,7 +188,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Backups\USDASearchPAgeXaml.txt" />
+    <Content Include="Properties\Backups\USDASearchPAgeXaml.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\USDAFoodGroupItemsPage.xaml">

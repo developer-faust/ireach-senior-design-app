@@ -48,6 +48,10 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.refractored.monodroidtoolkit, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.FormsPlugin.CrossPieChart.2.1.15\lib\MonoAndroid10\com.refractored.monodroidtoolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DeviceMotion.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.DeviceMotion.1.1.2\lib\MonoAndroid10\DeviceMotion.Plugin.dll</HintPath>
       <Private>True</Private>
@@ -139,6 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrossPieCharts\CrossPieChartsRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="AboutPageRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

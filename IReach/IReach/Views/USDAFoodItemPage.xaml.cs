@@ -20,13 +20,14 @@ namespace IReach.Views
         public USDAFoodItemPage (food  item)
         {
             InitializeComponent ( );
-            BindingContext = new UsdaFoodItemViewModel(item);
-
+            BindingContext = new UsdaFoodItemViewModel(item); 
             _foodItem = item;
         }
 
-
-
-
+        async void SaveClicked(object sender, EventArgs e)
+        {
+            ViewModel.Save();
+            await this.Navigation.PopToRootAsync();
+        }
     }
 }

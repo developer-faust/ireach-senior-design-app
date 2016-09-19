@@ -25,8 +25,35 @@ namespace IReach.ViewModels
             get { return item.short_desc; }
         }
 
-        
+        private int _calories;
+        public int Calories
+        {
+            get { return 100; }
+            set { SetProperty(ref _calories, value); }
+        }
+
+        private int _servings;
+        public int Servings
+        {
+            get
+            {
+                if (_servings > 1)
+                    return 2;
+                return _servings;
+            }
+            set { SetProperty(ref _servings, value); }
+        }
 
 
+        public async void Save()
+        {
+            var foodEntry = new FoodItem();
+            foodEntry.Name = FoodName;
+            foodEntry.Calories = Calories;
+            foodEntry.Servings = Servings;
+             
+            App.Database.SaveItem(foodEntry); 
+
+        }
     }
 }
