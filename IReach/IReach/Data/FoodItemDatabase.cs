@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,20 @@ namespace IReach.Data
             {
                 return database.Delete<FoodItem> ( id );
             }
+        }
+         
+        public double TotalCalories ()
+        {
+            double total = 0;
+            var cal = (from s in database.Table<FoodItem>() select s.Calories);
+            foreach (var c in cal)
+            {
+                total += c;
+            }
+
+            Debug.WriteLine("Total Calories = {0}", total); 
+            return total;
+             
         }
     }
 }

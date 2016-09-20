@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,40 +14,50 @@ namespace IReach.Views
     public partial class HomePage : ContentPage
     {
         private IDeviceMotion motion = CrossDeviceMotion.Current;
-
+        private Label totalCalories;
+        private Entry TargetEntry;
+        private CrossPieChartView chartView;
+        private Label ChartLabel;
         public HomePage()
         {
-            InitializeComponent();
-
+            InitializeComponent(); 
             var lable1 = new Label
             {
                 XAlign = TextAlignment.Center,
                 Text = "Summary: ",
                 TextColor = Color.Black
             };
-            
+            totalCalories = new Label();
+            TargetEntry = new Entry();
+            TargetEntry.Text = $"3000";
+
+
+            Debug.WriteLine("Progress So Far {0}", Progress);
+
+
+            chartView = new CrossPieChartView();
+            chartView.Progress = (float)_progress;
+            chartView.ProgressColor = Color.Green;
+            chartView.ProgressBackgroundColor = Color.FromHex("#EEEEEEEE");
+            chartView.StrokeThickness = Device.OnPlatform(10, 20, 80);
+            chartView.Radius = Device.OnPlatform(100, 180, 160);
+            chartView.BackgroundColor = Color.White;
+
+
+            ChartLabel = new Label();
+            ChartLabel.Text = string.Format("{0}", _progress);
+            ChartLabel.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
+            ChartLabel.FontAttributes = FontAttributes.Bold;
+            ChartLabel.VerticalOptions = LayoutOptions.Center;
+            ChartLabel.HorizontalOptions = LayoutOptions.Center;
+            ChartLabel.TextColor = Color.Black;
+
             var mainGrid = new Grid
             {
                 Children =
                 {
-                    new CrossPieChartView
-                    {
-                        Progress = 60,
-                        ProgressColor = Color.Green,
-                        ProgressBackgroundColor = Color.FromHex("#EEEEEEEE"),
-                        StrokeThickness = Device.OnPlatform(10, 20, 80),
-                        Radius = Device.OnPlatform(100, 180, 160),
-                        BackgroundColor = Color.White
-                    },
-                    new Label
-                    {
-                        Text = "60%", 
-                        FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                        FontAttributes = FontAttributes.Bold,
-                        VerticalOptions = LayoutOptions.Center,
-                        HorizontalOptions = LayoutOptions.Center,
-                        TextColor = Color.Black
-                    }
+                   chartView,
+                   ChartLabel
                 }
             };
             var graphsLayout = new StackLayout
@@ -79,11 +90,25 @@ namespace IReach.Views
 
             HomePageStackLayout.Children.Insert(0, lable1); 
             HomePageStackLayout.Children.Insert(1, mainGrid);
-            HomePageStackLayout.Children.Insert(2, graphsLayout); 
-            
-
-
+            HomePageStackLayout.Children.Insert(2, graphsLayout);  
+            HomePageStackLayout.Children.Insert(3, totalCalories); 
+            HomePageStackLayout.Children.Insert(4, TargetEntry); 
         }
+
+        private double _totalCalories;
+        public double TotalCalories { get { return _totalCalories; } set { _totalCalories = value; }}
+
+        private double _progress;
+
+        public double Progress
+        {
+            get { return _progress; }
+            set
+            {
+                _progress = value; 
+            }
+        }
+         
 
         private void OnStartActivated(object sender, EventArgs e)
         {
@@ -115,6 +140,23 @@ namespace IReach.Views
         {
             motion.Stop(MotionSensorType.Accelerometer);
         }
-         
+
+        private void HomePage_OnAppearing(object sender, EventArgs e)
+        {
+
+            Debug.WriteLine("Page Appearing");
+            _totalCalories = App.Database.TotalCalories();
+
+            int target;
+            int.TryParse(TargetEntry.Text, out target);
+            _progress = (_totalCalories/target)* 100;
+
+            ChartLabel.Text = string.Format("{0}", _progress);
+            chartView.Progress = (float)_progress;
+
+
+            totalCalories.Text = string.Format("Your total calories = {0} Target = {1} Progress = {2}", _totalCalories, target, _progress);
+             
+        }
     }
 }

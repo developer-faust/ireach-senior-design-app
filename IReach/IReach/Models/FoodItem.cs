@@ -11,7 +11,7 @@ namespace IReach.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Name { get; set; }
-        public int Calories { get; set; }
+        public double Calories { get; set; }
         public int Servings { get; set; }
     }
 }

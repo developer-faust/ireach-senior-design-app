@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,18 +17,18 @@ namespace IReach.Views
         {
             get { return BindingContext as UsdaFoodItemViewModel; }
         }
-        private food _foodItem;
+     
         public USDAFoodItemPage (food  item)
         {
             InitializeComponent ( );
-            BindingContext = new UsdaFoodItemViewModel(item); 
-            _foodItem = item;
-        }
+            BindingContext = new UsdaFoodItemViewModel(item);  
+        } 
 
         async void SaveClicked(object sender, EventArgs e)
         {
             ViewModel.Save();
             await this.Navigation.PopToRootAsync();
         }
+         
     }
 }
