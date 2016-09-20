@@ -7,6 +7,7 @@ using IReach.Models;
 using IReach.Services;
 using MvvmHelpers;
 using Xamarin.Forms;
+using IReach;
 
 namespace IReach.ViewModels
 {
@@ -28,7 +29,9 @@ namespace IReach.ViewModels
         private int _calories;
         public int Calories
         {
-            get { return 100; }
+            get {
+                return App.NutritionDb.GetCalories(item.id).Result;
+                }
             set { SetProperty(ref _calories, value); }
         }
 

@@ -104,6 +104,14 @@ namespace IReach.Service
 
             return foods;
         }
+
+        public async Task<int> GetCalories(int foodId) //new function to return calories
+        {
+            Debug.WriteLine("Get calories for food ID {0}", foodId);
+            String qstring = "SELECT amount FROM nutrition WHERE food_id=" + foodId.ToString() + " AND nutrient_id=208;";
+            var calories = await Database.QueryAsync<nutrition>(qstring);
+            return (int) calories[0].amount;
+        }
          
     }
 }
