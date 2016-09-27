@@ -19,9 +19,10 @@ namespace IReach.Views
         async void OnSaveClicked(object sender, EventArgs e)
         {
             var foodItem = (FoodItem) BindingContext;
+            foodItem.CreationDate = DateTime.Now.ToString();
             App.Database.SaveItem(foodItem);
 
-            await this.Navigation.PopAsync();
+            await this.Navigation.PopAsync(); 
         }
 
         async void OnDeleteClicked(object sender, EventArgs e)

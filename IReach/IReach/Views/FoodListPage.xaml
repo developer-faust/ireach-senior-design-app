@@ -14,7 +14,10 @@
 
               <Label Text="{Binding Name}"
                      VerticalTextAlignment="Center"
-                     HorizontalOptions="StartAndExpand" /> 
+                     HorizontalOptions="Start" /> 
+              <Label Text="{Binding CreationDate,  StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                     VerticalTextAlignment="Center"
+                     HorizontalOptions="EndAndExpand"/>
 
             </StackLayout>
           </ViewCell.View>

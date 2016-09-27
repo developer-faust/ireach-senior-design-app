@@ -4,9 +4,7 @@
   </style>
   <!-- Base theme applied no matter what API -->
   <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
-
-    <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
-    <!-- colorPrimary is used for the default action bar background -->
+ 
     <item name="colorPrimary">@color/primary</item>
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">@color/primaryDark</item>

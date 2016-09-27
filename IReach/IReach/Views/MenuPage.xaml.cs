@@ -14,41 +14,39 @@ namespace IReach.Views
 		RootPage root;
 		List<HomeMenuItem> menuItems;
 		public MenuPage (RootPage root)
-		{ 
-			InitializeComponent ( );
-            this.root = root;
-            /*	if ( !App.IsWindows10 )
-                {
-                    BackgroundColor = Color.FromHex ( "#03A9F4" );
-                    ListViewMenu.BackgroundColor = Color.FromHex ( "#F5F5F5" );
-                }*/
-            BackgroundColor = Color.FromHex ( "#03A9F4" );
-            ListViewMenu.BackgroundColor = Color.FromHex ( "#F5F5F5" );
-
+		{
+            this.root = root; 
+            InitializeComponent( );
             BindingContext = new BaseViewModel
-			{
-				Title = "IReach.Forms",
-				Subtitle = "IReach.Forms",
-				Icon = "slideout.png"  
-			};
+            {
+                Title = "IReach.Forms",
+                Subtitle = "IReach.Forms",
+                Icon = "slideout.png"
+            };
 
+
+            BackgroundColor = Color.FromHex ("#F44336");
+            ListViewMenu.BackgroundColor = Color.FromHex ("#CFD8DC");
+
+           
 			ListViewMenu.ItemsSource = menuItems = new List<HomeMenuItem>
 			{
                 new HomeMenuItem {Title = "Home", MenuType = MenuType.Home, Icon ="home.png" },
                 new HomeMenuItem {Title = "Food Log", MenuType = MenuType.FoodLog, Icon ="diet.png" },  
                 new HomeMenuItem {Title = "About", MenuType = MenuType.About, Icon ="about.png" } 
-            }; 
+            };
 
-			ListViewMenu.ItemSelected += async ( sender, e ) =>
+            ListViewMenu.SelectedItem = menuItems[0];
+
+            ListViewMenu.ItemSelected += async ( sender, e ) =>
 			{
 				if ( ListViewMenu.SelectedItem == null )
 					return;
 
-				await this.root.NavigateAsync ( ( ( HomeMenuItem )e.SelectedItem ).MenuType ); 
-
+				await this.root.NavigateAsync ( ( ( HomeMenuItem )e.SelectedItem ).MenuType );  
 			};
 
-            ListViewMenu.SelectedItem = menuItems[ 0 ];
+            
         }
 	}
 }

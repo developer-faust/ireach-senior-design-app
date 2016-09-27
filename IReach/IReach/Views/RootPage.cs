@@ -15,7 +15,7 @@ namespace IReach.Views
 		/* Todo: Windows Phone
          * public static bool IsUWPDesktop { get; set; }
          */
-	    private Dictionary<MenuType, NavigationPage> Pages;
+	    private Dictionary<MenuType, NavigationPage> Pages { get; set; }
 		public RootPage ( )
 		{
 			Pages = new Dictionary<MenuType, NavigationPage> ( );
@@ -23,43 +23,62 @@ namespace IReach.Views
 
 			BindingContext = new BaseViewModel
 			{
-				Title = "IReach",
+				Title = "iREACH",
 				Icon = "slideout.png"
 			};
 
-			NavigateAsync ( MenuType.Home );
-			InvalidateMeasure ( );
+		    Navigate();
 		}
 
+	    public async void Navigate()
+	    {
+            await NavigateAsync(MenuType.FoodLog); 
+        }
+
+	    void SetDetailIfNull(Page page)
+	    {
+	        if (Detail == null && page != null)
+	            Detail = page;
+	    }
 		public async Task NavigateAsync ( MenuType id )
 		{
-			Page newPage = null;
+			Page newPage;
 			if ( !Pages.ContainsKey ( id ) )
 			{
 				switch ( id )
 				{
 					case MenuType.Home:
-						Pages.Add ( id, new IReachNavigationPage ( new HomePage ( ) ) );
+
+                        var page =  new IReachNavigationPage(new HomePage());
+
+                        SetDetailIfNull(page);
+                        Pages.Add ( id, page);
 						break;
                     case MenuType.FoodLog:
-                        Pages.Add(id, new IReachNavigationPage(new FoodLogPage()));
+				        page = new IReachNavigationPage(new FoodLogPage());
+                        SetDetailIfNull(page);
+                        Pages.Add(id, page);
                         break; 
                     case MenuType.About:
-                        Pages.Add ( id, new IReachNavigationPage ( new AboutPage ( ) ) );
+
+                        page = new IReachNavigationPage(new AboutPage());
+                        SetDetailIfNull(page);
+                        Pages.Add(id, page);
+                        Pages.Add ( id, page);
                         break;
                 }  
 			} 
-            newPage = Pages[ id ]; 
+            newPage = Pages[ id ];
 
-            if ( Detail != null && Device.OS == TargetPlatform.WinPhone )
-                await Detail.Navigation.PopToRootAsync ( );
+		    if (newPage == null)
+		        return;
 
-            Detail = newPage;
+		    if (Detail != null && Device.OS == TargetPlatform.WinPhone)
+		    {
+		        await Detail.Navigation.PopToRootAsync();
+		    }
 
-            /* TODO: Window Universal App
-             * if ( IsUWPDesktop )
-                 return;
-            */
+		    Detail = newPage; 
 
             if ( Device.Idiom != TargetIdiom.Tablet )
                 IsPresented = false;

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using IReach.Statics;
+using Xamarin.Forms;
 
 namespace IReach.Controls
 {
@@ -17,7 +18,7 @@ namespace IReach.Controls
 		void Init ( )
 		{
 
-			BarBackgroundColor = Color.FromHex ( "#03A9F4" );
+			BarBackgroundColor = Palette._002;
 			BarTextColor = Color.White;
 		} 
 	}

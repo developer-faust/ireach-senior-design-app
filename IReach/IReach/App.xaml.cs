@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using IReach.Data;
+using IReach.Localization;
 using IReach.Services;
 using IReach.Views;
 using Xamarin.Forms;
@@ -27,9 +29,12 @@ namespace IReach
 
             app = this;
             _authenticationService = DependencyService.Get<IAuthenticationService> ( );
+            TextResources.Culture = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
+
 
             if ( !_authenticationService.IsAuthenticated )
             {
+                Debug.WriteLine("Not authenticated! Show Login Page");
                 MainPage = new SplashPage ( );
             }
             else
@@ -78,7 +83,7 @@ namespace IReach
             }
         }
 
-        public static async Task ExecuteIfConnect ( Func<Task> actionToExecuteIfConnected )
+        public static async Task ExecuteIfConnected ( Func<Task> actionToExecuteIfConnected )
         {
             if ( IsConnected )
             {
@@ -91,7 +96,7 @@ namespace IReach
             get { return true; }
         }
 
-
+        public static int AnimationSpeed { get; } = 250; 
         protected override void OnStart ( )
         {
             // Handle when your app starts

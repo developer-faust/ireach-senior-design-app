@@ -11,6 +11,20 @@ namespace IReach.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
+        private string _AuthenticationClientId;
+        private string _AuthenticationClientID;
+        private string _Authority;
+        // Authenticator interface (Device specific)
+        readonly IAuthenticator _authenticator;
+        private bool _authenticationResult = false;
+
+        // TODO: configuration fecter interface
+
+
+        public AuthenticationService()
+        {
+            _authenticator = DependencyService.Get<IAuthenticator>();  
+        }
        
         public bool IsAuthenticated
         {
@@ -20,7 +34,7 @@ namespace IReach.Services
                     return true;
                 else
                 {
-                    return false;
+                    return _authenticationResult;
                 }
 
             } 
@@ -33,10 +47,27 @@ namespace IReach.Services
         }
 
         // Change this to Async Function
-        public bool AuthenticateAsync ( )
+        public async Task<bool> AuthenticateAsync ( )
         {
+            _authenticationResult = await _authenticator.Authenticate(_AuthenticationClientID);
+
+            var accessToken = await GetTokenAsync();
+
             return true;
         }
-
+  
+        public async Task<string> GetTokenAsync()
+        {
+            // TODO: Hardcoded for now
+            _Authority = "iReach";
+            return await _authenticator.FetchToken(_Authority);
+        }
+        async Task GetConfig()
+        {
+            if (_AuthenticationClientID == null)
+            {
+                _AuthenticationClientID = $"IREACHDEMOID";
+            }
+        }
     }
 }

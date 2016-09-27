@@ -8,7 +8,9 @@ namespace IReach.Services
 {
     public interface IAuthenticationService
     {
-        bool AuthenticateAsync();
-        bool IsAuthenticated { get; }
+        Task<bool> AuthenticateAsync();
+        Task<string> GetTokenAsync();
+        bool IsAuthenticated { get; } 
+        void BypassAuthentication();
     }
 }

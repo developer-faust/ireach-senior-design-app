@@ -2496,8 +2496,8 @@ namespace IReach.Droid
 			// aapt resource value: 0x7f0200a6
 			public const int mr_ic_play_light = 2130837670;
 			
-			// aapt resource value: 0x7f0200af
-			public const int notification_template_icon_bg = 2130837679;
+			// aapt resource value: 0x7f0200b0
+			public const int notification_template_icon_bg = 2130837680;
 			
 			// aapt resource value: 0x7f0200a7
 			public const int pin_progress_pinned = 2130837671;
@@ -2522,6 +2522,9 @@ namespace IReach.Droid
 			
 			// aapt resource value: 0x7f0200ae
 			public const int slideout = 2130837678;
+			
+			// aapt resource value: 0x7f0200af
+			public const int splashSlice = 2130837679;
 			
 			static Drawable()
 			{

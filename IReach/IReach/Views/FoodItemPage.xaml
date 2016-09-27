@@ -7,7 +7,8 @@
     <StackLayout VerticalOptions="StartAndExpand">
       <Label Text="Name"/>
       <Entry x:Name= "nameEntry" Text="{Binding Name}" Placeholder="Food Name"/>
-      
+      <Label Text="Date Created: "/>
+      <Label x:Name= "dateEntry" Text="{Binding CreationDate, StringFormat='{0:HH:mm:ss}'}"/>
      <Grid>
        <Grid.RowDefinitions>
          <RowDefinition Height="Auto"/>

@@ -43,12 +43,14 @@ namespace IReach.Views
         {
             var foodItem = (FoodItem) e.SelectedItem;
             var foodPage = new FoodItemPage();
+
+            
             foodPage.BindingContext = foodItem;
 
           
             ( (App) App.Current).ResumeAtFoodID = foodItem.ID;
-            Debug.WriteLine("Setting ResumeAtFoodId = " + foodItem.ID); 
-            
+            Debug.WriteLine("Setting ResumeAtFoodId = " + foodItem.ID);
+            Debug.WriteLine("Created: {0}", foodItem.CreationDate);
             Navigation.PushAsync(foodPage);
 
         }
@@ -58,7 +60,8 @@ namespace IReach.Views
             base.OnAppearing();
 
             ((App) App.Current).ResumeAtFoodID = -1;
-            listView.ItemsSource = App.Database.GetFoodItems();
+            var foods = App.Database.GetFoodItems();
+            listView.ItemsSource = foods;
         }
     }
 }

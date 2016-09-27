@@ -4,7 +4,12 @@
              x:Class="IReach.Views.MenuPage"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              Title="{Binding Title}"
-             Icon="{Binding Icon}">
+             Icon="{Binding Icon}"
+             BackgroundColor="#F44336">
+      <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color"
+          Android="#F5F5F5" />
+      </ContentPage.BackgroundColor>
   <ContentPage.Content>
     <ListView
       CachingStrategy="RecycleElement"
@@ -27,10 +32,12 @@
 
           <BoxView Grid.ColumnSpan="3"
                    Grid.RowSpan="4"
-                   BackgroundColor="#03A9F4"/>
+                   BackgroundColor="#F44336"/>
           <controls:CircleImage
                     Grid.Column="1"
                     Grid.Row="1"
+                    BorderColor="White"
+                    BorderThickness="5"
                     HorizontalOptions="Start"
                     VerticalOptions="End"
                     Source="droid.png"

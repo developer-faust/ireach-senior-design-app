@@ -8,7 +8,7 @@ using IReach.Models;
 using IReach.Services;
 using MvvmHelpers;
 using Xamarin.Forms;
-using IReach;
+using IReach; 
 
 namespace IReach.ViewModels
 {
@@ -63,6 +63,7 @@ namespace IReach.ViewModels
         {
             var foodEntry = new FoodItem();
             foodEntry.Name = FoodName;
+            foodEntry.CreationDate = DateTime.Now.ToString();
             foodEntry.Calories = Calories;
             foodEntry.Servings = Servings;
              
