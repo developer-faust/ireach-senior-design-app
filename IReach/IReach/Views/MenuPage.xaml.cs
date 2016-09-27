@@ -26,7 +26,7 @@ namespace IReach.Views
 
 
             BackgroundColor = Color.FromHex ("#F44336");
-            ListViewMenu.BackgroundColor = Color.FromHex ("#FFFFFF");
+            ListViewMenu.BackgroundColor = Color.FromHex ("#CFD8DC");
 
            
 			ListViewMenu.ItemsSource = menuItems = new List<HomeMenuItem>
