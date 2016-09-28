@@ -20,8 +20,8 @@ namespace IReach.Views
             tbi = new ToolbarItem ( "+", null, ( ) =>
             {
                 var foodItem = new FoodItem ( );
-                var foodPage = new FoodItemPage ( );
-                foodPage.BindingContext = foodItem;
+                var foodPage = new FoodItemPage {BindingContext = foodItem};
+
                 Navigation.PushAsync ( foodPage );
             }, 0, 0 );
 
@@ -30,8 +30,8 @@ namespace IReach.Views
                 tbi = new ToolbarItem("+", "plus", () =>
                 {
                     var foodItem = new FoodItem();
-                    var foodPage = new FoodItemPage();
-                    foodPage.BindingContext = foodItem;
+                    var foodPage = new FoodItemPage {BindingContext = foodItem};
+
                     Navigation.PushAsync(foodPage);
                 },0,0); 
             }
@@ -51,16 +51,18 @@ namespace IReach.Views
             ( (App) App.Current).ResumeAtFoodID = foodItem.ID;
             Debug.WriteLine("Setting ResumeAtFoodId = " + foodItem.ID);
             Debug.WriteLine("Created: {0}", foodItem.CreationDate);
+
             Navigation.PushAsync(foodPage);
 
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
             ((App) App.Current).ResumeAtFoodID = -1;
-            var foods = App.Database.GetFoodItems();
+            var foods = await App.UserAsyncDb.GetFoodsAsync();
+
             listView.ItemsSource = foods;
         }
     }

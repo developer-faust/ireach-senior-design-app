@@ -61,6 +61,21 @@ namespace IReach
             }
         }
 
+        // USER Database Async Implimentation
+        private static FoodItemAsyncDb _userFoodDb;
+
+        public static FoodItemAsyncDb UserAsyncDb
+        {
+            get
+            {
+                if (_userFoodDb == null)
+                {
+                    _userFoodDb = new FoodItemAsyncDb();
+                }
+
+                return _userFoodDb;
+            }
+        }
         private static USDAFoodService nutritionDb;
         public static USDAFoodService NutritionDb
         {

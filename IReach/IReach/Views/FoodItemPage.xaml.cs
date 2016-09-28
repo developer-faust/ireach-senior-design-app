@@ -20,7 +20,7 @@ namespace IReach.Views
         {
             var foodItem = (FoodItem) BindingContext;
             foodItem.CreationDate = DateTime.Now.ToString();
-            App.Database.SaveItem(foodItem);
+            await App.UserAsyncDb.SaveFoodAsync(foodItem);
 
             await this.Navigation.PopAsync(); 
         }
@@ -28,7 +28,7 @@ namespace IReach.Views
         async void OnDeleteClicked(object sender, EventArgs e)
         {
             var foodItem = (FoodItem) BindingContext;
-            App.Database.DeleteItem(foodItem.ID);
+            await App.UserAsyncDb.DeleteFoodAsync(foodItem.ID);
             await this.Navigation.PopAsync();
         }
 

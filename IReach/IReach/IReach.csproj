@@ -43,6 +43,8 @@
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
+    <Compile Include="Data\FoodItemAsyncDb.cs" />
+    <Compile Include="Interfaces\IFoodDataService.cs" />
     <Compile Include="Helpers\AsyncSemaphore.cs" />
     <Compile Include="Controls\IReachNavigationPage.cs" />
     <Compile Include="Controls\NativeListView.cs" />
@@ -55,6 +57,7 @@
     </Compile>
     <Compile Include="Localization\TranslateExtension.cs" />
     <Compile Include="Services\IAuthenticator.cs" />
+    <Compile Include="Interfaces\ISqLiteAsyncUserDb.cs" />
     <Compile Include="Services\USDANutritionDB.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\FoodItem.cs" />
