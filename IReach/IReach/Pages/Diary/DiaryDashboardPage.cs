@@ -20,6 +20,7 @@ namespace IReach.Pages.Diary
     public class DiaryDashboardPage : ContentPage
     {
         private ScrollView _scrollView;
+        private StackLayout _frameStackLayout;
         private FloatingActionButtonView _fab;
 
         private DiaryDashboardChartViewModel _DiaryDashboardChartViewModel { get; set; } 
@@ -47,24 +48,33 @@ namespace IReach.Pages.Diary
                     _DiaryDashboardFoodsViewModel =
                         new DiaryDashboardFoodsViewModel(new Command(PushTabbedFoodPageAction))
             };
-
             _scrollView = new ScrollView
-            {
+            {  
                 Content = new StackLayout
-                {
-                    Spacing = 0,
+                { 
                     Children =
-                    {
-                        new Label()
-                        {
-                            Text = "Hello From ChartView"
-                        },
-                        foodsChartView,
-                        foodsView
+                    { 
+                        foodsView 
                     }
-                }
-
+                } 
             };
+
+            _frameStackLayout = new StackLayout()
+            {
+                Spacing = 0,
+                Children =
+                {
+                    new Label()
+                    {
+                        Text = "Diet Intake Summary",
+                        FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                        FontAttributes = FontAttributes.Bold
+                    },
+                    foodsChartView,
+                    _scrollView
+                }
+            };
+           
 
             if (Device.OS == TargetPlatform.Android)
             {
@@ -77,11 +87,9 @@ namespace IReach.Pages.Diary
 
                     Clicked = async (sender, args) =>
                     {
-                        // TODO: Implement click action
-
-
+                        // When the + FAB is clicked. Load the database with Sample 8 Weeks worth of Data
                         DateTime now = DateTime.UtcNow; 
-                        for (int i = 0; i < 8; i++)
+                        for (int i = 0; i < 6; i++)
                         {
                             for (int j = 0; j < 7; j++)
                             {
@@ -111,9 +119,9 @@ namespace IReach.Pages.Diary
                 };
                 // Position the pageLayout to fill the entire screen.
                 // Manage positioning of child elements on the page by editing the pageLayout.
-                AbsoluteLayout.SetLayoutFlags(_scrollView, AbsoluteLayoutFlags.All);
-                AbsoluteLayout.SetLayoutBounds(_scrollView, new Rectangle(0f, 0f, 1f, 1f));
-                absoluteLayout.Children.Add(_scrollView);
+                AbsoluteLayout.SetLayoutFlags(_frameStackLayout, AbsoluteLayoutFlags.All);
+                AbsoluteLayout.SetLayoutBounds(_frameStackLayout, new Rectangle(0f, 0f, 1f, 1f));
+                absoluteLayout.Children.Add(_frameStackLayout);
 
                 // Overlay the FAB in the bottom-right corner
                 AbsoluteLayout.SetLayoutFlags(_fab, AbsoluteLayoutFlags.PositionProportional);
@@ -212,6 +220,10 @@ namespace IReach.Pages.Diary
             // TODO: Insight tracking  
         }
 
-
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            GC.Collect();
+        }
     }
 }

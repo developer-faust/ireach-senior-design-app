@@ -47,13 +47,13 @@ namespace IReach.Views.Diary
             Label weeklyAverageTitleLabel = new Label()
             {
                 Text = TextResources.DiaryDashboard_FoodChart_Header_WeeklyAverageTitle.ToUpperInvariant(),
-                TextColor = Palette._007,
+                TextColor = Palette._006,
                 FontSize = Device.OnPlatform(
                   iOS: Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * .9,
                   Android: Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
                   WinPhone: Device.GetNamedSize(NamedSize.Micro, typeof(Label))),
                 HorizontalTextAlignment = TextAlignment.End,
-                VerticalTextAlignment = TextAlignment.Center
+                VerticalTextAlignment = TextAlignment.Center, 
             };
 
             _WeeklyAverageValueLabel = new Label()
@@ -96,13 +96,13 @@ namespace IReach.Views.Diary
                 heightConstraint: Constraint.RelativeToParent(parent => (parent.Height / 4) * 3)
             );
 
-            //BackgroundColor = Palette._009;
+            //BackgroundColor = Palette._002;
 
             //Device.OnPlatform(iOS: () => BackgroundColor = Color.White, Android: () => BackgroundColor = Palette._009);
 
             HeightRequest = RowSizes.MediumRowHeightDouble;
 
-            Padding = new Thickness(20, 20, 20, 0);
+            Padding = new Thickness(10, 20, 10, 0);
 
             Content = relativeLayout;
         }

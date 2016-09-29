@@ -143,7 +143,7 @@ namespace IReach.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Week.
+        ///   Looks up a localized string similar to Week Of.
         /// </summary>
         public static string DiaryDashboard_FoodChart_PrimaryAxis_Title {
             get {

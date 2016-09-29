@@ -51,7 +51,7 @@ namespace IReach.Views.Diary
 
             #region Calories Graph
 
-            double chartHeight = Device.OnPlatform(190, 300, 190);
+            double chartHeight = Device.OnPlatform(190, 250, 190);
             var columnSeries = new ColumnSeries()
             {
                 YAxis = new NumericalAxis()
@@ -78,7 +78,7 @@ namespace IReach.Views.Diary
                     LabelStyle = new DataMarkerLabelStyle()
                     {
                         LabelPosition = DataMarkerLabelPosition.Auto,
-                        TextColor = Color.Lime,
+                        TextColor = Palette._001,
                         BackgroundColor = Color.Transparent
                     }
                 },
@@ -110,7 +110,7 @@ namespace IReach.Views.Diary
                     LabelPlacement = LabelPlacement.BetweenTicks,
                     TickPosition = AxisElementPosition.Inside,
                     ShowMajorGridLines = false,
-                    LabelStyle = new ChartAxisLabelStyle() { TextColor = Color.Red} 
+                    LabelStyle = new ChartAxisLabelStyle() { TextColor = AxisLabelColor } 
                 }
             };
 
@@ -125,7 +125,7 @@ namespace IReach.Views.Diary
 
             StackLayout stackLayout = new StackLayout()
             {
-                Spacing = 0,
+                Spacing = 5,
                 Children =
                 {
                     loadingLabel,
@@ -145,7 +145,9 @@ namespace IReach.Views.Diary
                 },
                 Android: () =>
                 {
-                    columnSeries.YAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5);
+                    // Controls Y Axis Data Points Labels
+                    columnSeries.YAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5); 
+
                     columnSeries.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.2);
                     chart.PrimaryAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5);
                 });
@@ -154,9 +156,11 @@ namespace IReach.Views.Diary
             Content = stackLayout;
         }
 
-        public Color AxisLabelColor { get { return Device.OnPlatform(Palette._002, Palette._002, Color.White); } }
+        // Controls FontColor of Y Axis Label
+        public Color AxisLabelColor { get { return Device.OnPlatform(Palette._002, Palette._002, Color.White); } } 
 
-        static Color AxisLineColor { get { return Device.OnPlatform(Palette._008, Palette._008, Color.White); } }
+        // Controls FontColor of Horizontal axis lines
+        static Color AxisLineColor { get { return Device.OnPlatform(Palette._001, Palette._001, Color.White); } }
         
         // Controls FontSize of axis titles 
         public Font ChartAxisFont

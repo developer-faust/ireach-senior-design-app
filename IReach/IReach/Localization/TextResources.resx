@@ -205,7 +205,7 @@
     <value>Calories Total (kcal)</value>
   </data>
   <data name="DiaryDashboard_FoodChart_PrimaryAxis_Title" xml:space="preserve">
-    <value>Week</value>
+    <value>Week Of</value>
   </data>
   <data name="Foods_NewFood" xml:space="preserve">
     <value>New Food</value>
