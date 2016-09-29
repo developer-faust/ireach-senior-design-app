@@ -1,26 +1,40 @@
-﻿using System.Collections.Generic;
-using Xamarin.Forms;
-using IReach.Models;
-using IReach.Services;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using IReach.Helpers;
+using IReach.Interfaces;
+using IReach.Models;
+using IReach.Services;
 using SQLite.Net.Async;
-using IReach.Service;
-using SQLite.Net;
+using Xamarin.Forms;
+
 
 [assembly: Dependency(typeof(USDAFoodService))]
-namespace IReach.Service
+namespace IReach.Services
 {
+    /// <summary>
+    /// This class provides a Implements IUsdaFoodService Interface and is registered as a service using Dependency Injection.
+    /// the tag [assembly: Dependency(typeof(USDAFoodService))] registers this class as a service. To get access to this service anywhere 
+    /// within the app:
+    /// 
+    /// var IamAUsdaService = DependencyService.Get<IUsdaFoodService>();
+    /// 
+    /// IamAUsdaService can now use all the operations within this class
+    /// 
+    /// </summary>
     public class USDAFoodService : IUsdaFoodService
     {
 
         private static readonly AsyncLock Locker = new AsyncLock ( );
         private SQLiteAsyncConnection Database { get; } = DependencyService.Get<ISQLiteUsda> ( ).GetAsyncConnection ( );
 
+        #region TODO: For Daniel
+        /// <summary>
+        /// TODO: Daniel implement this part its just a feature to add to the add so that we can view foods with common Nutrients
+        /// </summary>
+        /// <returns></returns>
         public Task<IList<common_nutrient>> GetCommonGetCommonNutrients ( )
         {
             throw new NotImplementedException ( );
@@ -30,6 +44,8 @@ namespace IReach.Service
         {
             throw new NotImplementedException ( );
         }
+
+        #endregion
 
         public async Task<IList<food_group>> GetFoodGroups ( )
         {
@@ -55,6 +71,11 @@ namespace IReach.Service
             } 
         }
 
+
+        /// <summary>
+        /// Thre should be no reason to use this for now, because no feature requires the use of all 8000 foods.
+        /// </summary>
+        /// <returns></returns>
         public Task<IList<food>> GetFoods ( )
         {
             throw new NotImplementedException ( );

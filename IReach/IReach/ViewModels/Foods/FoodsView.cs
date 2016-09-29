@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IReach.Converters;
+﻿using IReach.Converters;
 using IReach.Localization;
 using IReach.Models;
 using IReach.Statics;
@@ -12,7 +7,7 @@ using IReach.Views.Base;
 using IReach.Views.Diet;
 using Xamarin.Forms;
 
-namespace IReach.ViewModels.Diet
+namespace IReach.ViewModels.Foods
 {
     public class FoodsView : ModelBoundContentView<DiaryDashboardFoodsViewModel>
     {

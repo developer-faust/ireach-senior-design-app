@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
 using MvvmHelpers;
-using Xamarin.Forms; 
+using Xamarin.Forms;
 
-namespace IReach.ViewModels
+namespace IReach.ViewModels.Usda
 {
     public class UsdaSearchFoodViewModel : BaseViewModel
     {

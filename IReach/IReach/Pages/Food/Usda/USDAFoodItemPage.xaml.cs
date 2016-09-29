@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using IReach.Models;
 using IReach.ViewModels;
+using IReach.ViewModels.Usda;
 using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages.Food.Usda
 {
     public partial class USDAFoodItemPage : ContentPage
     {

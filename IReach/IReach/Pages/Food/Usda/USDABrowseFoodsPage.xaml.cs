@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IReach.Data;
+﻿using System.Diagnostics;
 using IReach.Models;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using IReach.ViewModels;
+using IReach.ViewModels.Foods;
+using IReach.Views;
+using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages.Food.Usda
 {
     public partial class USDABrowseFoodsPage : ContentPage
     {

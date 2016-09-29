@@ -1,16 +1,13 @@
-﻿using IReach.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Localization;
+using IReach.Models;
 using IReach.Statics;
 using IReach.ViewModels.Base;
 using Xamarin.Forms;
 
-namespace IReach.ViewModels.Diet
+namespace IReach.ViewModels.Foods
 {
     public class FoodDetailViewModel : BaseViewModel
     {

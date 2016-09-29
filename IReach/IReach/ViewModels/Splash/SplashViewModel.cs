@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks; 
-using Xamarin.Forms;
+﻿using System.Threading.Tasks;
 using IReach.ViewModels.Base;
+using Xamarin.Forms;
 
-namespace IReach.ViewModels
+namespace IReach.ViewModels.Splash
 {
     public class SplashViewModel : BaseViewModel
     {

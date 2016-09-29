@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using IReach.Data;
 using IReach.Helpers;
 using IReach.Interfaces;
 using IReach.Models;
+using IReach.Services;
 using SQLite.Net.Async;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(FoodItemAsyncDb))]
-namespace IReach.Data
+[assembly: Dependency(typeof(FoodAsyncDataService))]
+namespace IReach.Services
 {
-    public class FoodItemAsyncDb : IFoodDataService
+    public class FoodAsyncDataService : IFoodDataService
     {
         private static readonly AsyncLock Locker = new AsyncLock();
         private SQLiteAsyncConnection Database { get; } = DependencyService.Get<ISQLite>().GetAsyncConnection(); 
 
-        public FoodItemAsyncDb()
+        public FoodAsyncDataService()
         {
             CreateAllTablesAsync();
         }

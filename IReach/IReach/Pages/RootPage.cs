@@ -1,12 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using IReach.Controls;
-using IReach.Views;
-using MvvmHelpers;
+using IReach.ViewModels.Base;
+using IReach.Views; 
 using Xamarin.Forms;
+using FoodLogPage = IReach.Pages.Food.User.FoodLogPage;
 
 namespace IReach.Pages
 {
+    /// <summary>
+    /// RootPage() : Is the Apps main page View. It has a Master (The Hamburger Menu) and the Details Which is pages
+    /// that will be show when a menu Item is click.
+    /// 
+    /// The MenuPage:
+    /// Creates a page to hold the items displayed when the Hamburger Icon is clicked.
+    /// 
+    /// </summary>
 	public class RootPage : MasterDetailPage
 	{
 		/* Todo: Windows Phone
@@ -17,7 +26,10 @@ namespace IReach.Pages
 		{
 			Pages = new Dictionary<MenuType, NavigationPage> ( );
 			Master = new Pages.MenuPage (this);
-
+            
+            // The Context of which to Bind Properties in this Page
+            // The Base ViewModel Has properties that will be used to notify views of changes.
+            // It implements INotifyPropertyChanged
 			BindingContext = new BaseViewModel
 			{
 				Title = "iREACH",
@@ -27,16 +39,32 @@ namespace IReach.Pages
 		    Navigate();
 		}
 
+        /// <summary>
+        /// Navigates to a new Food Log FoodLog Page as the Default page displayed when App Shows RootPage()
+        /// </summary>
 	    public async void Navigate()
 	    {
             await NavigateAsync(MenuType.FoodLog); 
         }
 
+        /// <summary>
+        /// Sets the page displayed to a new page. This is called when a MenuItem is Clicked.
+        /// We pass in the Page as a parameter, since Page is the Base Class for all Pages i.e. ContentPage, NavigationPage etc..
+        /// We can Easily assign Detail Page any page we want.
+        /// </summary>
+        /// <param name="page"></param>
 	    void SetDetailIfNull(Page page)
 	    {
 	        if (Detail == null && page != null)
 	            Detail = page;
 	    }
+
+        /// <summary>
+        /// Finds the Page to navigate to base on what MenuItem is Clicked. We pass in the MenuType
+        /// Then navigate accordingly.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 		public async Task NavigateAsync ( MenuType id )
 		{
 			Page newPage;

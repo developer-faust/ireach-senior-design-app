@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Android.Speech.Tts; 
 using IReach.Droid;
+using IReach.Interfaces;
 using IReach.Services; 
 using Xamarin.Forms; 
 using Object = Java.Lang.Object;

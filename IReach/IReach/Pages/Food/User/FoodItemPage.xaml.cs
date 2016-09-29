@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
 using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages.Food.User
 {
     public partial class FoodItemPage : ContentPage
     {
@@ -23,14 +20,14 @@ namespace IReach.Views
             var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
 
             foodItem.DateCreated = today;
-            await App.UserAsyncDb.SaveFoodAsync(foodItem);
+            await App.UserAsyncDataService.SaveFoodAsync(foodItem);
             await this.Navigation.PopAsync(); 
         }
 
         async void OnDeleteClicked(object sender, EventArgs e)
         {
             var foodItem = (FoodItem) BindingContext;
-            await App.UserAsyncDb.DeleteFoodAsync(foodItem.ID);
+            await App.UserAsyncDataService.DeleteFoodAsync(foodItem.ID);
             await this.Navigation.PopAsync();
         }
 

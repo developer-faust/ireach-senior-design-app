@@ -44,7 +44,7 @@
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
-    <Compile Include="Data\FoodItemAsyncDb.cs" />
+    <Compile Include="Services\FoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IListExtensions.cs" />
     <Compile Include="Interfaces\IChartDataService.cs" />
@@ -65,12 +65,11 @@
     <Compile Include="Models\Local\WeeklyCaloriesDataPoint.cs" />
     <Compile Include="Pages\Base\ModelBoundTabbedPage.cs" />
     <Compile Include="Pages\Diary\DiaryDashboardPage.cs" />
-    <Compile Include="Pages\Food\FoodDetailPage.xaml.cs">
+    <Compile Include="Pages\Food\User\FoodDetailPage.xaml.cs">
       <DependentUpon>FoodDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\ChartDataService.cs" />
-    <Compile Include="Services\IAuthenticator.cs" />
-    <Compile Include="Interfaces\ISqLiteAsyncUserDb.cs" />
+    <Compile Include="Interfaces\IAuthenticator.cs" />
     <Compile Include="Services\USDANutritionDB.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\FoodItem.cs" />
@@ -80,24 +79,24 @@
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
     <Compile Include="ISQLite.cs" />
-    <Compile Include="Services\ITextToSpeech.cs" />
+    <Compile Include="Interfaces\ITextToSpeech.cs" />
     <Compile Include="ISQLiteUsda.cs" />
-    <Compile Include="Services\IUsdaFoodService.cs" />
+    <Compile Include="Interfaces\IUsdaFoodService.cs" />
     <Compile Include="Statics\MessagingServiceConstants.cs" />
     <Compile Include="Statics\Palette.cs" />
     <Compile Include="Statics\RowSizes.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
-    <Compile Include="ViewModels\BrowseFoodsViewModel.cs" />
+    <Compile Include="ViewModels\Foods\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\Diary\DiaryDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Diary\DiaryDashboardFoodsViewModel.cs" />
-    <Compile Include="ViewModels\Diet\FoodDetailViewModel.cs" />
-    <Compile Include="ViewModels\Diet\FoodsView.cs" />
-    <Compile Include="ViewModels\FoodGroupItemsViewModel.cs" />
-    <Compile Include="ViewModels\SplashViewModel.cs" />
-    <Compile Include="ViewModels\UsdaFoodItemViewModel.cs" />
-    <Compile Include="ViewModels\USDASearchFoodViewModel.cs" />
-    <Compile Include="ViewModels\UserFoodViewModel.cs" />
-    <Compile Include="Views\AboutPage.xaml.cs">
+    <Compile Include="ViewModels\Foods\FoodDetailViewModel.cs" />
+    <Compile Include="ViewModels\Foods\FoodsView.cs" />
+    <Compile Include="ViewModels\Foods\FoodGroupItemsViewModel.cs" />
+    <Compile Include="ViewModels\Splash\SplashViewModel.cs" />
+    <Compile Include="ViewModels\Usda\UsdaFoodItemViewModel.cs" />
+    <Compile Include="ViewModels\Usda\USDASearchFoodViewModel.cs" />
+    <Compile Include="ViewModels\Foods\UserFoodViewModel.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Base\ModelBoundContentPage.cs" />
@@ -107,13 +106,13 @@
     <Compile Include="Views\Diet\FoodListHeaderView.cs" />
     <Compile Include="Views\Diet\FoodsListView.cs" />
     <Compile Include="Views\FloatingActionButtonView.cs" />
-    <Compile Include="Views\FoodItemPage.xaml.cs">
+    <Compile Include="Pages\Food\User\FoodItemPage.xaml.cs">
       <DependentUpon>FoodItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FoodListPage.xaml.cs">
+    <Compile Include="Pages\Food\User\FoodListPage.xaml.cs">
       <DependentUpon>FoodListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FoodLogPage.xaml.cs">
+    <Compile Include="Pages\Food\User\FoodLogPage.xaml.cs">
       <DependentUpon>FoodLogPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Diary\HomePage.xaml.cs">
@@ -129,16 +128,16 @@
     <Compile Include="Views\NonPresistentSelectedItemListView.xaml.cs">
       <DependentUpon>NonPresistentSelectedItemListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\USDAFoodGroupItemsPage.xaml.cs">
+    <Compile Include="Pages\Food\Usda\USDAFoodGroupItemsPage.xaml.cs">
       <DependentUpon>USDAFoodGroupItemsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\USDAFoodItemPage.xaml.cs">
+    <Compile Include="Pages\Food\Usda\USDAFoodItemPage.xaml.cs">
       <DependentUpon>USDAFoodItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\USDABrowseFoodsPage.xaml.cs">
+    <Compile Include="Pages\Food\Usda\USDABrowseFoodsPage.xaml.cs">
       <DependentUpon>USDABrowseFoodsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\USDASearchFoodPage.xaml.cs">
+    <Compile Include="Pages\Food\Usda\USDASearchFoodPage.xaml.cs">
       <DependentUpon>USDASearchFoodPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -213,13 +212,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\FoodListPage.xaml">
+    <EmbeddedResource Include="Pages\Food\User\FoodListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\FoodItemPage.xaml">
+    <EmbeddedResource Include="Pages\Food\User\FoodItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -231,13 +230,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\AboutPage.xaml">
+    <EmbeddedResource Include="Pages\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\USDABrowseFoodsPage.xaml">
+    <EmbeddedResource Include="Pages\Food\Usda\USDABrowseFoodsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -246,31 +245,31 @@
     <Content Include="Properties\Backups\USDASearchPAgeXaml.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\USDAFoodGroupItemsPage.xaml">
+    <EmbeddedResource Include="Pages\Food\Usda\USDAFoodGroupItemsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\USDAFoodItemPage.xaml">
+    <EmbeddedResource Include="Pages\Food\Usda\USDAFoodItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\USDASearchFoodPage.xaml">
+    <EmbeddedResource Include="Pages\Food\Usda\USDASearchFoodPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\FoodLogPage.xaml">
+    <EmbeddedResource Include="Pages\Food\User\FoodLogPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\Food\FoodDetailPage.xaml">
+    <EmbeddedResource Include="Pages\Food\User\FoodDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

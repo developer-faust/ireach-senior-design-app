@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using IReach.Models;
 using IReach.ViewModels;
+using IReach.ViewModels.Usda;
 using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages.Food.Usda
 {
     public partial class USDASearchFoodPage : ContentPage
     {
@@ -38,7 +34,7 @@ namespace IReach.Views
         private void FoodItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var foodItem = (food)e.SelectedItem;
-            var foodPage = new USDAFoodItemPage(foodItem);
+            var foodPage = new Pages.Food.Usda.USDAFoodItemPage(foodItem);
             foodPage.BindingContext = foodItem; 
           
             Navigation.PushAsync(foodPage);

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IReach.Pages.Base;
-using IReach.ViewModels.Diet;
-using Xamarin.Forms;
+﻿using IReach.Pages.Base;
+using IReach.ViewModels.Foods;
 
-namespace IReach.Pages.Food
+namespace IReach.Pages.Food.User
 {
     public partial class FoodDetailPage : FoodDetailPageXaml
     {

@@ -13,7 +13,8 @@ using IReach.Models;
 using IReach.Models.Local;
 using IReach.Pages.Food;
 using IReach.Services;
-using IReach.ViewModels.Diet;
+using IReach.ViewModels.Foods;
+using FoodDetailPage = IReach.Pages.Food.User.FoodDetailPage;
 
 namespace IReach.Pages.Diary
 {
@@ -105,7 +106,7 @@ namespace IReach.Pages.Diary
                                     MealType = MealTypeOption.All
                                 };
 
-                                await App.UserAsyncDb.SaveFoodAsync(item);
+                                await App.UserAsyncDataService.SaveFoodAsync(item);
 
                             }
                         }

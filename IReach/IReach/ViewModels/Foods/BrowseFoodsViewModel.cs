@@ -1,12 +1,13 @@
-﻿using IReach.Models;
-using IReach.Services;
-using MvvmHelpers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Xamarin.Forms; 
+using IReach.Interfaces;
+using IReach.Models;
+using IReach.Services;
+using MvvmHelpers;
+using Xamarin.Forms;
 
-namespace IReach.ViewModels
+namespace IReach.ViewModels.Foods
 {
     public class BrowseFoodsViewModel : BaseViewModel
     {

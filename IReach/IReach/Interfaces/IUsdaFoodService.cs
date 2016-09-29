@@ -1,8 +1,8 @@
-﻿using IReach.Models; 
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using IReach.Models;
 
-namespace IReach.Services
+namespace IReach.Interfaces
 {
     public interface IUsdaFoodService
     {

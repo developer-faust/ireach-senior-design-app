@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using IReach.Models;
-using IReach.Services;
 using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages.Food.User
 {
     public partial class FoodListPage : ContentPage
     {
@@ -20,7 +14,7 @@ namespace IReach.Views
             tbi = new ToolbarItem ( "+", null, ( ) =>
             {
                 var foodItem = new FoodItem ( );
-                var foodPage = new FoodItemPage {BindingContext = foodItem};
+                var foodPage = new Pages.Food.User.FoodItemPage {BindingContext = foodItem};
 
                 Navigation.PushAsync ( foodPage );
             }, 0, 0 );
@@ -30,7 +24,7 @@ namespace IReach.Views
                 tbi = new ToolbarItem("+", "plus", () =>
                 {
                     var foodItem = new FoodItem();
-                    var foodPage = new FoodItemPage {BindingContext = foodItem};
+                    var foodPage = new Pages.Food.User.FoodItemPage {BindingContext = foodItem};
 
                     Navigation.PushAsync(foodPage);
                 },0,0); 
@@ -42,7 +36,7 @@ namespace IReach.Views
         void listItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var foodItem = (FoodItem) e.SelectedItem;
-            var foodPage = new FoodItemPage();
+            var foodPage = new Pages.Food.User.FoodItemPage();
 
             
             foodPage.BindingContext = foodItem;
@@ -61,7 +55,7 @@ namespace IReach.Views
             base.OnAppearing();
 
             ((App) App.Current).ResumeAtFoodID = -1;
-            var foods = await App.UserAsyncDb.GetFoodsAsync();
+            var foods = await App.UserAsyncDataService.GetFoodsAsync();
 
             listView.ItemsSource = foods;
         }

@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
 using MvvmHelpers;
 using Xamarin.Forms;
-using IReach; 
 
-namespace IReach.ViewModels
+namespace IReach.ViewModels.Usda
 {
     public class UsdaFoodItemViewModel : BaseViewModel
     {
@@ -34,7 +30,7 @@ namespace IReach.ViewModels
 
         public async void GetCalories()
         { 
-            var cal = await App.NutritionDb.GetNutrition(item.id);
+            var cal = await App.NutritionDataService.GetNutrition(item.id);
             _caloriesFromDB = cal.amount;
             Debug.WriteLine("Calories From DB = {0}", (_caloriesFromDB / 1000));
             Calories = _caloriesFromDB;
