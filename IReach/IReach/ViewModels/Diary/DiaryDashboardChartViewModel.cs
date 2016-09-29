@@ -5,6 +5,7 @@ using IReach.ViewModels.Base;
 using Xamarin.Forms;
 using Syncfusion.SfChart.XForms;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using IReach.Extensions;
@@ -70,7 +71,7 @@ namespace IReach.ViewModels.Diary
 
             IsBusy = true;
 
-            Foods = (await App.UserAsyncDb.GetFoodsAsync()).ToObservableCollection();
+            Foods = (await _DataClient.GetFoodsAsync()).ToObservableCollection();
 
             WeeklyCaloriesChartDataPoints =
                 (await _ChartDataService.GetWeeklyCaloriesDataPointsAsync(Foods))
@@ -78,9 +79,11 @@ namespace IReach.ViewModels.Diary
                     .Select(x => new ChartDataPoint(FormatDateRange(x.StartDate, x.EndDate), x.Amount))
                     .ToObservableCollection();
 
-            AverageWeeklyCalories = string.Format("{0:D", WeeklyCaloriesChartDataPoints.Average(x => x.YValue));
-            IsInitialized = true;
+            
+            AverageWeeklyCalories = string.Format("{0}", WeeklyCaloriesChartDataPoints.Average(x => x.YValue));
 
+            Debug.WriteLine("Weekly Average Calories: {0}", AverageWeeklyCalories);
+            IsInitialized = true; 
             IsBusy = false;
         }
 

@@ -21,6 +21,7 @@ namespace IReach.Views.Diary
             set { SetValue(WeeklyAverageProperty, value);}
         }
 
+        // Updates average weekly calorie 
         protected override void OnPropertyChanged(string propertyName = null)
         {
             base.OnPropertyChanged(propertyName);

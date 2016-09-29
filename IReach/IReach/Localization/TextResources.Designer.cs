@@ -125,7 +125,7 @@ namespace IReach.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weekly Average.
+        ///   Looks up a localized string similar to Weekly Average Calories.
         /// </summary>
         public static string DiaryDashboard_FoodChart_Header_WeeklyAverageTitle {
             get {
@@ -152,7 +152,7 @@ namespace IReach.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calories Total.
+        ///   Looks up a localized string similar to Calories Total (kcal).
         /// </summary>
         public static string DiaryDashboard_FoodChart_YAxis_Title {
             get {
@@ -179,7 +179,7 @@ namespace IReach.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Foods.
+        ///   Looks up a localized string similar to Foods History.
         /// </summary>
         public static string Foods_FoodListHeaderTitle {
             get {

@@ -8,7 +8,7 @@
       <Label Text="Name"/>
       <Entry x:Name= "nameEntry" Text="{Binding Name}" Placeholder="Food Name"/>
       <Label Text="Date Created: "/>
-      <Label x:Name= "dateEntry" Text="{Binding CreationDate, StringFormat='{0:HH:mm:ss}'}"/>
+      <Label x:Name= "dateEntry" Text="{Binding DateCreated, StringFormat='{0:d MMM}'}"/>
      <Grid>
        <Grid.RowDefinitions>
          <RowDefinition Height="Auto"/>

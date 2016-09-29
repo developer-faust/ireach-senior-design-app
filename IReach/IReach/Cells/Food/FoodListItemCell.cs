@@ -27,6 +27,7 @@ namespace IReach.Cells.Food
                 LineBreakMode = LineBreakMode.TailTruncation
             };
 
+
             FoodNameLabel.SetBinding(
                 Label.TextProperty,
                 new Binding("Name"));
@@ -44,7 +45,9 @@ namespace IReach.Cells.Food
 
             DateCreatedLabel.SetBinding(
                 Label.TextProperty,
-                new Binding("DateCreated"));
+                new Binding(
+                    path:"DateCreated",
+                    stringFormat: "{0:MMMM d, yyyy}"));
             #endregion
 
             #region DateCreatedLabel Label
@@ -65,7 +68,10 @@ namespace IReach.Cells.Food
             
             // Set padding
             contentView.Padding = new Thickness(10, 0);
-            RelativeLayout relativeLayout = new RelativeLayout();
+            RelativeLayout relativeLayout = new RelativeLayout()
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
 
             // add the foodNameLabel to the relativeLayout
             relativeLayout.Children.Add(

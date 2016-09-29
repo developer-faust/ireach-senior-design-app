@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,10 @@ using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Models.Local;
+using IReach.Services;
 using Xamarin.Forms;
 
+[assembly: Dependency(typeof(ChartDataService))]
 namespace IReach.Services
 {
     public class ChartDataService : IChartDataService
@@ -20,19 +23,16 @@ namespace IReach.Services
 
         public ChartDataService()
         {
-            _FoodDatabase = DependencyService.Get<IFoodDataService>();
-
+            _FoodDatabase = DependencyService.Get<IFoodDataService>(); 
         }
-
-
-
+         
         public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6,
             MealTypeOption mealOption = MealTypeOption.All)
         {
             var weeklyCaloriesDataPoints = new List<WeeklyCaloriesDataPoint>();
 
             var now = DateTime.UtcNow;
-            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc).AddDays(56);
 
             int delta = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - today.DayOfWeek;
 
@@ -53,6 +53,8 @@ namespace IReach.Services
                 weekEnd = weekEnd.AddDays(-7);
 
                 weekTotal = GetCalorieTotalForPeriod(enumerableFoods, weekStart, weekEnd);
+                Debug.WriteLine("WeekTotal = {0}", weekTotal);
+
                 weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
                 {
                     StartDate = weekStart,

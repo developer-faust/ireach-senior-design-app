@@ -196,13 +196,13 @@
     <value>6-Week Diet</value>
   </data>
   <data name="DiaryDashboard_FoodChart_Header_WeeklyAverageTitle" xml:space="preserve">
-    <value>Weekly Average</value>
+    <value>Weekly Average Calories</value>
   </data>
   <data name="DiaryDashboard_FoodChart_LoadingLabel" xml:space="preserve">
     <value>Loading Food Data</value>
   </data>
   <data name="DiaryDashboard_FoodChart_YAxis_Title" xml:space="preserve">
-    <value>Calories Total</value>
+    <value>Calories Total (kcal)</value>
   </data>
   <data name="DiaryDashboard_FoodChart_PrimaryAxis_Title" xml:space="preserve">
     <value>Week</value>
@@ -217,6 +217,6 @@
     <value>Save?</value>
   </data>
   <data name="Foods_FoodListHeaderTitle" xml:space="preserve">
-    <value>Your Foods</value>
+    <value>Foods History</value>
   </data>
 </root>

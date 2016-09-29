@@ -51,7 +51,7 @@ namespace IReach.Views.Diary
 
             #region Calories Graph
 
-            double chartHeight = Device.OnPlatform(190, 250, 190);
+            double chartHeight = Device.OnPlatform(190, 300, 190);
             var columnSeries = new ColumnSeries()
             {
                 YAxis = new NumericalAxis()
@@ -70,8 +70,7 @@ namespace IReach.Views.Diary
                     MinorGridLineStyle = new ChartLineStyle() { StrokeColor = AxisLineColor },
                     LabelStyle = new ChartAxisLabelStyle()
                     {
-                        TextColor = AxisLabelColor,
-                        LabelFormat = "$kcal"
+                        TextColor = AxisLabelColor 
                     }
                 },
                 DataMarker = new ChartDataMarker()
@@ -79,15 +78,19 @@ namespace IReach.Views.Diary
                     LabelStyle = new DataMarkerLabelStyle()
                     {
                         LabelPosition = DataMarkerLabelPosition.Auto,
-                        TextColor = Color.Black,
-                        BackgroundColor = Color.Transparent,
-                        LabelFormat = "0.00"
+                        TextColor = Color.Lime,
+                        BackgroundColor = Color.Transparent
                     }
                 },
                 DataMarkerPosition = DataMarkerPosition.Top,
                 EnableDataPointSelection = false,
                 Color = Palette._003
             };
+
+
+            // Bind data points to the chart
+            columnSeries.SetBinding(ChartSeries.ItemsSourceProperty, "WeeklyCaloriesChartDataPoints");
+
 
             var chart = new SfChart()
             {
@@ -107,8 +110,7 @@ namespace IReach.Views.Diary
                     LabelPlacement = LabelPlacement.BetweenTicks,
                     TickPosition = AxisElementPosition.Inside,
                     ShowMajorGridLines = false,
-                    LabelStyle = new ChartAxisLabelStyle() { TextColor = AxisLabelColor}
-
+                    LabelStyle = new ChartAxisLabelStyle() { TextColor = Color.Red} 
                 }
             };
 
@@ -143,19 +145,20 @@ namespace IReach.Views.Diary
                 },
                 Android: () =>
                 {
-                    columnSeries.YAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 1.5);
-                    columnSeries.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 1.2);
-                    chart.PrimaryAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 1.5);
+                    columnSeries.YAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5);
+                    columnSeries.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.2);
+                    chart.PrimaryAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5);
                 });
             #endregion
 
             Content = stackLayout;
         }
 
-        public Color AxisLabelColor { get; set; }
+        public Color AxisLabelColor { get { return Device.OnPlatform(Palette._002, Palette._002, Color.White); } }
 
         static Color AxisLineColor { get { return Device.OnPlatform(Palette._008, Palette._008, Color.White); } }
-
+        
+        // Controls FontSize of axis titles 
         public Font ChartAxisFont
         {
             get
@@ -165,8 +168,8 @@ namespace IReach.Views.Diary
                     return Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Default, typeof(ChartAxisTitle)) * 0.6);
                 }
                 else if (Device.OS == TargetPlatform.Android)
-                {
-                    return Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Default, typeof(ChartAxisTitle)) * 1.7);
+                { 
+                    return Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Default, typeof(ChartAxisTitle)));
                 }
                 else
                 {

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using IReach.Extensions;
 using IReach.Interfaces;
 using IReach.Models;
+using IReach.Statics;
 using IReach.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -29,6 +30,23 @@ namespace IReach.ViewModels.Diary
             PushTabbedFoodPageCommand = pushTabbedFoodPageCommand;
             _DataClient = DependencyService.Get<IFoodDataService>();
             Foods = new ObservableCollection<FoodItem>();
+
+            MessagingCenter.Subscribe<FoodItem>(this, MessagingServiceConstants.SAVE_FOOD, (food) =>
+            {
+                var index = Foods.IndexOf(food);
+                if (index >= 0)
+                {
+                    Foods[index] = food;
+                }
+                else
+                {
+                    Foods.Add(food);
+                }
+
+                Foods = new ObservableCollection<FoodItem>(Foods.OrderBy(n => n.Name));
+            });
+
+            IsInitialized = false;
         }
 
         public ObservableCollection<FoodItem> Foods
@@ -49,9 +67,10 @@ namespace IReach.ViewModels.Diary
 
             IsBusy = true;
 
+            // FOR TESTING
             if (!_DataClient.IsSeeded)
             {
-                await _DataClient.SeedLocalDataAsync();
+               // await _DataClient.SeedLocalDataAsync();
             }
 
             Foods = (await _DataClient.GetFoodsAsync()).ToObservableCollection();
@@ -60,6 +79,14 @@ namespace IReach.ViewModels.Diary
             IsBusy = false;
         }
 
+        public Command LoadSeedDataCommand
+        {
+            get
+            {
+                return _LoadSeedDataCommand ??
+                       (_LoadSeedDataCommand = new Command(async () => await ExecuteLoadSeedDataCommand()));
+            }
+        }
         public Command LoadFoodsCommand
         {
             get
