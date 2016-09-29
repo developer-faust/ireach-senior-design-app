@@ -19,7 +19,7 @@ namespace IReach.Views
         async void OnSaveClicked(object sender, EventArgs e)
         {
             var foodItem = (FoodItem) BindingContext;
-            foodItem.CreationDate = DateTime.Now.ToString();
+            foodItem.DateCreated = DateTime.UtcNow;
             await App.UserAsyncDb.SaveFoodAsync(foodItem);
 
             await this.Navigation.PopAsync(); 

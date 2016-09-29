@@ -1,13 +1,9 @@
-﻿using MvvmHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
+using IReach.Views;
+using MvvmHelpers;
 using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages
 {
 	public partial class MenuPage : ContentPage
 	{

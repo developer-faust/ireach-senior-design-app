@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using IReach.Pages.Base;
 using IReach.Services;
 using IReach.Statics;
 using IReach.ViewModels;
-using IReach.Views.Base; 
 using Xamarin.Forms;
-using Xamarin;
 
-
-namespace IReach.Views
+namespace IReach.Pages.Splash
 {
     public partial class SplashPage : SplashPageXaml
     {

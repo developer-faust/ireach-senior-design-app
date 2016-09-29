@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CrossPieCharts.FormsPlugin.Abstractions;
 using DeviceMotion.Plugin;
 using DeviceMotion.Plugin.Abstractions;
 using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages.Diary
 {
     public partial class HomePage : ContentPage
     {

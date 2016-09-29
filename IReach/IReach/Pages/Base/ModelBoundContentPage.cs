@@ -1,7 +1,7 @@
 ﻿using IReach.ViewModels.Base;
 using Xamarin.Forms;
 
-namespace IReach.Views.Base
+namespace IReach.Pages.Base
 {
     public abstract class ModelBoundContentPage<TViewModel> : ContentPage where TViewModel : BaseViewModel
     {

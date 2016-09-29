@@ -107,6 +107,60 @@ namespace IReach.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diary.
+        /// </summary>
+        public static string Diary {
+            get {
+                return ResourceManager.GetString("Diary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6-Week Diet.
+        /// </summary>
+        public static string DiaryDashboard_FoodChart_Header_Title {
+            get {
+                return ResourceManager.GetString("DiaryDashboard_FoodChart_Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weekly Average.
+        /// </summary>
+        public static string DiaryDashboard_FoodChart_Header_WeeklyAverageTitle {
+            get {
+                return ResourceManager.GetString("DiaryDashboard_FoodChart_Header_WeeklyAverageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading Food Data.
+        /// </summary>
+        public static string DiaryDashboard_FoodChart_LoadingLabel {
+            get {
+                return ResourceManager.GetString("DiaryDashboard_FoodChart_LoadingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Week.
+        /// </summary>
+        public static string DiaryDashboard_FoodChart_PrimaryAxis_Title {
+            get {
+                return ResourceManager.GetString("DiaryDashboard_FoodChart_PrimaryAxis_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calories Total.
+        /// </summary>
+        public static string DiaryDashboard_FoodChart_YAxis_Title {
+            get {
+                return ResourceManager.GetString("DiaryDashboard_FoodChart_YAxis_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string Exit {
@@ -121,6 +175,42 @@ namespace IReach.Localization {
         public static string Exit_and_Discard {
             get {
                 return ResourceManager.GetString("Exit_and_Discard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Foods.
+        /// </summary>
+        public static string Foods_FoodListHeaderTitle {
+            get {
+                return ResourceManager.GetString("Foods_FoodListHeaderTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Food.
+        /// </summary>
+        public static string Foods_NewFood {
+            get {
+                return ResourceManager.GetString("Foods_NewFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to save changes to this food?.
+        /// </summary>
+        public static string Foods_SaveConfirmDescription {
+            get {
+                return ResourceManager.GetString("Foods_SaveConfirmDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save?.
+        /// </summary>
+        public static string Foods_SaveConfirmTitle {
+            get {
+                return ResourceManager.GetString("Foods_SaveConfirmTitle", resourceCulture);
             }
         }
         

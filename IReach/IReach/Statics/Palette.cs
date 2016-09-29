@@ -26,7 +26,7 @@ namespace IReach.Statics
 
         // Splash screen title color
         public static readonly Color _018 = Color.FromHex("C5C5C5");
-
-
+        public static readonly Color _011 = Color.FromHex("747474");
+        public static readonly Color _008 = Color.FromHex("D8D8D8");
     }
 }

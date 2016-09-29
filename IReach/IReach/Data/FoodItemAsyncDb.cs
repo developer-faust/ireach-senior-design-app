@@ -41,6 +41,11 @@ namespace IReach.Data
             }
         }
 
+        internal Task GetFoodAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<FoodItem> GetFoodAsync(int id)
         {
             using (await Locker.LockAsync())
@@ -78,6 +83,16 @@ namespace IReach.Data
             }
         }
 
+        private bool _isSeeded;
+        public bool IsSeeded { get { return _isSeeded; } }
+
+        private bool _IsSeeded;
+        public async Task SeedLocalDataAsync()
+        {
+            _IsSeeded = true;
+        }
+
+       
         public double TotalCalories()
         {
             double total = 0;

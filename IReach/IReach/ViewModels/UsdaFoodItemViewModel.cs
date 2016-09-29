@@ -63,7 +63,7 @@ namespace IReach.ViewModels
         {
             var foodEntry = new FoodItem();
             foodEntry.Name = FoodName;
-            foodEntry.CreationDate = DateTime.Now.ToString();
+            foodEntry.DateCreated = DateTime.UtcNow;
             foodEntry.Calories = Calories;
             foodEntry.Servings = Servings;
              

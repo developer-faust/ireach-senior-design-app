@@ -50,7 +50,7 @@ namespace IReach.Views
           
             ( (App) App.Current).ResumeAtFoodID = foodItem.ID;
             Debug.WriteLine("Setting ResumeAtFoodId = " + foodItem.ID);
-            Debug.WriteLine("Created: {0}", foodItem.CreationDate);
+            Debug.WriteLine("Created: {0}", foodItem.DateCreated.ToString());
 
             Navigation.PushAsync(foodPage);
 

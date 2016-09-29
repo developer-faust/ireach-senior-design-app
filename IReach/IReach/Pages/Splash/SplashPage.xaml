@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!---Note that SplashPageXaml is a type defined at the bottom of the SplashPageXaml.cs file -->
-<page:SplashPageXaml
+<splash:SplashPageXaml
   xmlns="http://xamarin.com/schemas/2014/forms"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-  x:Class="IReach.Views.SplashPage" 
-  xmlns:page="clr-namespace:IReach.Views"
+  x:Class="IReach.Pages.Splash.SplashPage"  
   xmlns:statics="clr-namespace:IReach.Statics"
   xmlns:converters="clr-namespace:IReach.Converters"
   xmlns:i18n="clr-namespace:IReach.Localization"
+  xmlns:splash="clr-namespace:IReach.Pages.Splash;assembly=IReach"
   BackgroundColor="White">
   
-  <page:SplashPageXaml.Resources>
+  <splash:SplashPageXaml.Resources>
     <ResourceDictionary>
       <converters:InverseBooleanConverter x:Key="boolInverter" />
       <converters:BoolToLabelOpacityConverter x:Key="boolToLabelOpactityConverter" />
     </ResourceDictionary>
-  </page:SplashPageXaml.Resources>
+  </splash:SplashPageXaml.Resources>
   
-  <page:SplashPageXaml.Content>
+  <splash:SplashPageXaml.Content>
     <AbsoluteLayout>
       <StackLayout
 				Spacing="0"
@@ -121,5 +121,5 @@
         </ContentView>
       </StackLayout>
     </AbsoluteLayout>
-  </page:SplashPageXaml.Content>
-</page:SplashPageXaml>
+  </splash:SplashPageXaml.Content>
+</splash:SplashPageXaml>

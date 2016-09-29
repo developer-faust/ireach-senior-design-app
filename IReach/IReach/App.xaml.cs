@@ -3,11 +3,13 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using IReach.Data;
 using IReach.Localization;
+using IReach.Pages;
 using IReach.Services;
 using IReach.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using IReach.Service;
+using SplashPage = IReach.Pages.Splash.SplashPage;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace IReach

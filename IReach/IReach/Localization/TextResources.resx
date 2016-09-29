@@ -189,4 +189,34 @@
   <data name="NoPosition_Alert_Confirm" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="Diary" xml:space="preserve">
+    <value>Diary</value>
+  </data>
+  <data name="DiaryDashboard_FoodChart_Header_Title" xml:space="preserve">
+    <value>6-Week Diet</value>
+  </data>
+  <data name="DiaryDashboard_FoodChart_Header_WeeklyAverageTitle" xml:space="preserve">
+    <value>Weekly Average</value>
+  </data>
+  <data name="DiaryDashboard_FoodChart_LoadingLabel" xml:space="preserve">
+    <value>Loading Food Data</value>
+  </data>
+  <data name="DiaryDashboard_FoodChart_YAxis_Title" xml:space="preserve">
+    <value>Calories Total</value>
+  </data>
+  <data name="DiaryDashboard_FoodChart_PrimaryAxis_Title" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="Foods_NewFood" xml:space="preserve">
+    <value>New Food</value>
+  </data>
+  <data name="Foods_SaveConfirmDescription" xml:space="preserve">
+    <value>Would you like to save changes to this food?</value>
+  </data>
+  <data name="Foods_SaveConfirmTitle" xml:space="preserve">
+    <value>Save?</value>
+  </data>
+  <data name="Foods_FoodListHeaderTitle" xml:space="preserve">
+    <value>Your Foods</value>
+  </data>
 </root>

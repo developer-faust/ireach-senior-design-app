@@ -10,5 +10,8 @@ namespace IReach.Interfaces
         Task<FoodItem> GetFoodAsync(int id);
         Task SaveFoodAsync(FoodItem food);
         Task DeleteFoodAsync(int foodId);
+
+        bool IsSeeded { get; }
+        Task SeedLocalDataAsync();
     }
 }

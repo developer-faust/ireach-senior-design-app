@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<detail:FoodDetailPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IReach.Pages.Food.FoodDetailPage"
+             xmlns:detail="clr-namespace:IReach.Pages.Food;assembly=IReach">
+   
+  <Label Text="Food Detail Page" VerticalOptions="Center" HorizontalOptions="Center" />
+</detail:FoodDetailPageXaml>

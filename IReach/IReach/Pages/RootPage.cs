@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using IReach.Controls;
-using Xamarin.Forms;
+using IReach.Views;
 using MvvmHelpers;
+using Xamarin.Forms;
 
-namespace IReach.Views
+namespace IReach.Pages
 {
 	public class RootPage : MasterDetailPage
 	{
@@ -19,7 +16,7 @@ namespace IReach.Views
 		public RootPage ( )
 		{
 			Pages = new Dictionary<MenuType, NavigationPage> ( );
-			Master = new MenuPage (this);
+			Master = new Pages.MenuPage (this);
 
 			BindingContext = new BaseViewModel
 			{
@@ -49,7 +46,7 @@ namespace IReach.Views
 				{
 					case MenuType.Home:
 
-                        var page =  new IReachNavigationPage(new HomePage());
+                        var page =  new IReachNavigationPage(new Diary.DiaryDashboardPage());
 
                         SetDetailIfNull(page);
                         Pages.Add ( id, page);
