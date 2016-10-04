@@ -171,7 +171,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Syncfusion.SfChart.XForms">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.2.0.26\Xamarin\lib\pcl\Syncfusion.SfChart.XForms.dll</HintPath>
+      <HintPath>..\..\libs\pcl\Syncfusion.SfChart.XForms.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\..\packages\Xamarin.Android.Support.v4.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
