@@ -98,6 +98,15 @@ namespace IReach.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to iREACH Fitness.
+        /// </summary>
+        public static string Dashboard_Fitness_Header_Title {
+            get {
+                return ResourceManager.GetString("Dashboard_Fitness_Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -175,6 +184,15 @@ namespace IReach.Localization {
         public static string Exit_and_Discard {
             get {
                 return ResourceManager.GetString("Exit_and_Discard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fitness.
+        /// </summary>
+        public static string FitnessDashboard {
+            get {
+                return ResourceManager.GetString("FitnessDashboard", resourceCulture);
             }
         }
         

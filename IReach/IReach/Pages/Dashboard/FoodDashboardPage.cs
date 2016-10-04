@@ -1,44 +1,42 @@
-﻿using System.Diagnostics;
-using IReach.Localization;
-using IReach.Pages.Splash;
-using IReach.Statics;
-using IReach.ViewModels.Diary;
-using IReach.Views;
-using IReach.Views.Diary;
-using Xamarin.Forms;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Threading.Tasks;
+using IReach.Localization;
 using IReach.Models;
 using IReach.Models.Local;
-using IReach.Pages.Food;
+using IReach.Pages.Food.User;
+using IReach.Pages.Splash;
 using IReach.Services;
+using IReach.Statics;
+using IReach.ViewModels.Dashboard;
+using IReach.ViewModels.Diary;
 using IReach.ViewModels.Foods;
-using FoodDetailPage = IReach.Pages.Food.User.FoodDetailPage;
+using IReach.Views;
+using IReach.Views.Dashboard;
+using Xamarin.Forms; 
 
-namespace IReach.Pages.Diary
+namespace IReach.Pages.Dashboard
 {
-    public class DiaryDashboardPage : ContentPage
+    public class FoodDashboardPage : ContentPage
     {
         private ScrollView _scrollView;
         private StackLayout _frameStackLayout;
         private FloatingActionButtonView _fab;
 
-        private DiaryDashboardChartViewModel _DiaryDashboardChartViewModel { get; set; } 
-        private DiaryDashboardFoodsViewModel _DiaryDashboardFoodsViewModel { get; set; }
+        private FoodDashboardChartViewModel FoodDashboardChartViewModel { get; set; } 
+        private FoodsDashboardViewModel FoodsDashboardViewModel { get; set; }
 
         private IAuthenticationService _AuthenticationService;
 
         // Construction
-        public DiaryDashboardPage()
+        public FoodDashboardPage()
         {
             _AuthenticationService = DependencyService.Get<IAuthenticationService>();
 
             this.SetBinding(Page.TitleProperty, new Binding() { Source = TextResources.Diary });
 
-            var foodsChartView = new DiaryDashboardChartView()
+            var foodsChartView = new FoodDashboardChartView()
             {
-                BindingContext = _DiaryDashboardChartViewModel = new DiaryDashboardChartViewModel()
+                BindingContext = FoodDashboardChartViewModel = new FoodDashboardChartViewModel()
             };
 
 
@@ -46,8 +44,8 @@ namespace IReach.Pages.Diary
             var foodsView = new FoodsView
             {
                 BindingContext =
-                    _DiaryDashboardFoodsViewModel =
-                        new DiaryDashboardFoodsViewModel(new Command(PushTabbedFoodPageAction))
+                    FoodsDashboardViewModel =
+                        new FoodsDashboardViewModel(new Command(PushTabbedFoodPageAction))
             };
             _scrollView = new ScrollView
             {  
@@ -135,7 +133,7 @@ namespace IReach.Pages.Diary
             {
                 ToolbarItems.Add(new ToolbarItem("Add", "add_ios_gray", () =>
                 {
-                    _DiaryDashboardFoodsViewModel.PushTabbedFoodPageCommand.Execute(null);
+                    FoodsDashboardViewModel.PushTabbedFoodPageCommand.Execute(null);
                 }));
 
 
@@ -206,17 +204,17 @@ namespace IReach.Pages.Diary
             Content.IsVisible = true;
 
             // Load Data for Chart View
-            if (!_DiaryDashboardChartViewModel.IsInitialized && _DiaryDashboardFoodsViewModel.Foods != null)
+            if (!FoodDashboardChartViewModel.IsInitialized && FoodsDashboardViewModel.Foods != null)
             {
-                await _DiaryDashboardChartViewModel.ExecuteLoadSeedDataCommand();
-                _DiaryDashboardChartViewModel.IsInitialized = true;
+                await FoodDashboardChartViewModel.ExecuteLoadSeedDataCommand();
+                FoodDashboardChartViewModel.IsInitialized = true;
             }
 
             // Load Foods View Model
-            if (!_DiaryDashboardFoodsViewModel.IsInitialized)
+            if (!FoodsDashboardViewModel.IsInitialized)
             {
-                await _DiaryDashboardFoodsViewModel.ExecuteLoadSeedDataCommand();
-                _DiaryDashboardFoodsViewModel.IsInitialized = true;
+                await FoodsDashboardViewModel.ExecuteLoadSeedDataCommand();
+                FoodsDashboardViewModel.IsInitialized = true;
             }
             // TODO: Insight tracking  
         }

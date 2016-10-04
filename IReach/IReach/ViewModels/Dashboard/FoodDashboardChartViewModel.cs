@@ -12,7 +12,7 @@ using IReach.Extensions;
 
 namespace IReach.ViewModels.Diary
 {
-    public class DiaryDashboardChartViewModel : BaseViewModel
+    public class FoodDashboardChartViewModel : BaseViewModel
     {
         IFoodDataService _DataClient;
         private IChartDataService _ChartDataService;
@@ -25,7 +25,7 @@ namespace IReach.ViewModels.Diary
         private string _AverageWeeklyCalories;
         public bool NeedsRefresh { get; set; }
 
-        public DiaryDashboardChartViewModel(INavigation navigation = null ) : base(navigation)
+        public FoodDashboardChartViewModel(INavigation navigation = null ) : base(navigation)
         {
             _DataClient = DependencyService.Get<IFoodDataService>();
             _ChartDataService = DependencyService.Get<IChartDataService>(); 

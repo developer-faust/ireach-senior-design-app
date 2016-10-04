@@ -44,6 +44,13 @@
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
+    <Compile Include="Interfaces\IFitnessChartService.cs" />
+    <Compile Include="Interfaces\IFitnessDataService.cs" />
+    <Compile Include="Models\FitnessItem.cs" />
+    <Compile Include="Models\Local\DailyStepsDataPoint.cs" />
+    <Compile Include="Pages\Dashboard\FitnessDashboardPage.cs" />
+    <Compile Include="Services\FitnessAsyncDataService.cs" />
+    <Compile Include="Services\FitnessChartService.cs" />
     <Compile Include="Services\FoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IListExtensions.cs" />
@@ -64,7 +71,7 @@
     <Compile Include="Models\Local\MealTypeOption.cs" />
     <Compile Include="Models\Local\WeeklyCaloriesDataPoint.cs" />
     <Compile Include="Pages\Base\ModelBoundTabbedPage.cs" />
-    <Compile Include="Pages\Diary\DiaryDashboardPage.cs" />
+    <Compile Include="Pages\Dashboard\FoodDashboardPage.cs" />
     <Compile Include="Pages\Food\User\FoodDetailPage.xaml.cs">
       <DependentUpon>FoodDetailPage.xaml</DependentUpon>
     </Compile>
@@ -86,9 +93,11 @@
     <Compile Include="Statics\Palette.cs" />
     <Compile Include="Statics\RowSizes.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\FitnessDashboardChartViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\FitnessDashboardViewModel.cs" />
     <Compile Include="ViewModels\Foods\BrowseFoodsViewModel.cs" />
-    <Compile Include="ViewModels\Diary\DiaryDashboardChartViewModel.cs" />
-    <Compile Include="ViewModels\Diary\DiaryDashboardFoodsViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\FoodDashboardChartViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\FoodsDashboardViewModel.cs" />
     <Compile Include="ViewModels\Foods\FoodDetailViewModel.cs" />
     <Compile Include="ViewModels\Foods\FoodsView.cs" />
     <Compile Include="ViewModels\Foods\FoodGroupItemsViewModel.cs" />
@@ -101,10 +110,13 @@
     </Compile>
     <Compile Include="Pages\Base\ModelBoundContentPage.cs" />
     <Compile Include="Views\Base\ModelBoundContentView.cs" />
-    <Compile Include="Views\Diary\DiaryChartHeaderView.cs" />
-    <Compile Include="Views\Diary\DiaryDashboardChartView.cs" />
+    <Compile Include="Views\Dashboard\FitnessDashboardChartView.cs" />
+    <Compile Include="Views\Dashboard\FitnessDashChartHeaderView.cs" />
+    <Compile Include="Views\Dashboard\FoodDashChartHeaderView.cs" />
+    <Compile Include="Views\Dashboard\FoodDashboardChartView.cs" />
     <Compile Include="Views\Diet\FoodListHeaderView.cs" />
     <Compile Include="Views\Diet\FoodsListView.cs" />
+    <Compile Include="Views\Fitness\FitnessView.cs" />
     <Compile Include="Views\FloatingActionButtonView.cs" />
     <Compile Include="Pages\Food\User\FoodItemPage.xaml.cs">
       <DependentUpon>FoodItemPage.xaml</DependentUpon>
@@ -115,7 +127,7 @@
     <Compile Include="Pages\Food\User\FoodLogPage.xaml.cs">
       <DependentUpon>FoodLogPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Diary\HomePage.xaml.cs">
+    <Compile Include="Pages\Dashboard\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MenuPage.xaml.cs">
@@ -193,6 +205,7 @@
     <EmbeddedResource Include="Localization\TextResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TextResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -206,7 +219,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\Diary\HomePage.xaml">
+    <EmbeddedResource Include="Pages\Dashboard\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

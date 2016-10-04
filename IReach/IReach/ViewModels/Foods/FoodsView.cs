@@ -2,6 +2,7 @@
 using IReach.Localization;
 using IReach.Models;
 using IReach.Statics;
+using IReach.ViewModels.Dashboard;
 using IReach.ViewModels.Diary;
 using IReach.Views.Base;
 using IReach.Views.Diet;
@@ -9,7 +10,7 @@ using Xamarin.Forms;
 
 namespace IReach.ViewModels.Foods
 {
-    public class FoodsView : ModelBoundContentView<DiaryDashboardFoodsViewModel>
+    public class FoodsView : ModelBoundContentView<FoodsDashboardViewModel>
     {
         public FoodsView()
         {

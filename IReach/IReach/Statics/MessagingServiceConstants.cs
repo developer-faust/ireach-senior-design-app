@@ -26,6 +26,10 @@ namespace IReach.Statics
         public const string SAVE_FOOD = "SAVE_FOOD";
         public const string SAVE_FOOD_ERROR = "SAVE_FOOD_ERROR";
 
+        public const string SAVE_FITNESS = "SAVE_FITNESS";
+        public const string SAVE_FITNESS_ERROR = "SAVE_FITNESS_ERROR";
+
+
         public const string UPDATE_ORDER_PRODUCT = "ADD_PRODUCT_TO_ORDER";
     }
 }

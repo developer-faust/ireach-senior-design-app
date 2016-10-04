@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IReach.Converters;
+﻿using IReach.Converters;
 using IReach.Localization;
 using IReach.Statics;
 using IReach.ViewModels.Diary;
@@ -11,14 +6,14 @@ using IReach.Views.Base;
 using Syncfusion.SfChart.XForms;
 using Xamarin.Forms;
 
-namespace IReach.Views.Diary
+namespace IReach.Views.Dashboard
 {
-    public class DiaryDashboardChartView : ModelBoundContentView<DiaryDashboardChartViewModel>
+    public class FoodDashboardChartView : ModelBoundContentView<FoodDashboardChartViewModel>
     {
-        public DiaryDashboardChartView()
+        public FoodDashboardChartView()
         {
-            var chartHeaderView = new DiaryChartHeaderView() {HeightRequest = RowSizes.MediumRowHeightDouble, Padding = new Thickness(20, 10, 20, 0)};
-            chartHeaderView.SetBinding(DiaryChartHeaderView.WeeklyAverageProperty, "AverageWeeklyCalories");
+            var chartHeaderView = new FoodDashChartHeaderView() {HeightRequest = RowSizes.MediumRowHeightDouble, Padding = new Thickness(20, 10, 20, 0)};
+            chartHeaderView.SetBinding(FoodDashChartHeaderView.WeeklyAverageProperty, "AverageWeeklyCalories");
 
             chartHeaderView.SetBinding(IsEnabledProperty, "IsBusy", converter: new InverseBooleanConverter());
             chartHeaderView.SetBinding(IsVisibleProperty, "IsBusy", converter: new InverseBooleanConverter());
