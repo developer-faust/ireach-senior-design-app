@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
-using MvvmHelpers;
 using Xamarin.Forms;
+using IReach.ViewModels.Base;
 
 namespace IReach.ViewModels.Foods
 {
@@ -24,14 +24,21 @@ namespace IReach.ViewModels.Foods
         public string SearchText
         {
             get { return _searchText; }
-            set { SetProperty(ref _searchText, value); }
+            set {
+                _searchText = value;
+                OnPropertyChanged("SearchText");
+            }
         }
 
         private IList<food> _foods; 
         public IList<food> Foods
         {
             get { return _foods; }
-            private set { SetProperty(ref _foods, value); }
+            private set
+            {
+                _foods = value;
+                OnPropertyChanged("Foods");
+            }
         }
 
         public int GroupId { get; set; }

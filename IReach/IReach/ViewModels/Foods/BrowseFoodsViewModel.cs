@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
-using MvvmHelpers;
 using Xamarin.Forms;
+using IReach.ViewModels.Base;
 
 namespace IReach.ViewModels.Foods
 {
@@ -23,7 +23,8 @@ namespace IReach.ViewModels.Foods
             get { return _foodGroups; }
             private set
             {
-                SetProperty ( ref _foodGroups, value ); 
+                _foodGroups = value;
+                OnPropertyChanged("FoodGroups"); 
             }
         }
 
@@ -31,7 +32,10 @@ namespace IReach.ViewModels.Foods
         public IList<food> Foods
         {
             get { return _foods; }
-            private set { SetProperty ( ref _foods, value ); }
+            set {
+                _foods = value;
+                OnPropertyChanged("Foods");
+            }
         }
         private string _foodGroupName;
         public string FoodGroupName
@@ -39,8 +43,8 @@ namespace IReach.ViewModels.Foods
             get { return _foodGroupName; }
             private set
             {
-                SetProperty(ref _foodGroupName, value);
-                OnPropertyChanged();
+                _foodGroupName = value;
+                OnPropertyChanged("FoodGroupName");
             }
         }
 
@@ -50,7 +54,8 @@ namespace IReach.ViewModels.Foods
             get { return _searchText; }
             set
             {
-                SetProperty ( ref _searchText, value ); 
+                _searchText = value;
+                OnPropertyChanged("SearchText"); 
             }
         }
 
@@ -60,8 +65,8 @@ namespace IReach.ViewModels.Foods
             get { return _searchFoodGroupId; }
             private set
             {
-                SetProperty ( ref _searchFoodGroupId, value ); 
-                OnPropertyChanged();
+                _searchFoodGroupId = value; 
+                OnPropertyChanged("SearchFoodGroupId");
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using IReach.Views;
-using MvvmHelpers;
 using Xamarin.Forms;
+using IReach.ViewModels.Base;
 
 namespace IReach.Pages
 {

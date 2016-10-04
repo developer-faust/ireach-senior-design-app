@@ -3,8 +3,8 @@ using System.Diagnostics;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
-using MvvmHelpers;
 using Xamarin.Forms;
+using IReach.ViewModels.Base;
 
 namespace IReach.ViewModels.Usda
 {
@@ -26,7 +26,14 @@ namespace IReach.ViewModels.Usda
         }
 
         private double _calories;
-        public double Calories { get { return _calories; } set { SetProperty(ref _calories, value); } }
+        public double Calories
+        {
+            get { return _calories; }
+            set {
+                _calories = value;
+                OnPropertyChanged("Calories");
+            }
+        }
 
         public async void GetCalories()
         { 
@@ -48,7 +55,8 @@ namespace IReach.ViewModels.Usda
             {
                 if (_servings != value)
                 {
-                    SetProperty(ref _servings, value);
+                    _servings = value;
+                    OnPropertyChanged("Servings");
                     Recalculate();
                 } 
             }

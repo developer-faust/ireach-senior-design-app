@@ -1,5 +1,5 @@
-﻿using MvvmHelpers;
-using BaseViewModel = IReach.ViewModels.Base.BaseViewModel;
+﻿
+using IReach.ViewModels.Base;
 
 namespace IReach.ViewModels
 {
