@@ -9,7 +9,6 @@ namespace IReach
 	public enum MenuType
 	{
 		Home,
-        Fitness,
         FoodLog, 
         About
     }

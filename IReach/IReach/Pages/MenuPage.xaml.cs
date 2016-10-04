@@ -28,7 +28,6 @@ namespace IReach.Pages
 			ListViewMenu.ItemsSource = menuItems = new List<HomeMenuItem>
 			{
                 new HomeMenuItem {Title = "Home", MenuType = MenuType.Home, Icon ="home.png" },
-                new HomeMenuItem {Title = "Fitness", MenuType = MenuType.Fitness, Icon = "fit.png"},
                 new HomeMenuItem {Title = "Food Log", MenuType = MenuType.FoodLog, Icon ="diet.png" },  
                 new HomeMenuItem {Title = "About", MenuType = MenuType.About, Icon ="about.png" } 
             };

@@ -1,14 +1,19 @@
-﻿using IReach.Localization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using IReach.Localization;
 using IReach.Statics;
 using Xamarin.Forms;
 
-namespace IReach.Views.Dashboard
+namespace IReach.Views.Diary
 {
-    public class FoodDashChartHeaderView : ContentView
+    public class DiaryChartHeaderView : ContentView
     {
         readonly Label _WeeklyAverageValueLabel;
 
-        public static readonly BindableProperty WeeklyAverageProperty = BindableProperty.Create<FoodDashChartHeaderView, string>(p => p.WeeklyAverage, null);
+        public static readonly BindableProperty WeeklyAverageProperty = BindableProperty.Create<DiaryChartHeaderView, string>(p => p.WeeklyAverage, null);
 
         public string WeeklyAverage
         {
@@ -22,13 +27,13 @@ namespace IReach.Views.Dashboard
             base.OnPropertyChanged(propertyName);
             switch (propertyName)
             {
-                case "AverageWeeklyCalories":
+                case "WeeklyAverage":
                     _WeeklyAverageValueLabel.Text = (string) GetValue(WeeklyAverageProperty);
                     break;
             }
         }
 
-        public FoodDashChartHeaderView()
+        public DiaryChartHeaderView()
         {
             Label headerTitleLabel = new Label
             {
