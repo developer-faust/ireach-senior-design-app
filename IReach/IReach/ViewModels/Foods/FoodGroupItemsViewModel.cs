@@ -14,8 +14,8 @@ namespace IReach.ViewModels.Foods
     {
         private static IUsdaFoodService FoodService { get; } = 
             DependencyService.Get<IUsdaFoodService> ( );
-
-        public FoodGroupItemsViewModel( )
+         
+        public FoodGroupItemsViewModel(INavigation navigation = null) : base(navigation)
         {
             Title = "Food In Groups"; 
         }
@@ -58,7 +58,11 @@ namespace IReach.ViewModels.Foods
                 return;
 
             IsBusy = true;
+
+            Debug.WriteLine("Group ID: {0}", GroupId);
             Foods = await FoodService.GetFoodsWithGroupId ( GroupId ); 
+
+            Debug.WriteLine("Food Count = {0}", Foods.Count);
             IsBusy = false;
         }
 

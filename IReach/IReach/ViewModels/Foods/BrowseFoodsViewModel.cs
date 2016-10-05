@@ -2,8 +2,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using IReach.Interfaces;
-using IReach.Models;
-using IReach.Services;
+using IReach.Models; 
 using Xamarin.Forms;
 using IReach.ViewModels.Base;
 
@@ -12,7 +11,7 @@ namespace IReach.ViewModels.Foods
     public class BrowseFoodsViewModel : BaseViewModel
     {
         private static IUsdaFoodService FoodService { get; } = DependencyService.Get<IUsdaFoodService> ( ); 
-        public BrowseFoodsViewModel( )
+        public BrowseFoodsViewModel(INavigation navigation = null) : base(navigation)
         {
             Title = "Food Groups";
         }  

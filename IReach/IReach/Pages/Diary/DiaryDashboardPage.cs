@@ -34,7 +34,7 @@ namespace IReach.Pages.Diary
         {
             _AuthenticationService = DependencyService.Get<IAuthenticationService>();
 
-            this.SetBinding(Page.TitleProperty, new Binding() { Source = TextResources.Diary });
+            this.SetBinding(Page.TitleProperty, new Binding() { Source = TextResources.DiaryDashboardPage_Title });
 
             var foodsChartView = new DiaryDashboardChartView()
             {

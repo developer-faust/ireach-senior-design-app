@@ -8,8 +8,8 @@ using IReach.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using IReach.Pages.Splash;
+ 
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace IReach
 {
 

@@ -107,15 +107,6 @@ namespace IReach.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diary.
-        /// </summary>
-        public static string Diary {
-            get {
-                return ResourceManager.GetString("Diary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 6-Week Diet.
         /// </summary>
         public static string DiaryDashboard_FoodChart_Header_Title {
@@ -157,6 +148,15 @@ namespace IReach.Localization {
         public static string DiaryDashboard_FoodChart_YAxis_Title {
             get {
                 return ResourceManager.GetString("DiaryDashboard_FoodChart_YAxis_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diet Summary.
+        /// </summary>
+        public static string DiaryDashboardPage_Title {
+            get {
+                return ResourceManager.GetString("DiaryDashboardPage_Title", resourceCulture);
             }
         }
         

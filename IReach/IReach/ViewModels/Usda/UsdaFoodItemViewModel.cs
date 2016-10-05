@@ -14,7 +14,7 @@ namespace IReach.ViewModels.Usda
         private static IUsdaFoodService FoodService { get; } = DependencyService.Get<IUsdaFoodService>();
         private food item;
         private double _caloriesFromDB;
-        public UsdaFoodItemViewModel(food item)
+        public UsdaFoodItemViewModel(food item, INavigation navigation = null) : base(navigation)
         {
             this.item = item;
             GetCalories();

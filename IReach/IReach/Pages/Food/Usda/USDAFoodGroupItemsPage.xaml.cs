@@ -16,7 +16,7 @@ namespace IReach.Pages.Food.Usda
         public UsdaFoodGroupItemsPage (food_group group)
         {
             InitializeComponent ( );
-            BindingContext = new FoodGroupItemsViewModel (  );
+            BindingContext = new FoodGroupItemsViewModel ( this.Navigation);
 
             ViewModel.GroupId = group.id;
             Debug.WriteLine("Display Foods in Group ID = {0}", group.id); 
@@ -25,8 +25,8 @@ namespace IReach.Pages.Food.Usda
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
-                return; 
+            //if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
+            //    return; 
 
             ViewModel.LoadItemsCommand.Execute ( null );
         }

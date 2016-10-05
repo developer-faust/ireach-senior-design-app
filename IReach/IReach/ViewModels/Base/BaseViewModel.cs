@@ -13,6 +13,8 @@ namespace IReach.ViewModels.Base
         public BaseViewModel(INavigation navigation = null)
         {
             Navigation = navigation;
+            IsBusy = false;
+
         }
 
         public bool IsInitialized { get; set; }
