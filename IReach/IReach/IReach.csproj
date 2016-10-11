@@ -48,11 +48,7 @@
     <Compile Include="Interfaces\IFitnessDataService.cs" />
     <Compile Include="Models\FitnessItem.cs" />
     <Compile Include="Models\Local\DailyStepsDataPoint.cs" />
-    <Compile Include="Models\Model.cs" />
     <Compile Include="Pages\Dashboard\FitnessDashboardPage.cs" />
-    <Compile Include="Pages\Fitness\FitnessPage.xaml.cs">
-      <DependentUpon>FitnessPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Services\FitnessAsyncDataService.cs" />
     <Compile Include="Services\FitnessChartService.cs" />
     <Compile Include="Services\FoodAsyncDataService.cs" />
@@ -99,7 +95,6 @@
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\FitnessDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\FitnessDashboardViewModel.cs" />
-    <Compile Include="ViewModels\Fitness\FitnessViewModel.cs" />
     <Compile Include="ViewModels\Foods\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\FoodDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\FoodsDashboardViewModel.cs" />
@@ -114,7 +109,6 @@
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Base\ModelBoundContentPage.cs" />
-    <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="Views\Base\ModelBoundContentView.cs" />
     <Compile Include="Views\Dashboard\FitnessDashboardChartView.cs" />
     <Compile Include="Views\Dashboard\FitnessDashChartHeaderView.cs" />
@@ -295,12 +289,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\NonPresistentSelectedItemListView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Fitness\FitnessPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

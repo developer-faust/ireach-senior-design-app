@@ -10,18 +10,26 @@ namespace IReach.Models.Local
     {
         public WeeklyCaloriesDataPoint()
         {
-            Created = DateTime.MinValue; 
+            StartDate = DateTime.MinValue;
+            EndDate = DateTime.MaxValue;
 
             Amount = 0;
         }
         
-        public DateTime Created { get; set; } 
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+
         public double Amount { get; set; }
 
-        public string DateCreateString
+        public string StartDateString
         {
-            get { return Created.ToString("M/dd"); }
-        } 
+            get { return StartDate.ToString("M/dd"); }
+        }
+        public string EndDateString
+        {
+            get { return EndDate.ToString("M/dd"); }
+        }
+
     }
 
 

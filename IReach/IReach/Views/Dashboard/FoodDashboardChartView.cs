@@ -47,8 +47,8 @@ namespace IReach.Views.Dashboard
             #region Calories Graph
 
             double chartHeight = Device.OnPlatform(190, 250, 190);
-            var columnSeries1 = new StackingColumnSeries()
-            { 
+            var columnSeries = new ColumnSeries()
+            {
                 YAxis = new NumericalAxis()
                 {
                     Title = new ChartAxisTitle()
@@ -56,7 +56,7 @@ namespace IReach.Views.Dashboard
                         Text = TextResources.DiaryDashboard_FoodChart_YAxis_Title,
                         Font = ChartAxisFont,
                         TextColor = Palette._011
-                    },  
+                    },
                     OpposedPosition = false,
                     ShowMajorGridLines = true,
                     MajorGridLineStyle = new ChartLineStyle() { StrokeColor = AxisLineColor },
@@ -65,15 +65,14 @@ namespace IReach.Views.Dashboard
                     MinorGridLineStyle = new ChartLineStyle() { StrokeColor = AxisLineColor },
                     LabelStyle = new ChartAxisLabelStyle()
                     {
-                        TextColor = AxisLabelColor  
+                        TextColor = AxisLabelColor 
                     }
                 },
-                
                 DataMarker = new ChartDataMarker()
                 {
                     LabelStyle = new DataMarkerLabelStyle()
                     {
-                        LabelPosition = DataMarkerLabelPosition.Auto, 
+                        LabelPosition = DataMarkerLabelPosition.Auto,
                         TextColor = Palette._001,
                         BackgroundColor = Color.Transparent
                     }
@@ -83,14 +82,15 @@ namespace IReach.Views.Dashboard
                 Color = Palette._003
             };
 
-          
+
             // Bind data points to the chart
-            columnSeries1.SetBinding(ChartSeries.ItemsSourceProperty, "WeeklyCaloriesChartDataPoints"); 
+            columnSeries.SetBinding(ChartSeries.ItemsSourceProperty, "WeeklyCaloriesChartDataPoints");
+
 
             var chart = new SfChart()
             {
                 HeightRequest = chartHeight,
-                
+
                 PrimaryAxis = new CategoryAxis()
                 {
                     Title = new ChartAxisTitle()
@@ -98,7 +98,8 @@ namespace IReach.Views.Dashboard
                         Text = TextResources.DiaryDashboard_FoodChart_PrimaryAxis_Title,
                         Font = ChartAxisFont,
                         TextColor = Palette._011
-                    }, 
+                    },
+
                     LabelRotationAngle = -45,
                     EdgeLabelsDrawingMode = EdgeLabelsDrawingMode.Center,
                     LabelPlacement = LabelPlacement.BetweenTicks,
@@ -108,14 +109,12 @@ namespace IReach.Views.Dashboard
                 }
             };
 
-             
             if (Device.OS == TargetPlatform.Android)
             {
                 chart.BackgroundColor = Color.Transparent;
             }
 
-            chart.Series.Add(columnSeries1);
-
+            chart.Series.Add(columnSeries);
             chart.SetBinding(IsEnabledProperty, "IsBusy", converter: new InverseBooleanConverter());
             chart.SetBinding(IsVisibleProperty, "IsBusy", converter: new InverseBooleanConverter());
 
@@ -137,14 +136,14 @@ namespace IReach.Views.Dashboard
             Device.OnPlatform(
                 iOS: () =>
                 {
-                    columnSeries1.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 0.6);
+                    columnSeries.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 0.6);
                 },
                 Android: () =>
                 {
                     // Controls Y Axis Data Points Labels
-                    columnSeries1.YAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5); 
+                    columnSeries.YAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5); 
 
-                    columnSeries1.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.2);
+                    columnSeries.DataMarker.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.2);
                     chart.PrimaryAxis.LabelStyle.Font = Font.SystemFontOfSize(Device.GetNamedSize(NamedSize.Micro, typeof(Label)) * 1.5);
                 });
             #endregion

@@ -46,7 +46,7 @@ namespace IReach.ViewModels.Dashboard
                     Fitness.Add(fitness);
                 }
 
-                //Fitness = new ObservableCollection<FitnessItem>(Fitness.OrderBy(n => n.DateOfActivity));
+                Fitness = new ObservableCollection<FitnessItem>(Fitness.OrderBy(n => n.DateOfActivity));
             });
 
             IsInitialized = false;
