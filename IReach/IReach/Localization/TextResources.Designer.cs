@@ -98,29 +98,11 @@ namespace IReach.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to iREACH Fitness.
-        /// </summary>
-        public static string Dashboard_Fitness_Header_Title {
-            get {
-                return ResourceManager.GetString("Dashboard_Fitness_Header_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Diary.
-        /// </summary>
-        public static string Diary {
-            get {
-                return ResourceManager.GetString("Diary", resourceCulture);
             }
         }
         
@@ -170,6 +152,15 @@ namespace IReach.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diet Summary.
+        /// </summary>
+        public static string DiaryDashboardPage_Title {
+            get {
+                return ResourceManager.GetString("DiaryDashboardPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string Exit {
@@ -184,15 +175,6 @@ namespace IReach.Localization {
         public static string Exit_and_Discard {
             get {
                 return ResourceManager.GetString("Exit_and_Discard", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fitness.
-        /// </summary>
-        public static string FitnessDashboard {
-            get {
-                return ResourceManager.GetString("FitnessDashboard", resourceCulture);
             }
         }
         

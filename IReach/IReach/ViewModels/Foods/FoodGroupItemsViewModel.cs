@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
-using MvvmHelpers;
 using Xamarin.Forms;
+using IReach.ViewModels.Base;
 
 namespace IReach.ViewModels.Foods
 {
@@ -14,8 +14,8 @@ namespace IReach.ViewModels.Foods
     {
         private static IUsdaFoodService FoodService { get; } = 
             DependencyService.Get<IUsdaFoodService> ( );
-
-        public FoodGroupItemsViewModel( )
+         
+        public FoodGroupItemsViewModel(INavigation navigation = null) : base(navigation)
         {
             Title = "Food In Groups"; 
         }
@@ -24,14 +24,21 @@ namespace IReach.ViewModels.Foods
         public string SearchText
         {
             get { return _searchText; }
-            set { SetProperty(ref _searchText, value); }
+            set {
+                _searchText = value;
+                OnPropertyChanged("SearchText");
+            }
         }
 
         private IList<food> _foods; 
         public IList<food> Foods
         {
             get { return _foods; }
-            private set { SetProperty(ref _foods, value); }
+            private set
+            {
+                _foods = value;
+                OnPropertyChanged("Foods");
+            }
         }
 
         public int GroupId { get; set; }
@@ -51,7 +58,11 @@ namespace IReach.ViewModels.Foods
                 return;
 
             IsBusy = true;
+
+            Debug.WriteLine("Group ID: {0}", GroupId);
             Foods = await FoodService.GetFoodsWithGroupId ( GroupId ); 
+
+            Debug.WriteLine("Food Count = {0}", Foods.Count);
             IsBusy = false;
         }
 

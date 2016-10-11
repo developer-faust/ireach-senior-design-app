@@ -1,5 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using IReach.Extensions;
 using IReach.Interfaces;
@@ -8,9 +11,9 @@ using IReach.Statics;
 using IReach.ViewModels.Base;
 using Xamarin.Forms;
 
-namespace IReach.ViewModels.Dashboard
+namespace IReach.ViewModels.Diary
 {
-    public class FoodsDashboardViewModel : BaseViewModel
+    public class DiaryDashboardFoodsViewModel : BaseViewModel
     {
         IFoodDataService _DataClient;
 
@@ -21,7 +24,7 @@ namespace IReach.ViewModels.Dashboard
         public Command PushTabbedFoodPageCommand { get; private set; }
         public bool NeedsRefresh { get; set; }
 
-        public FoodsDashboardViewModel(Command pushTabbedFoodPageCommand, INavigation navigation = null)
+        public DiaryDashboardFoodsViewModel(Command pushTabbedFoodPageCommand, INavigation navigation = null)
             : base(navigation)
         {
             PushTabbedFoodPageCommand = pushTabbedFoodPageCommand;

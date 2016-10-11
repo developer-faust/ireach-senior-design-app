@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
-using MvvmHelpers;
 using Xamarin.Forms;
+using IReach.ViewModels.Base;
 
 namespace IReach.ViewModels.Usda
 {
@@ -23,16 +23,20 @@ namespace IReach.ViewModels.Usda
         public IList<food> Foods
         {
             get { return _foods; }
-            private set { SetProperty ( ref _foods, value ); }
+            set {
+                _foods = value;
+                OnPropertyChanged("Foods");
+            }
         }
 
         private IList<food_group> _foodGroups;
         public IList<food_group> FoodGroups
         {
             get { return _foodGroups; }
-            private set
+            set
             {
-                SetProperty ( ref _foodGroups, value );
+                _foodGroups = value;
+                OnPropertyChanged("FoodGroups");
             }
         }
         private string _searchText;
@@ -41,7 +45,8 @@ namespace IReach.ViewModels.Usda
             get { return _searchText; }
             set
             {
-                SetProperty ( ref _searchText, value );
+                _searchText = value;
+                OnPropertyChanged("SearchText");
             }
         }
 

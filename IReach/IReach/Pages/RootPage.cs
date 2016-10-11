@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using IReach.Controls;
-using IReach.Pages.Dashboard;
 using IReach.ViewModels.Base;
 using IReach.Views; 
 using Xamarin.Forms;
@@ -69,24 +68,17 @@ namespace IReach.Pages
 		public async Task NavigateAsync ( MenuType id )
 		{
 			Page newPage;
-            IReachNavigationPage page;
-
-            if ( !Pages.ContainsKey ( id ) )
+			if ( !Pages.ContainsKey ( id ) )
 			{
 				switch ( id )
 				{
-					case MenuType.Home: 
-                        page =  new IReachNavigationPage(new FoodDashboardPage()); 
+					case MenuType.Home:
+
+                        var page =  new IReachNavigationPage(new Diary.DiaryDashboardPage());
+
                         SetDetailIfNull(page);
                         Pages.Add ( id, page);
 						break;
-
-                    case MenuType.Fitness:
-                        page = new IReachNavigationPage(new FitnessDashboardPage());
-				        SetDetailIfNull(page);
-				        Pages.Add(id, page);
-				        break;
-
                     case MenuType.FoodLog:
 				        page = new IReachNavigationPage(new FoodLogPage());
                         SetDetailIfNull(page);

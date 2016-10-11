@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics;
 using IReach.Models;
-using IReach.ViewModels;
 using IReach.ViewModels.Foods;
-using IReach.Views;
 using Xamarin.Forms;
 
 namespace IReach.Pages.Food.Usda
@@ -25,7 +23,7 @@ namespace IReach.Pages.Food.Usda
         public USDABrowseFoodsPage ( )
         {
             InitializeComponent ( );
-            BindingContext = new BrowseFoodsViewModel(  );
+            BindingContext = new BrowseFoodsViewModel(this.Navigation);
             ListviewFoodGrp.ItemTapped += (sender, args) =>
             {
                 if (ListviewFoodGrp.SelectedItem == null)
@@ -46,10 +44,9 @@ namespace IReach.Pages.Food.Usda
         protected override void OnAppearing ( )
         {
             base.OnAppearing ( );
-            if ( ViewModel == null || !ViewModel.CanLoadMore || ViewModel.IsBusy )
-                return;
-
-            ViewModel.LoadItemsCommand.Execute ( null ); 
+           
+            Debug.WriteLine("USDA Browse Foods Appearing");
+            ViewModel.LoadItemsCommand.Execute (null ); 
         }  
 
        
