@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fitness:FitnessPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"  
+             xmlns:fitness="clr-namespace:IReach.Pages.Fitness;assembly=IReach"  
+             xmlns:viewModel="clr-namespace:IReach.ViewModels.Fitness;assembly=IReach"
+             x:Class="IReach.Pages.Fitness.FitnessPage">
+ 
+  <fitness:FitnessPageXaml.BindingContext>
+    <viewModel:FitnessViewModel/>
+  </fitness:FitnessPageXaml.BindingContext>
+  <fitness:FitnessPage.Content>
+
+    <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Calories Consumed" />
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <viewModel:FitnessViewModel/>
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis LabelPlacement="BetweenTicks">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Days"/>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="1800" Minimum="0" Interval="200">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Calorie Amount"/>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Bottom"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+        <chart:StackingColumnSeries ItemsSource="{Binding StackedColumnData1}" XBindingPath="Name" YBindingPath="Value" Label="Google" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+        </chart:StackingColumnSeries>
+
+        <!--<chart:StackingColumnSeries ItemsSource="{Binding StackedColumnData2}" XBindingPath="Name" YBindingPath="Value" Label="Bing" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+        </chart:StackingColumnSeries>-->
+
+        <chart:StackingColumnSeries ItemsSource="{Binding StackedColumnData3}" XBindingPath="Name" YBindingPath="Value" Label="Yahoo" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+        </chart:StackingColumnSeries>
+
+        <chart:StackingColumnSeries IsVisible="False" ItemsSource="{Binding StackedColumnData4}" XBindingPath="Name" YBindingPath="Value" Label="Ask" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+        </chart:StackingColumnSeries> 
+
+      </chart:SfChart.Series>
+
+    </chart:SfChart> 
+  </fitness:FitnessPage.Content> 
+</fitness:FitnessPageXaml>

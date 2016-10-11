@@ -2,7 +2,9 @@
 using System.Threading.Tasks;
 using IReach.Controls;
 using IReach.Pages.Dashboard;
+using IReach.Pages.Fitness;
 using IReach.ViewModels.Base;
+using IReach.ViewModels.Fitness;
 using IReach.Views; 
 using Xamarin.Forms;
 using FoodLogPage = IReach.Pages.Food.User.FoodLogPage;
@@ -82,7 +84,10 @@ namespace IReach.Pages
 						break;
 
                     case MenuType.Fitness:
-                        page = new IReachNavigationPage(new FitnessDashboardPage());
+                        page = new IReachNavigationPage(new FitnessPage()
+                        {
+                            BindingContext = new FitnessViewModel()
+                        });
 				        SetDetailIfNull(page);
 				        Pages.Add(id, page);
 				        break;

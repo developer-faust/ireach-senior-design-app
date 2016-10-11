@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading.Tasks;
 using IReach.Localization;
 using IReach.Models;
@@ -87,26 +88,30 @@ namespace IReach.Pages.Dashboard
                     Clicked = async (sender, args) =>
                     {
                         // When the + FAB is clicked. Load the database with Sample 8 Weeks worth of Data
-                        DateTime now = DateTime.UtcNow; 
-                        for (int i = 0; i < 6; i++)
+                        DateTime now = DateTime.UtcNow;  
+                        var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+
+                        int delta = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - today.DayOfWeek;
+                        if (delta > 0)
+                            delta -= 7;
+
+                        var firstDayOfCurrentWeek = today.AddDays(delta);
+                        var weekStart = firstDayOfCurrentWeek;
+
+
+                        for (int i = 0; i < 7; i++)
                         {
-                            for (int j = 0; j < 7; j++)
+                            var day = weekStart.AddDays(i);
+                            var item = new FoodItem()
                             {
-                                now = now.AddDays(j);
-                                DateTime today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+                                Name = $"TestItem created {day.ToString("yy-mm-dd")}",
+                                Calories = 100 * i+1 + 50,
+                                DateCreated = day,
+                                Servings = 1,
+                                MealType = MealTypeOption.All
+                            };
 
-                                var item = new FoodItem()
-                                {
-                                    Name = $"TestItem week{i + 1} day{j + 1}",
-                                    Calories = 100 * j+1,
-                                    DateCreated = today.AddDays(j),
-                                    Servings = 1,
-                                    MealType = MealTypeOption.All
-                                };
-
-                                await App.UserAsyncDataService.SaveFoodAsync(item);
-
-                            }
+                                await App.UserAsyncDataService.SaveFoodAsync(item); 
                         }
                     }
                 };

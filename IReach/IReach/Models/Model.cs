@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IReach.Models
+namespace IReach
 {
-    public class FitnessItem
+    public class Model
     {
 
         public string Name { get; set; }
@@ -23,27 +23,27 @@ namespace IReach.Models
 
         public double Low { get; set; }
 
-        public FitnessItem(string name, double value)
+        public Model(string name, double value)
         {
             Name = name;
             Value = value;
         }
 
-        public FitnessItem(string name, double value, double size)
+        public Model(string name, double value, double size)
         {
             Name = name;
             Value = value;
             Size = size;
         }
 
-        public FitnessItem(double value, double value1, double size)
+        public Model(double value, double value1, double size)
         {
             Value1 = value;
             Value = value1;
             Size = size;
         }
 
-        public FitnessItem(string name, double high, double low, double open, double close)
+        public Model(string name, double high, double low, double open, double close)
         {
             Name = name;
             High = high;
@@ -51,7 +51,7 @@ namespace IReach.Models
             Value = open;
             Size = close;
         }
-        public FitnessItem(DateTime Date, double high, double low, double open, double close)
+        public Model(DateTime Date, double high, double low, double open, double close)
         {
             date = Date;
             High = high;
@@ -59,13 +59,13 @@ namespace IReach.Models
             Value = open;
             Size = close;
         }
-        public FitnessItem(double value, double size)
+        public Model(double value, double size)
         {
             Value = value;
             Size = size;
         }
 
-        public FitnessItem(DateTime dateTime, double value)
+        public Model(DateTime dateTime, double value)
         {
             date = dateTime;
             Value = value;

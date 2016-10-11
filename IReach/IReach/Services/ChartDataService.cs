@@ -19,50 +19,46 @@ namespace IReach.Services
     {
         private IFoodDataService _FoodDatabase;
 
-        const int defaultNumberOfWeeks = 6;
+        const int defaultNumberOfWeeks = 1;
 
         public ChartDataService()
         {
             _FoodDatabase = DependencyService.Get<IFoodDataService>(); 
         }
          
-        public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6,
+        public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = defaultNumberOfWeeks,
             MealTypeOption mealOption = MealTypeOption.All)
         {
             var weeklyCaloriesDataPoints = new List<WeeklyCaloriesDataPoint>();
 
-            var now = DateTime.UtcNow;
-
+            var now = DateTime.UtcNow; 
             // TODO: Change Hard Coded Sample Today's Date from 6 * 7 (six weeks * 7 DaysPer Week) to its Default 
             // The data is calculated backwords it will get 6 weeks worth of data upto current week.
-            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc).AddDays(42);
+            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
 
-            int delta = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - today.DayOfWeek;
-
+            int delta = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - today.DayOfWeek; 
             if (delta > 0)
                 delta -= 7;
 
             var firstDayOfCurrentWeek = today.AddDays(delta);
-            var weekStart = firstDayOfCurrentWeek;
+            var weekStart = firstDayOfCurrentWeek; 
 
-            var weekEnd = weekStart.AddDays(7);
             var enumerableFoods = foods as IList<FoodItem> ?? foods.ToList();
 
-            double weekTotal = 0;
+            double dayTotal = 0;
 
-            for (int i = 0; i < numberOfWeeks; i++)
+            for (int i = 0; i < 7; i++)
             {
-                weekStart = weekStart.AddDays(-7);
-                weekEnd = weekEnd.AddDays(-7);
 
-                weekTotal = GetCalorieTotalForPeriod(enumerableFoods, weekStart, weekEnd);
-                Debug.WriteLine("WeekTotal = {0}", weekTotal);
+                DateTime day = weekStart.AddDays(i);
+
+                dayTotal = GetCalorieTotalForPeriod(enumerableFoods, day);
+                Debug.WriteLine("WeekTotal = {0}", dayTotal); 
 
                 weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
                 {
-                    StartDate = weekStart,
-                    EndDate = weekEnd,
-                    Amount = weekTotal
+                    Created = day, 
+                    Amount = dayTotal
                 });
             } 
 
@@ -77,7 +73,7 @@ namespace IReach.Services
             throw new NotImplementedException();
         }
 
-        private static double GetCalorieTotalForPeriod(IEnumerable<FoodItem> foods, DateTime dateStart, DateTime dateEnd, MealTypeOption mealType = MealTypeOption.All)
+        private static double GetCalorieTotalForPeriod(IEnumerable<FoodItem> foods, DateTime date, MealTypeOption mealType = MealTypeOption.All)
         {
             double total = 0;
 
@@ -89,29 +85,25 @@ namespace IReach.Services
                     results = foods.Where(
                         food =>
                             food.MealType == mealType &&
-                            food.DateCreated >= dateStart &&
-                            food.DateCreated < dateEnd);
+                            food.DateCreated == date);
                     break;
 
                     case MealTypeOption.Lunch:
                     results = foods.Where(
                         food =>
                             food.MealType == MealTypeOption.Lunch &&
-                            food.DateCreated >= dateStart &&
-                            food.DateCreated < dateEnd);
+                            food.DateCreated == date);
                     break;
                     case MealTypeOption.Dinner:
                         results = foods.Where(
                             food =>
                                 food.MealType == MealTypeOption.Dinner &&
-                                food.DateCreated >= dateStart &&
-                                food.DateCreated < dateEnd);
+                                food.DateCreated == date);
                         break;
                     default:
                         results = foods.Where(
                             food =>  
-                                food.DateCreated >= dateStart &&
-                                food.DateCreated < dateEnd);
+                                food.DateCreated == date);
                         break;  
             }
 
