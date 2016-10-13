@@ -7,6 +7,10 @@
   x:Class="IReach.Views.Fitness.FitnessChartView">
 
   <fitness:FitnessChartViewXaml.Content>
+    <AbsoluteLayout x:Name="dateLayout" LayoutFlags="All">
+      <Label Text="{Binding TodaysDate, Mode=TwoWay}"/>
+      <Label Text="{Binding PercentCompleted, Mode=TwoWay}"></Label>
+    </AbsoluteLayout>
     <StackLayout x:Name="main_layout" VerticalOptions="FillAndExpand" Orientation="Vertical">
    
       <gauge:SfCircularGauge x:Name="CircularGauge"
@@ -19,46 +23,47 @@
                        Interval="10"
                        StartAngle="135"
                        SweepAngle="270"
-                       RimThickness="20"
-                       RimColor="#d14646"
-                       LabelColor="Gray"
+                       RimThickness="40"
+                       RimColor="Gray"
                        MinorTicksPerInterval="0">
             
             <gauge:Scale.Pointers>
               <gauge:NeedlePointer
-                Value="{Binding StepsCount, Mode=TwoWay}"
+                Value="{Binding PercentComplete, Mode=TwoWay}"
                 KnobRadius="10"
                 Color="Gray"
                 KnobColor="Red"
-                LengthFactor="0.8"
+                LengthFactor=".8"
                 Type="Bar"/>
               
               <gauge:RangePointer
                 Value="{Binding StepsCount, Mode=TwoWay}"
-                Color="#2bbfb8"
-                Thickness="10"/>   
+                Color="Red"
+                Thickness="40"/>   
             </gauge:Scale.Pointers> 
             <gauge:Scale.MajorTickSettings>
             <gauge:TickSettings x:Name="major"
                                 Length="20"
-                                Color="#444444"
-                                Thickness="3"/> 
+                                Color="White"
+                                Thickness="5"/> 
             </gauge:Scale.MajorTickSettings>
             <gauge:Scale.MinorTickSettings>
               <gauge:TickSettings
-                Length="25"
-                Color="#444444"
-                Thickness="3"/>
+                Length="20"
+                Color="Gray"
+                Thickness="6"/> 
               
             </gauge:Scale.MinorTickSettings>
           </gauge:Scale>
         </gauge:SfCircularGauge.Scales>
         
         <gauge:SfCircularGauge.Headers>
-          <gauge:Header Text="Daily Steps Progress" TextSize="20" Font="Bold" ForegroundColor="Gray" x:Name="Header"/>
-        </gauge:SfCircularGauge.Headers> 
+          <gauge:Header  Text="Today you've taken" TextSize="30" Font="Bold" ForegroundColor="Red" x:Name="TitleHeader"/>
+          <gauge:Header  Text="{Binding StepsCount, Mode=TwoWay}" TextSize="40" Font="Bold" ForegroundColor="Gray" x:Name="ValueHeader"/>
+           <gauge:Header  Text="steps" TextSize="30" Font="Bold" ForegroundColor="Red" x:Name="UnitsHeader"/>
         
-      </gauge:SfCircularGauge> 
+        </gauge:SfCircularGauge.Headers> 
+       </gauge:SfCircularGauge> 
     </StackLayout> 
   </fitness:FitnessChartViewXaml.Content>
 

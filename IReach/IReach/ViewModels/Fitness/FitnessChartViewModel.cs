@@ -27,9 +27,36 @@ namespace IReach.ViewModels.Fitness
             set
             {
                 stepsCount = value;
+                PercentComplete = (value/TargetSteps)*100;
                 OnPropertyChanged("StepsCount");
             }
-        } 
-       
+        }
+
+        private double _percentComplete; 
+        public double PercentComplete
+        {
+            get { return _percentComplete; }
+            set
+            {
+                _percentComplete = value;
+                OnPropertyChanged("PercentComplete");
+            }
+        }
+
+        private double _target = 500; 
+        public double TargetSteps
+        {
+            get
+            {
+                return _target;
+            }
+            set
+            {
+                _target = value;
+                OnPropertyChanged("TargetSteps");
+            }
+        }
+
+        public string TodaysDate => DateTime.UtcNow.Date.ToString("D");
     }
 }

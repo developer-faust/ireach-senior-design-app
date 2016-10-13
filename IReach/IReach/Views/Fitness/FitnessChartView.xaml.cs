@@ -23,15 +23,17 @@ namespace IReach.Views.Fitness
 
             CircularGauge.BindingContext = ViewModel;
 
+            // 
             ViewModel.StepsCount = 70;
             
             // Header position
-            Header.Position = Device.OnPlatform(iOS: new Point(0.5, 0.6), Android: new Point(0.5, 0.7), WinPhone:new Point(0.5, 0.7));
+            TitleHeader.Position = Device.OnPlatform(iOS: new Point(0.5, 0.65), Android: new Point(0.5, 0.65), WinPhone:new Point(0.5, 0.65));
+            ValueHeader.Position = Device.OnPlatform(iOS: new Point(0.5, 0.75), Android: new Point(0.5, 0.75), WinPhone: new Point(0.5, 0.75));
+            UnitsHeader.Position = Device.OnPlatform(iOS: new Point(0.5, 0.85), Android: new Point(0.5, 0.85), WinPhone: new Point(0.5, 0.85));
         }
     }
 
     public abstract class FitnessChartViewXaml : ModelBoundContentView<FitnessChartViewModel>
     {
-        
     }
 }
