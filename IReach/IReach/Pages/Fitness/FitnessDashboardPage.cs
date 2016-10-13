@@ -36,22 +36,20 @@ namespace IReach.Pages.Fitness
         { 
             this.SetBinding(Page.TitleProperty, new Binding() {Source = TextResources.FitnessDashboardPage_Title});
 
-            var toolbarItem = new ToolbarItem
+            var toolbarItem = new ToolbarItem()
             {
                 Text = "Settings",
                 Icon = "Settings.png"
             };
 
-            toolbarItem.Clicked += toolbartItem_Clicked;
-
             ToolbarItems.Add(toolbarItem);
+            toolbarItem.Clicked += toolbartItem_Clicked; 
 
             var fitnessChartView = new FitnessChartView()
             {
                 BindingContext = FitnessChartViewModel = new FitnessChartViewModel(this.Navigation)
             };
-
-            
+             
 
             _frameStackLayout = new StackLayout()
             {
@@ -73,8 +71,7 @@ namespace IReach.Pages.Fitness
                 Debug.WriteLine("Clicked Settings");
 
             }
-        }
+        } 
 
-       
     } 
 }
