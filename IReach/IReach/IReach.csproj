@@ -41,6 +41,8 @@
     <Compile Include="Cells\Food\FoodListItemCell.cs" />
     <Compile Include="Controls\FoodViewTemplateSelector.cs" />
     <Compile Include="Converters\BoolToLabelOpacityConverter.cs" />
+    <Compile Include="Converters\DoubleRoundingConverter.cs" />
+    <Compile Include="Converters\DoubleToStringConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />

@@ -1,18 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <fitness:FitnessChartViewXaml 
   xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-  xmlns:fitness="clr-namespace:IReach.Views.Fitness;assembly=IReach"
-  xmlns:page="clr-namespace:IReach.Pages.Fitness;assembly=IReach"
+  xmlns:fitness="clr-namespace:IReach.Views.Fitness;assembly=IReach" 
   xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
-  x:Class="IReach.Views.Fitness.FitnessChartView">
+  x:Class="IReach.Views.Fitness.FitnessChartView" 
+  xmlns:local="clr-namespace:IReach;assembly=IReach">
 
+  <fitness:FitnessChartViewXaml.Resources>
+    <ResourceDictionary>
+      <local:DoubleToStringConverter x:Key="StringConverter"/>
+      <local:DoubleRoundingConverter x:Key="RoundConverter"/>
+    </ResourceDictionary>
+  </fitness:FitnessChartViewXaml.Resources>
   <fitness:FitnessChartViewXaml.Content>
-    <AbsoluteLayout x:Name="dateLayout" LayoutFlags="All">
-      <Label Text="{Binding TodaysDate, Mode=TwoWay}"/>
-      <Label Text="{Binding PercentCompleted, Mode=TwoWay}"></Label>
-    </AbsoluteLayout>
+  
     <StackLayout x:Name="main_layout" VerticalOptions="FillAndExpand" Orientation="Vertical">
-   
+      <StackLayout x:Name="HeaderStackLayout" HorizontalOptions="CenterAndExpand">
+        <Label Text="{Binding TodaysDate}"/>
+        <Label Text="% Percent Complete" HorizontalOptions="Center"/>
+        <Label x:Name="PercentCompleteLabel" FontSize ="30" HorizontalOptions="Center"/>
+      </StackLayout> 
       <gauge:SfCircularGauge x:Name="CircularGauge"
                              WidthRequest="200"
                              HeightRequest="500"
@@ -24,22 +31,24 @@
                        StartAngle="135"
                        SweepAngle="270"
                        RimThickness="40"
-                       RimColor="Gray"
+                       RimColor="Red"
+                       LabelColor="White"
                        MinorTicksPerInterval="0">
             
             <gauge:Scale.Pointers>
               <gauge:NeedlePointer
-                Value="{Binding PercentComplete, Mode=TwoWay}"
-                KnobRadius="10"
+                Value="{Binding Complete}"
+                KnobRadius="10" 
                 Color="Gray"
                 KnobColor="Red"
                 LengthFactor=".8"
                 Type="Bar"/>
               
               <gauge:RangePointer
-                Value="{Binding StepsCount, Mode=TwoWay}"
-                Color="Red"
-                Thickness="40"/>   
+                Value="{Binding Complete}"
+                Color="Green"
+                Thickness="40"/>
+            
             </gauge:Scale.Pointers> 
             <gauge:Scale.MajorTickSettings>
             <gauge:TickSettings x:Name="major"
@@ -50,7 +59,7 @@
             <gauge:Scale.MinorTickSettings>
               <gauge:TickSettings
                 Length="20"
-                Color="Gray"
+                Color="White"
                 Thickness="6"/> 
               
             </gauge:Scale.MinorTickSettings>
@@ -58,9 +67,9 @@
         </gauge:SfCircularGauge.Scales>
         
         <gauge:SfCircularGauge.Headers>
-          <gauge:Header  Text="Today you've taken" TextSize="30" Font="Bold" ForegroundColor="Red" x:Name="TitleHeader"/>
-          <gauge:Header  Text="{Binding StepsCount, Mode=TwoWay}" TextSize="40" Font="Bold" ForegroundColor="Gray" x:Name="ValueHeader"/>
-           <gauge:Header  Text="steps" TextSize="30" Font="Bold" ForegroundColor="Red" x:Name="UnitsHeader"/>
+          <gauge:Header  Text="Today you've taken" TextSize="20" Font="Bold" ForegroundColor="Gray" x:Name="TitleHeader"/>
+          <gauge:Header  Text="{Binding StepsCount,  &#xA; Converter={StaticResource StringConverter}}" TextSize="40" Font="Bold" ForegroundColor="Gray" x:Name="ValueHeader"/>
+           <gauge:Header  Text="steps" TextSize="20" Font="Bold" ForegroundColor="Gray" x:Name="UnitsHeader"/>
         
         </gauge:SfCircularGauge.Headers> 
        </gauge:SfCircularGauge> 

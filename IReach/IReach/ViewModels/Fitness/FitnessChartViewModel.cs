@@ -14,36 +14,47 @@ namespace IReach.ViewModels.Fitness
         private INavigation _navigation;
         public FitnessChartViewModel(INavigation navigation) : base(navigation)
         {
-            _navigation = navigation;
-
+            _navigation = navigation; 
         }
 
         // For testing
-        private double stepsCount;
-
+        private double _stepsCount; 
         public double StepsCount
         {
-            get { return stepsCount; }
+            get { return _stepsCount; }
             set
             {
-                stepsCount = value;
-                PercentComplete = (value/TargetSteps)*100;
-                OnPropertyChanged("StepsCount");
+                if (_stepsCount != value)
+                {
+                    _stepsCount = value;
+                    OnPropertyChanged("StepsCount");
+                    Recalculate();
+                }
+               
             }
+        }
+
+        public void Recalculate()
+        {
+
+            _percentComplete = (StepsCount / TargetSteps) * 100;
         }
 
         private double _percentComplete; 
-        public double PercentComplete
+        public double Complete
         {
-            get { return _percentComplete; }
+            get { return Math.Round(_percentComplete, 1); }
             set
             {
-                _percentComplete = value;
-                OnPropertyChanged("PercentComplete");
+                if (_percentComplete != value)
+                {
+                    _percentComplete = value;
+                    OnPropertyChanged("Complete");
+                } 
             }
         }
 
-        private double _target = 500; 
+        private double _target; 
         public double TargetSteps
         {
             get
@@ -52,11 +63,18 @@ namespace IReach.ViewModels.Fitness
             }
             set
             {
-                _target = value;
-                OnPropertyChanged("TargetSteps");
+                if (_target != value)
+                {
+                    _target = value;
+                    OnPropertyChanged("TargetSteps");
+                    Recalculate();
+                }
+
             }
         }
 
         public string TodaysDate => DateTime.UtcNow.Date.ToString("D");
+
+        
     }
 }
