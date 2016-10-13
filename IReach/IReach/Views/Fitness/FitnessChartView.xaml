@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<fitness:FitnessChartViewXaml 
+  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+  xmlns:fitness="clr-namespace:IReach.Views.Fitness;assembly=IReach"
+  xmlns:page="clr-namespace:IReach.Pages.Fitness;assembly=IReach"
+  xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+  x:Class="IReach.Views.Fitness.FitnessChartView">
+
+  <fitness:FitnessChartViewXaml.Content>
+    <StackLayout x:Name="main_layout" VerticalOptions="FillAndExpand" Orientation="Vertical">
+   
+      <gauge:SfCircularGauge x:Name="CircularGauge"
+                             WidthRequest="200"
+                             HeightRequest="500"
+                             VerticalOptions="FillAndExpand">
+        <gauge:SfCircularGauge.Scales>
+          <gauge:Scale StartValue="0" x:Name="Scale"
+                       EndValue="100"
+                       Interval="10"
+                       StartAngle="135"
+                       SweepAngle="270"
+                       RimThickness="20"
+                       RimColor="#d14646"
+                       LabelColor="Gray"
+                       MinorTicksPerInterval="0">
+            
+            <gauge:Scale.Pointers>
+              <gauge:NeedlePointer
+                Value="{Binding StepsCount, Mode=TwoWay}"
+                KnobRadius="10"
+                Color="Gray"
+                KnobColor="Red"
+                LengthFactor="0.8"
+                Type="Bar"/>
+              
+              <gauge:RangePointer
+                Value="{Binding StepsCount, Mode=TwoWay}"
+                Color="#2bbfb8"
+                Thickness="10"/>   
+            </gauge:Scale.Pointers> 
+            <gauge:Scale.MajorTickSettings>
+            <gauge:TickSettings x:Name="major"
+                                Length="20"
+                                Color="#444444"
+                                Thickness="3"/> 
+            </gauge:Scale.MajorTickSettings>
+            <gauge:Scale.MinorTickSettings>
+              <gauge:TickSettings
+                Length="25"
+                Color="#444444"
+                Thickness="3"/>
+              
+            </gauge:Scale.MinorTickSettings>
+          </gauge:Scale>
+        </gauge:SfCircularGauge.Scales>
+        
+        <gauge:SfCircularGauge.Headers>
+          <gauge:Header Text="Daily Steps Progress" TextSize="20" Font="Bold" ForegroundColor="Gray" x:Name="Header"/>
+        </gauge:SfCircularGauge.Headers> 
+        
+      </gauge:SfCircularGauge> 
+    </StackLayout> 
+  </fitness:FitnessChartViewXaml.Content>
+
+</fitness:FitnessChartViewXaml>

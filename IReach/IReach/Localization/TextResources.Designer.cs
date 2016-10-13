@@ -179,6 +179,15 @@ namespace IReach.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to iREACH Fitness.
+        /// </summary>
+        public static string FitnessDashboardPage_Title {
+            get {
+                return ResourceManager.GetString("FitnessDashboardPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Foods History.
         /// </summary>
         public static string Foods_FoodListHeaderTitle {
