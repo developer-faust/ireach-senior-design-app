@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using IReach.Interfaces;
@@ -16,8 +17,8 @@ namespace IReach.ViewModels.Foods
             Title = "Food Groups";
         }  
 
-        private IList<food_group> _foodGroups;
-        public IList<food_group> FoodGroups
+        private ObservableCollection< food_group> _foodGroups;
+        public ObservableCollection<food_group> FoodGroups
         {
             get { return _foodGroups; }
             private set
@@ -27,8 +28,8 @@ namespace IReach.ViewModels.Foods
             }
         }
 
-        private IList<food> _foods;
-        public IList<food> Foods
+        private ObservableCollection<food> _foods;
+        public ObservableCollection<food> Foods
         {
             get { return _foods; }
             set {
@@ -99,7 +100,7 @@ namespace IReach.ViewModels.Foods
         }
         private async Task ExecuteSearchCommand ( )
         {
-            IList<food> previousList = new List<food> ( Foods );
+          
             if ( IsBusy )
             {
                 return;

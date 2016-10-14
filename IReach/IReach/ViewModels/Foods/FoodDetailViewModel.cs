@@ -11,7 +11,7 @@ namespace IReach.ViewModels.Foods
 {
     public class FoodDetailViewModel : BaseViewModel
     {
-        private readonly IFoodDataService _DataClient;
+        private readonly IUserFoodDataService _DataClient;
         public FoodItem Food { get; set; }
         public FoodDetailViewModel(INavigation navigation, FoodItem food = null)
         {
@@ -32,7 +32,7 @@ namespace IReach.ViewModels.Foods
                 this.Title = food.Name.Replace(',', ' ').Substring(0, 20);
             }
 
-            _DataClient = DependencyService.Get<IFoodDataService>();  
+            _DataClient = DependencyService.Get<IUserFoodDataService>();  
         }
 
         Command saveFoodCommand;

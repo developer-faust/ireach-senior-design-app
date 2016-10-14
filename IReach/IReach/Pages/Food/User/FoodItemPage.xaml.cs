@@ -20,14 +20,14 @@ namespace IReach.Pages.Food.User
             var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
 
             foodItem.DateCreated = today;
-            await App.UserAsyncDataService.SaveFoodAsync(foodItem);
+            await App.UserUserAsyncDataService.SaveFoodAsync(foodItem);
             await this.Navigation.PopAsync(); 
         }
 
         async void OnDeleteClicked(object sender, EventArgs e)
         {
             var foodItem = (FoodItem) BindingContext;
-            await App.UserAsyncDataService.DeleteFoodAsync(foodItem.ID);
+            await App.UserUserAsyncDataService.DeleteFoodAsync(foodItem.ID);
             await this.Navigation.PopAsync();
         }
 

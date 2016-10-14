@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using IReach.Extensions;
 using IReach.Helpers;
 using IReach.Interfaces;
 using IReach.Models;
@@ -8,15 +10,15 @@ using IReach.Services;
 using SQLite.Net.Async;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(FoodAsyncDataService))]
+[assembly: Dependency(typeof(UserFoodAsyncDataService))]
 namespace IReach.Services
 {
-    public class FoodAsyncDataService : IFoodDataService
+    public class UserFoodAsyncDataService : IUserFoodDataService
     {
         private static readonly AsyncLock Locker = new AsyncLock();
         private SQLiteAsyncConnection Database { get; } = DependencyService.Get<ISQLite>().GetAsyncConnection(); 
 
-        public FoodAsyncDataService()
+        public UserFoodAsyncDataService()
         {
             CreateAllTablesAsync();
         }
@@ -27,15 +29,12 @@ namespace IReach.Services
         }
 
 
-        public async Task<IEnumerable<FoodItem>> GetFoodsAsync()
+        public async Task<ObservableCollection< FoodItem>> GetFoodsAsync()
         {
             using (await Locker.LockAsync())
             {
-                var query = await (from s in Database.Table<FoodItem>()
-                    orderby s.ID
-                    select s).ToListAsync();
-
-                return query;
+                var result = await Database.QueryAsync<FoodItem>("SELECT * FROM FoodItem");
+                return result.ToObservableCollection();
             }
         }
 

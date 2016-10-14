@@ -17,13 +17,13 @@ namespace IReach.Services
 {
     public class ChartDataService : IChartDataService
     {
-        private IFoodDataService _FoodDatabase;
+        private IUserFoodDataService _userFoodDatabase;
 
         const int defaultNumberOfWeeks = 6;
 
         public ChartDataService()
         {
-            _FoodDatabase = DependencyService.Get<IFoodDataService>(); 
+            _userFoodDatabase = DependencyService.Get<IUserFoodDataService>(); 
         }
          
         public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6,

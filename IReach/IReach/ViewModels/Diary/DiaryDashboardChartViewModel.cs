@@ -14,7 +14,7 @@ namespace IReach.ViewModels.Diary
 {
     public class DiaryDashboardChartViewModel : BaseViewModel
     {
-        IFoodDataService _DataClient;
+        IUserFoodDataService _DataClient;
         private IChartDataService _ChartDataService;
 
         private Command _loadSeedDataCommand;
@@ -27,7 +27,7 @@ namespace IReach.ViewModels.Diary
 
         public DiaryDashboardChartViewModel(INavigation navigation = null ) : base(navigation)
         {
-            _DataClient = DependencyService.Get<IFoodDataService>();
+            _DataClient = DependencyService.Get<IUserFoodDataService>();
             _ChartDataService = DependencyService.Get<IChartDataService>(); 
 
             Foods = new ObservableCollection<FoodItem>();

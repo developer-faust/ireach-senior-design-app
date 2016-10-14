@@ -15,7 +15,7 @@ namespace IReach.ViewModels.Diary
 {
     public class DiaryDashboardFoodsViewModel : BaseViewModel
     {
-        IFoodDataService _DataClient;
+        IUserFoodDataService _DataClient;
 
         Command _LoadSeedDataCommand;
         Command _loadFoodsCommand;
@@ -28,7 +28,7 @@ namespace IReach.ViewModels.Diary
             : base(navigation)
         {
             PushTabbedFoodPageCommand = pushTabbedFoodPageCommand;
-            _DataClient = DependencyService.Get<IFoodDataService>();
+            _DataClient = DependencyService.Get<IUserFoodDataService>();
             Foods = new ObservableCollection<FoodItem>();
 
             MessagingCenter.Subscribe<FoodItem>(this, MessagingServiceConstants.SAVE_FOOD, (food) =>

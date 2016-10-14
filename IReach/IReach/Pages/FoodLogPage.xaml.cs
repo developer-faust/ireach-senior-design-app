@@ -1,7 +1,7 @@
 ﻿using IReach.Pages.Diary;
 using Xamarin.Forms;
 
-namespace IReach.Pages.Food.User
+namespace IReach.Pages
 {
     public partial class FoodLogPage : TabbedPage
     {
@@ -10,9 +10,9 @@ namespace IReach.Pages.Food.User
             InitializeComponent();
 
             this.Children.Add(new DiaryDashboardPage());
-            this.Children.Add(new Pages.Food.User.FoodListPage());
-            this.Children.Add(new Pages.Food.Usda.UsdaSearchFoodPage());
-            this.Children.Add(new Pages.Food.Usda.BrowseFoodsPage());
+            this.Children.Add(new Food.User.UserFoodListPage());
+            this.Children.Add(new Food.Usda.UsdaSearchFoodPage());
+            this.Children.Add(new Food.Usda.BrowseFoodsPage());
         }
     }
 }

@@ -106,7 +106,7 @@ namespace IReach.Pages.Diary
                                     MealType = MealTypeOption.All
                                 };
 
-                                await App.UserAsyncDataService.SaveFoodAsync(item);
+                                await App.UserUserAsyncDataService.SaveFoodAsync(item);
 
                             }
                         }

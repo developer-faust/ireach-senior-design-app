@@ -47,11 +47,11 @@
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
     <Compile Include="Pages\Fitness\FitnessDashboardPage.cs" />
-    <Compile Include="Services\FoodAsyncDataService.cs" />
+    <Compile Include="Services\UserFoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IListExtensions.cs" />
     <Compile Include="Interfaces\IChartDataService.cs" />
-    <Compile Include="Interfaces\IFoodDataService.cs" />
+    <Compile Include="Interfaces\IUserFoodDataService.cs" />
     <Compile Include="Helpers\AsyncSemaphore.cs" />
     <Compile Include="Controls\IReachNavigationPage.cs" />
     <Compile Include="Controls\NativeListView.cs" />
@@ -99,7 +99,7 @@
     <Compile Include="ViewModels\Splash\SplashViewModel.cs" />
     <Compile Include="ViewModels\Usda\UsdaFoodItemViewModel.cs" />
     <Compile Include="ViewModels\Usda\USDASearchFoodViewModel.cs" />
-    <Compile Include="ViewModels\Foods\UserFoodViewModel.cs" />
+    <Compile Include="ViewModels\Foods\UserFoodListViewModel.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
@@ -116,10 +116,10 @@
     <Compile Include="Pages\Food\User\FoodItemPage.xaml.cs">
       <DependentUpon>FoodItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Food\User\FoodListPage.xaml.cs">
-      <DependentUpon>FoodListPage.xaml</DependentUpon>
+    <Compile Include="Pages\Food\User\UserFoodListPage.xaml.cs">
+      <DependentUpon>UserFoodListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Food\User\FoodLogPage.xaml.cs">
+    <Compile Include="Pages\FoodLogPage.xaml.cs">
       <DependentUpon>FoodLogPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Diary\HomePage.xaml.cs">
@@ -219,7 +219,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\Food\User\FoodListPage.xaml">
+    <EmbeddedResource Include="Pages\Food\User\UserFoodListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -270,7 +270,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\Food\User\FoodLogPage.xaml">
+    <EmbeddedResource Include="Pages\FoodLogPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

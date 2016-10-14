@@ -102,19 +102,19 @@ namespace IReach
         /// A Singleton UserFood Database:
         /// Allows for a single instance of the database for the entire app. 
         /// Use this instead of DependencyService.Get<>
-        /// Usage: var DBInstance = App.CurrentApp.UserAsyncDataService;
+        /// Usage: var DBInstance = App.CurrentApp.UserUserAsyncDataService;
         /// </summary>
-        private static FoodAsyncDataService _userFoodDataService; 
-        public static FoodAsyncDataService UserAsyncDataService
+        private static UserFoodAsyncDataService _userUserFoodDataService; 
+        public static UserFoodAsyncDataService UserUserAsyncDataService
         {
             get
             {
-                if (_userFoodDataService == null)
+                if (_userUserFoodDataService == null)
                 {
-                    _userFoodDataService = new FoodAsyncDataService();
+                    _userUserFoodDataService = new UserFoodAsyncDataService();
                 }
 
-                return _userFoodDataService;
+                return _userUserFoodDataService;
             }
         }
 

@@ -5,7 +5,7 @@ using IReach.Pages.Fitness;
 using IReach.ViewModels.Base;
 using IReach.Views; 
 using Xamarin.Forms;
-using FoodLogPage = IReach.Pages.Food.User.FoodLogPage;
+using FoodLogPage = IReach.Pages.FoodLogPage;
 
 namespace IReach.Pages
 {

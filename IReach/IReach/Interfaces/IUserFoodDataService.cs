@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using IReach.Models;
 
 namespace IReach.Interfaces
 {
-    public interface IFoodDataService
+    public interface IUserFoodDataService
     {
-        Task<IEnumerable<FoodItem>> GetFoodsAsync();
+        Task<ObservableCollection<FoodItem>> GetFoodsAsync();
         Task<FoodItem> GetFoodAsync(int id);
         Task SaveFoodAsync(FoodItem food);
         Task DeleteFoodAsync(int foodId);
