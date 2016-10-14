@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<usda:UsdaFoodItemPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IReach.Pages.Food.Usda.USDAFoodItemPage"
+             xmlns:usda="clr-namespace:IReach.Pages.Food.Usda;assembly=IReach"
+             x:Class="IReach.Pages.Food.Usda.UsdaFoodItemPage"
              Padding="10">
-  <ContentPage.Content>
+ 
+  <usda:UsdaFoodItemPageXaml.Content>
     <StackLayout VerticalOptions="StartAndExpand">
       <Label Text="Name"/>
       <Entry x:Name= "nameEntry" Text="{Binding FoodName}" Placeholder="Food Name"/>
@@ -29,11 +31,11 @@
       <Stepper x:Name="servings" Minimum="1" Maximum="10" Increment="1" Value="{Binding Servings, &#xA; Mode =TwoWay,&#xA; }" />
       <StackLayout Orientation="Horizontal">
         <Label BindingContext="{x:Reference servings}" Text="{Binding Value}"/>
-        <Label Text="Oz"></Label> 
+        <Label Text="Oz"></Label>
       </StackLayout>
 
-      <Button Text="Save" Clicked="SaveClicked"/> 
-    
+      <Button Text="Save" Clicked="SaveClicked"/>
+
     </StackLayout>
-  </ContentPage.Content>
-</ContentPage>
+  </usda:UsdaFoodItemPageXaml.Content>
+  </usda:UsdaFoodItemPageXaml>

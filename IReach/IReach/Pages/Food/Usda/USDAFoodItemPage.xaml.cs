@@ -1,20 +1,16 @@
 ﻿using System;
 using IReach.Models;
+using IReach.Pages.Base;
 using IReach.ViewModels;
 using IReach.ViewModels.Usda;
 using Xamarin.Forms;
 
 namespace IReach.Pages.Food.Usda
 {
-    public partial class USDAFoodItemPage : ContentPage
-    {
-
-        private UsdaFoodItemViewModel ViewModel
-        {
-            get { return BindingContext as UsdaFoodItemViewModel; }
-        }
+    public partial class UsdaFoodItemPage : UsdaFoodItemPageXaml
+    { 
      
-        public USDAFoodItemPage (food  item)
+        public UsdaFoodItemPage (food  item)
         {
             InitializeComponent ( );
             BindingContext = new UsdaFoodItemViewModel(item);  
@@ -22,9 +18,15 @@ namespace IReach.Pages.Food.Usda
 
         async void SaveClicked(object sender, EventArgs e)
         {
+            // Call the base viewModel object.
             ViewModel.Save();
+
             await this.Navigation.PopToRootAsync();
         }
          
+    }
+
+    public abstract class UsdaFoodItemPageXaml : ModelBoundContentPage<UsdaFoodItemViewModel>
+    {
     }
 }

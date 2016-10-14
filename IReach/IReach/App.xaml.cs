@@ -104,8 +104,7 @@ namespace IReach
         /// Use this instead of DependencyService.Get<>
         /// Usage: var DBInstance = App.CurrentApp.UserAsyncDataService;
         /// </summary>
-        private static FoodAsyncDataService _userFoodDataService;
-
+        private static FoodAsyncDataService _userFoodDataService; 
         public static FoodAsyncDataService UserAsyncDataService
         {
             get

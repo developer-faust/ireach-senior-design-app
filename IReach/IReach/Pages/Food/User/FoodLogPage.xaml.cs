@@ -11,8 +11,8 @@ namespace IReach.Pages.Food.User
 
             this.Children.Add(new DiaryDashboardPage());
             this.Children.Add(new Pages.Food.User.FoodListPage());
-            this.Children.Add(new Pages.Food.Usda.USDASearchFoodPage());
-            this.Children.Add(new Pages.Food.Usda.USDABrowseFoodsPage());
+            this.Children.Add(new Pages.Food.Usda.UsdaSearchFoodPage());
+            this.Children.Add(new Pages.Food.Usda.BrowseFoodsPage());
         }
     }
 }

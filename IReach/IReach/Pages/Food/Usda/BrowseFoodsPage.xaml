@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<usda:BrowseFoodsPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IReach.Pages.Food.Usda.USDABrowseFoodsPage"
+             xmlns:usda="clr-namespace:IReach.Pages.Food.Usda;assembly=IReach"
+             x:Class="IReach.Pages.Food.Usda.BrowseFoodsPage"
              Padding="0,20,0,0"
              Title="Browse Food Groups">
-  <ContentPage.Content> 
-    
+  <usda:BrowseFoodsPageXaml.Content>
+
     <StackLayout
       HorizontalOptions="FillAndExpand"
       VerticalOptions="FillAndExpand">
-      
+
       <ListView
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand"
@@ -21,11 +22,11 @@
             <Label Text="Browse For Food or Ingredient" FontAttributes="Bold" FontSize="Medium"></Label>
           </StackLayout>
         </ListView.Header>
-        
+
         <x:Arguments>
           <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
         </x:Arguments>
-        <ListView.ItemTemplate> 
+        <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
               <ViewCell.View>
@@ -46,7 +47,7 @@
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
-     
-    </StackLayout> 
-  </ContentPage.Content>
-</ContentPage>
+
+    </StackLayout>
+  </usda:BrowseFoodsPageXaml.Content>
+  </usda:BrowseFoodsPageXaml>

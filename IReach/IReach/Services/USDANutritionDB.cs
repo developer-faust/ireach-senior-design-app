@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using IReach.Extensions;
 using IReach.Helpers;
 using IReach.Interfaces;
 using IReach.Models;
@@ -35,7 +37,7 @@ namespace IReach.Services
         /// TODO: Daniel implement this part its just a feature to add to the add so that we can view foods with common Nutrients
         /// </summary>
         /// <returns></returns>
-        public Task<IList<common_nutrient>> GetCommonGetCommonNutrients ( )
+        public Task<ObservableCollection<common_nutrient>> GetCommonGetCommonNutrients ( )
         {
             throw new NotImplementedException ( );
         }
@@ -47,16 +49,16 @@ namespace IReach.Services
 
         #endregion
 
-        public async Task<IList<food_group>> GetFoodGroups ( )
+        public async Task<ObservableCollection<food_group>> GetFoodGroups ( )
         {
             using ( await Locker.LockAsync() )
             {
                 var result = await Database.QueryAsync<food_group>("SELECT * FROM food_group"); 
-                return result;
+                return result.ToObservableCollection();
             }
         }
 
-        public async Task<IList<food>> GetFoodsWithGroupId(int groupId)
+        public async Task<ObservableCollection<food>> GetFoodsWithGroupId(int groupId)
         {
             using (await Locker.LockAsync())
             {
@@ -67,7 +69,7 @@ namespace IReach.Services
                               select s).ToListAsync();
                 Debug.WriteLine("Result Count = {0}", result.Count);
                  
-                return result;
+                return result.ToObservableCollection();
             } 
         }
 
@@ -76,7 +78,7 @@ namespace IReach.Services
         /// Thre should be no reason to use this for now, because no feature requires the use of all 8000 foods.
         /// </summary>
         /// <returns></returns>
-        public Task<IList<food>> GetFoods ( )
+        public Task<ObservableCollection<food>> GetFoods ( )
         {
             throw new NotImplementedException ( );
         }
@@ -92,7 +94,7 @@ namespace IReach.Services
             return food;
         }
 
-        public async Task<IList<food>> SearchFoods ( string searchString)
+        public async Task<ObservableCollection<food>> SearchFoods ( string searchString)
         {
             Debug.WriteLine("Search string = {0}", searchString);
             var words = (IEnumerable<string>) searchString.Split(' ').ToList(); 
@@ -105,10 +107,10 @@ namespace IReach.Services
             var tableSearch = await Database.QueryAsync<food>(string.Format(SqlQuery, joined)); 
             Debug.WriteLine("Found Count = {0}", tableSearch.Count);
 
-           return tableSearch;
+           return tableSearch.ToObservableCollection();
         }
 
-        public async Task<IList<food>> SearchFoods(string searchString, int groupId)
+        public async Task<ObservableCollection<food>> SearchFoods(string searchString, int groupId)
         {
             Debug.WriteLine("Searching for food name = {0} with group id = {1}", searchString, groupId); 
             var words = (IEnumerable<string>) searchString.Split(' ').ToList();
@@ -123,7 +125,7 @@ namespace IReach.Services
 
             Debug.WriteLine("Food Count = {0}", foods.Count);
 
-            return foods;
+            return foods.ToObservableCollection();
         }
 
         public async Task<nutrition> GetNutrition(int foodId) //new function to return calories
