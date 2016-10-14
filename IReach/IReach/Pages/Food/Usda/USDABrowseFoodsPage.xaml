@@ -25,9 +25,24 @@
         <x:Arguments>
           <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
         </x:Arguments>
-        <ListView.ItemTemplate>
+        <ListView.ItemTemplate> 
           <DataTemplate>
-            <TextCell Text="{Binding name}" Detail="{Binding id}"/>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Padding="20,0,20,0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand">
+
+                  <Label Text="{Binding name}"
+                         VerticalTextAlignment="Center"
+                         HorizontalOptions="Start" />
+                  <Label Text="{Binding id}"
+                         VerticalTextAlignment="Center"
+                         HorizontalOptions="EndAndExpand"/>
+
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
