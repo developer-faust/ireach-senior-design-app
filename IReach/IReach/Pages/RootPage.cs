@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using IReach.Controls;
+using IReach.Pages.Diary;
 using IReach.Pages.Fitness;
 using IReach.ViewModels.Base;
 using IReach.Views; 
@@ -74,7 +75,7 @@ namespace IReach.Pages
 				switch ( id )
 				{
 					case MenuType.Home:
-                        var page =  new IReachNavigationPage(new Diary.DiaryDashboardPage());
+                        var page =  new IReachNavigationPage(new DietDashboardPage());
                         SetDetailIfNull(page);
                         Pages.Add ( id, page);
 						break;

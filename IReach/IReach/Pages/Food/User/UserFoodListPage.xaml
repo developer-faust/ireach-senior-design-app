@@ -4,81 +4,89 @@
              xmlns:user="clr-namespace:IReach.Pages.Food.User;assembly=IReach"
              x:Class="IReach.Pages.Food.User.UserFoodListPage"
              Title="My Food Diary">
-  <StackLayout
-       HorizontalOptions="FillAndExpand"
-       VerticalOptions="FillAndExpand">
 
-    <ListView
-                  VerticalOptions="FillAndExpand"
-                  HorizontalOptions="FillAndExpand"
-                  ItemsSource="{Binding UserFoods}"
-                  HasUnevenRows="True"
-                  x:Name="UserFoodsListView">
-      <ListView.Header>
-        <StackLayout Padding="10,5,0,5"
-                     BackgroundColor="#cccccc">
-          <Label Text="Food Entry" FontAttributes="Bold" FontSize="Medium"></Label>
-        </StackLayout>
-      </ListView.Header>
+  <user:UserFoodListPageXaml.Content>
 
-      <x:Arguments>
-        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-      </x:Arguments>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <ViewCell.View>
-              
-              <StackLayout
-                Orientation="Vertical"
-                Padding="0, 5, 0, 5">
-                <StackLayout 
-                  Padding="0,5,0,5"
-                  Orientation="Horizontal"
-                  HorizontalOptions="FillAndExpand"> 
-                  <Label 
-                    Text="{Binding Name}"
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="Start" />
-                  <Label
-                    Text="{Binding DateCreated,  StringFormat='{0:MMMM d}'}"
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="EndAndExpand"/> 
+
+    <StackLayout
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand">
+
+      <ListView
+                    x:Name="UserFoodsListView"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    ItemsSource="{Binding UserFoods}"
+                    HasUnevenRows="True" 
+                    ItemSelected="ListItemSelected">
+        <ListView.Header>
+          <StackLayout Padding="10,5,0,5"
+                       BackgroundColor="#cccccc">
+            <Label Text="Food Entry" FontAttributes="Bold" FontSize="Medium"></Label>
+          </StackLayout>
+        </ListView.Header>
+
+        <x:Arguments>
+          <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+
+                <StackLayout
+                  Orientation="Vertical"
+                  Padding="0, 5, 0, 5">
+                  <StackLayout
+                    Padding="0,5,0,5"
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand">
+                    <Label
+                      Text="{Binding Name}"
+                      VerticalTextAlignment="Center"
+                      HorizontalOptions="Start" />
+                    <Label
+                      Text="{Binding DateCreated,  StringFormat='{0:MMMM d}'}"
+                      VerticalTextAlignment="Center"
+                      HorizontalOptions="EndAndExpand"/>
+                  </StackLayout>
+                  <StackLayout
+                    Orientation="Horizontal"
+                    Padding="0,2,0,2"
+                    HorizontalOptions="FillAndExpand">
+
+                    <Label
+                      Text="Calories: "
+                      VerticalTextAlignment="Center"
+                      HorizontalOptions="Start" />
+                    <Label
+                      Text="{Binding Calories}"
+                      VerticalTextAlignment="Center"
+                      HorizontalOptions="EndAndExpand"/>
+                  </StackLayout>
+                  <StackLayout
+                   Orientation="Horizontal"
+                   Padding="0,2,0,2"
+                   HorizontalOptions="FillAndExpand">
+                    <Label
+                      Text="Servings: "
+                      VerticalTextAlignment="Center"
+                      HorizontalOptions="Start" />
+                    <Label
+                      Text="{Binding Servings}"
+                      VerticalTextAlignment="Center"
+                      HorizontalOptions="EndAndExpand"/>
+                  </StackLayout>
                 </StackLayout>
-                <StackLayout 
-                  Orientation="Horizontal"
-                  Padding="0,2,0,2"
-                  HorizontalOptions="FillAndExpand">
 
-                  <Label 
-                    Text="Calories: "
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="Start" />
-                  <Label
-                    Text="{Binding Calories}" 
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="EndAndExpand"/>
-                </StackLayout>
-                <StackLayout 
-                 Orientation="Horizontal"
-                 Padding="0,2,0,2"
-                 HorizontalOptions="FillAndExpand"> 
-                  <Label
-                    Text="Servings: "
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="Start" />
-                  <Label
-                    Text="{Binding Servings}"
-                    VerticalTextAlignment="Center"
-                    HorizontalOptions="EndAndExpand"/>
-                </StackLayout>
-              </StackLayout>
-             
-            </ViewCell.View>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
 
-  </StackLayout>
+    </StackLayout>
+    
+  </user:UserFoodListPageXaml.Content>
+  
   </user:UserFoodListPageXaml>

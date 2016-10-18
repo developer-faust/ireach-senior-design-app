@@ -13,15 +13,13 @@ namespace IReach.Pages.Food.User
         {
             InitializeComponent ( );
 
-            BindingContext =  new UserFoodListViewModel(this.Navigation);
+            BindingContext =  new UserFoodListViewModel(this.Navigation); 
 
 
-
-
-            /*  tbi = new ToolbarItem ( "+", null, ( ) =>
+            var tbi = new ToolbarItem ( "+", null, ( ) =>
             {
                 var foodItem = new FoodItem ( );
-                var foodPage = new Pages.Food.User.FoodItemPage {BindingContext = foodItem};
+                var foodPage =  new FoodItemPage(foodItem);
 
                 ViewModel.Navigation.PushAsync ( foodPage );
             }, 0, 0 );
@@ -31,23 +29,31 @@ namespace IReach.Pages.Food.User
                 tbi = new ToolbarItem("+", "plus", () =>
                 {
                     var foodItem = new FoodItem();
-                    var foodPage = new Pages.Food.User.FoodItemPage {BindingContext = foodItem};
+                    var foodPage = new FoodItemPage(foodItem);
 
                     ViewModel.Navigation.PushAsync(foodPage);
                 },0,0); 
             }
 
-            ToolbarItems.Add(tbi);*/
-
+            ToolbarItems.Add(tbi);
+             
         }
-         
+
+        private void ListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var foodItem = (FoodItem)e.SelectedItem;
+            var foodPage = new FoodItemPage(foodItem);
+
+            Navigation.PushAsync(foodPage);
+        }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-
+            base.OnAppearing(); 
             Debug.WriteLine("User Food List Page Appearing"); 
             ViewModel.LoadItemsCommand.Execute(null); 
         }
+
+       
     }
 
     public abstract class UserFoodListPageXaml : ModelBoundContentPage<UserFoodListViewModel>

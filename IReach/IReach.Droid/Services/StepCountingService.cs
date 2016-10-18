@@ -17,7 +17,7 @@ namespace IReach.Droid.Services
 {
     [Service(Enabled = true)]
     [IntentFilter(new String[] { "com.refractored.IReach.StepService" })]
-    class StepCountingService : Service, ISensorEventListener, INotifyPropertyChanged
+    public class StepCountingService : Service, ISensorEventListener, INotifyPropertyChanged
     {
         public int prevSteps { get; set; }
         public int TodaySteps { get; set; }

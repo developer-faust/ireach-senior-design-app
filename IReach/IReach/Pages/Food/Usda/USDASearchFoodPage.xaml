@@ -13,7 +13,7 @@
     <StackLayout Orientation="Vertical"
                  VerticalOptions="Start"
                  Padding="10,20,10,20">
-      <Entry Placeholder="Filter Food Name Or Ingredient" TextChanged="TextFilterChanged"/>
+      <Entry Placeholder="Enter Food Name Or Ingredient" TextChanged="TextFilterChanged"/>
 
       <ListView
         x:Name="FoodAutoCompleteListView"

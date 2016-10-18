@@ -18,7 +18,7 @@
       <StackLayout x:Name="HeaderStackLayout" HorizontalOptions="CenterAndExpand">
         <Label Text="{Binding TodaysDate}"/>
         <Label Text="% Percent Complete" HorizontalOptions="Center"/>
-        <Label x:Name="PercentCompleteLabel" FontSize ="30" HorizontalOptions="Center"/>
+        <Label x:Name="PercentCompleteLabel" FontSize ="30" HorizontalOptions="Center"/>  
       </StackLayout> 
       <gauge:SfCircularGauge x:Name="CircularGauge"
                              WidthRequest="200"

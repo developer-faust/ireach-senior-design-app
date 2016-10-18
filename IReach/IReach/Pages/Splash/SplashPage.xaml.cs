@@ -30,7 +30,7 @@ namespace IReach.Pages.Splash
             // Use dependency service to request a service.
             _authenticationService = DependencyService.Get<IAuthenticationService>();
 
-
+            XamarinLogo.Source = "epsl.png";
             // Assign Gestures and Commands to Buttons. This is just another way to Do OnClickedListener Operations by using Command
             SignInButton.GestureRecognizers.Add(
                 new TapGestureRecognizer()

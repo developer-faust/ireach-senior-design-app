@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
-using IReach.Services;
 using Xamarin.Forms;
 using IReach.ViewModels.Base;
 

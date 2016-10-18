@@ -8,23 +8,26 @@ using IReach.Views.Diary;
 using Xamarin.Forms;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 using IReach.Models;
 using IReach.Models.Local;
 using IReach.Pages.Food;
 using IReach.Services;
 using IReach.ViewModels.Foods;
+using IReach.Views.Diet;
 using FoodDetailPage = IReach.Pages.Food.User.FoodDetailPage;
 
 namespace IReach.Pages.Diary
 {
     public class DiaryDashboardPage : ContentPage
     {
+
         private ScrollView _scrollView;
         private StackLayout _frameStackLayout;
         private FloatingActionButtonView _fab;
 
-        private DiaryDashboardChartViewModel _DiaryDashboardChartViewModel { get; set; } 
+        private DiaryDashboardChartViewModel _DiaryDashboardChartViewModel { get; set; }
         private DiaryDashboardFoodsViewModel _DiaryDashboardFoodsViewModel { get; set; }
 
         private IAuthenticationService _AuthenticationService;
@@ -50,14 +53,14 @@ namespace IReach.Pages.Diary
                         new DiaryDashboardFoodsViewModel(new Command(PushTabbedFoodPageAction))
             };
             _scrollView = new ScrollView
-            {  
+            {
                 Content = new StackLayout
-                { 
+                {
                     Children =
-                    { 
-                        foodsView 
+                    {
+                        foodsView
                     }
-                } 
+                }
             };
 
             _frameStackLayout = new StackLayout()
@@ -75,7 +78,7 @@ namespace IReach.Pages.Diary
                     _scrollView
                 }
             };
-           
+
 
             if (Device.OS == TargetPlatform.Android)
             {
@@ -89,7 +92,7 @@ namespace IReach.Pages.Diary
                     Clicked = async (sender, args) =>
                     {
                         // When the + FAB is clicked. Load the database with Sample 8 Weeks worth of Data
-                        DateTime now = DateTime.UtcNow; 
+                        DateTime now = DateTime.UtcNow;
                         for (int i = 0; i < 6; i++)
                         {
                             for (int j = 0; j < 7; j++)
@@ -100,7 +103,7 @@ namespace IReach.Pages.Diary
                                 var item = new FoodItem()
                                 {
                                     Name = $"TestItem week{i + 1} day{j + 1}",
-                                    Calories = 100 * j+1,
+                                    Calories = 100 * j + 1,
                                     DateCreated = today.AddDays(j),
                                     Servings = 1,
                                     MealType = MealTypeOption.All
@@ -150,7 +153,7 @@ namespace IReach.Pages.Diary
         }
         Action<object> PushTabbedFoodPageAction
         {
-            get { return new Action<object>(o => PushTabbedFoodPage((FoodItem)o));}
+            get { return new Action<object>(o => PushTabbedFoodPage((FoodItem)o)); }
         }
 
         async Task PushTabbedFoodPage(FoodItem food = null)
@@ -167,7 +170,7 @@ namespace IReach.Pages.Diary
 
             if (food != null)
             {
-                foodDetailPage.Title = food.Name.Replace(',', ' '); 
+                foodDetailPage.Title = food.Name.Replace(',', ' ');
             }
             else
             {
@@ -198,7 +201,7 @@ namespace IReach.Pages.Diary
 
             await Navigation.PushAsync(foodDetailPage);
         }
-        
+
 
         protected override async void OnAppearing()
         {

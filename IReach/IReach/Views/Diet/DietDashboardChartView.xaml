@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<diet:DietDashboardChartViewXaml xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                 xmlns:diet="clr-namespace:IReach.Views.Diet;assembly=IReach"
+                                 xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+                                 x:Class="IReach.Views.Diet.DietDashboardChartView">
+
+    <diet:DietDashboardChartViewXaml.Content>
+ 
+       <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+         <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+           <chart:SfChart.Title>
+             <chart:ChartTitle Text="Weekly Calorie Intake" />
+           </chart:SfChart.Title>
+
+           <chart:SfChart.PrimaryAxis>
+             <chart:CategoryAxis LabelPlacement="BetweenTicks">
+               <chart:CategoryAxis.Title>
+                 <chart:ChartAxisTitle Text="Day"/>
+               </chart:CategoryAxis.Title>
+             </chart:CategoryAxis>
+           </chart:SfChart.PrimaryAxis>
+
+           <chart:SfChart.SecondaryAxis>
+             <chart:NumericalAxis Maximum="1800" Minimum="0" Interval="200">
+               <chart:NumericalAxis.Title>
+                 <chart:ChartAxisTitle Text="Calories (kcal)"/>
+               </chart:NumericalAxis.Title>
+             </chart:NumericalAxis>
+
+           </chart:SfChart.SecondaryAxis>
+
+           <chart:SfChart.Legend>
+             <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Bottom"/>
+           </chart:SfChart.Legend>
+
+           <chart:SfChart.Series>
+             <chart:StackingColumnSeries Color="Green" ItemsSource="{Binding CalorieItems}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True">
+             </chart:StackingColumnSeries>
+             <chart:StackingColumnSeries Color="Red" ItemsSource="{Binding CalorieItems}" XBindingPath="Name" YBindingPath="Deficit" Label="Caloric Deficit" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+             </chart:StackingColumnSeries>
+ 
+           </chart:SfChart.Series>
+
+         </chart:SfChart>
+
+       </StackLayout>
+        
+    </diet:DietDashboardChartViewXaml.Content> 
+   
+  </diet:DietDashboardChartViewXaml>

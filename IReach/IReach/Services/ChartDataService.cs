@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using IReach.Interfaces;
 using IReach.Models;
@@ -25,7 +24,62 @@ namespace IReach.Services
         {
             _userFoodDatabase = DependencyService.Get<IUserFoodDataService>(); 
         }
-         
+
+        public async Task<ObservableCollection<DietChartModel>> GetDailyCaloriesDataPointsAsync(
+            IEnumerable<FoodItem> foods, int numberOfDays = 7)
+        {
+            var dailyCaloriesDataPoints = new ObservableCollection<DietChartModel>();
+
+            var now = DateTime.UtcNow;
+
+            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+            int delta = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - today.DayOfWeek;
+
+            if (delta > 0)
+            {
+                delta -= 7;
+            }
+
+            int daysBack = - 7;
+            var firstDayOfCurrentWeek = today.AddDays(daysBack);
+            var weekStart = firstDayOfCurrentWeek;
+
+            var weekEnd = weekStart.AddDays(7);
+            var enumerableFoods = foods as IList<FoodItem> ?? foods.ToList();
+
+            double dailyTotal = 0;
+
+            for (int i = 0; i < numberOfDays; i++)
+            {
+                var day = weekStart.AddDays(i);
+
+                string foodName;
+                dailyTotal =  GetCalorieTotalForDay(enumerableFoods, day);
+                Debug.WriteLine("{0} Total {1}", day.DayOfWeek, dailyTotal);
+
+                dailyCaloriesDataPoints.Add(
+                    new DietChartModel(day.DayOfWeek.ToString(), dailyTotal));
+            }
+
+            return dailyCaloriesDataPoints;
+        }
+
+        private static double GetCalorieTotalForDay(IEnumerable<FoodItem> enumerableFoods, DateTime day)
+        {
+            double total = 0.0;
+            IEnumerable<FoodItem> results;
+            results = enumerableFoods.Where(
+                            food =>
+                                food.DateCreated == day);
+
+            foreach (var foodItem in results)
+            {
+                total += foodItem.Calories;
+            }
+
+            return total;
+        }
+
         public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6,
             MealTypeOption mealOption = MealTypeOption.All)
         {
@@ -51,17 +105,14 @@ namespace IReach.Services
             double weekTotal = 0;
 
             for (int i = 0; i < numberOfWeeks; i++)
-            {
-                weekStart = weekStart.AddDays(-7);
-                weekEnd = weekEnd.AddDays(-7);
-
+            { 
                 weekTotal = GetCalorieTotalForPeriod(enumerableFoods, weekStart, weekEnd);
                 Debug.WriteLine("WeekTotal = {0}", weekTotal);
 
                 weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
                 {
                     StartDate = weekStart,
-                    EndDate = weekEnd,
+                    EndDate = weekEnd, 
                     Amount = weekTotal
                 });
             } 

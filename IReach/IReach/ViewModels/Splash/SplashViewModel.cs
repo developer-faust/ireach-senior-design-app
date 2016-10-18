@@ -53,8 +53,9 @@ namespace IReach.ViewModels.Splash
 
         public async Task LoadCredentials()
         {
-            Username = $"DemoUser";
-            Password = $"DemoPassword";
+            
+            Username = $"Email Address";
+            Password = $"Password";
         }
 
     }

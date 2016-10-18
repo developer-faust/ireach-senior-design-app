@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<user:FoodItemPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:user="clr-namespace:IReach.Pages.Food.User;assembly=IReach"
              x:Class="IReach.Pages.Food.User.FoodItemPage"
              Padding="20">
-  <ContentPage.Content>
+  <user:FoodItemPageXaml.Content>
     <StackLayout VerticalOptions="StartAndExpand">
       <Label Text="Name"/>
-      <Entry x:Name= "nameEntry" Text="{Binding Name}" Placeholder="Food Name"/>
+      <Entry x:Name= "nameEntry" Text="{Binding FoodName}" Placeholder="Food Name"/>
       <Label Text="Date Created: "/>
       <Label x:Name= "dateEntry" Text="{Binding DateCreated, StringFormat='{0:d MMM}'}"/>
      <Grid>
@@ -23,19 +24,21 @@
      </Grid>
         
         <Label Text="Calories: "/>
-        <Slider x:Name="calories" Minimum="0" Maximum="1000" Value="{Binding Calories}"
+        <Slider x:Name="calories" Minimum="0" Maximum="3000" Value="{Binding Calories, &#xA; Mode =TwoWay,&#xA; }"
                 Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Label BindingContext="{x:Reference calories}" Text="{Binding Value}" Grid.Row="0" Grid.Column="2"/>
+        <Label BindingContext="{x:Reference calories}" Text="{Binding Value}"/>
 
         <Label Text="Servings: "/>
-        <Stepper x:Name="servings" Minimum="0" Maximum="10" Increment="1" Value="{Binding Servings}"
-                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Label BindingContext="{x:Reference servings}" Text="{Binding Value}" Grid.Row="1" Grid.Column="2"></Label>  
+        <Stepper x:Name="servings" Minimum="0" Maximum="10" Increment="1" Value="{Binding Servings, &#xA; Mode =TwoWay,&#xA; }"/>
+        <StackLayout Orientation="Horizontal">
+          <Label BindingContext="{x:Reference servings}" Text="{Binding Value}"/>
+          <Label Text="Oz"></Label>
+        </StackLayout> 
    
-      <Button Text="Save" Clicked="OnSaveClicked"/>
-      <Button Text="Delete" Clicked="OnDeleteClicked"></Button>
-      <Button Text="Speak" Clicked="OnSpeakClicked"></Button>
+      <Button Text="Save" Clicked="SaveClicked"/>
+      <Button Text="Delete" Clicked="DeleteClicked"></Button>
+      <Button Text="Speak" Clicked="SpeakClicked"></Button>
 
     </StackLayout>
-  </ContentPage.Content>
-</ContentPage>
+  </user:FoodItemPageXaml.Content>
+</user:FoodItemPageXaml>

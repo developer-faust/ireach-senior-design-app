@@ -36,14 +36,15 @@ namespace IReach.Pages.Fitness
         { 
             this.SetBinding(Page.TitleProperty, new Binding() {Source = TextResources.FitnessDashboardPage_Title});
 
-            var toolbarItem = new ToolbarItem()
+            toolbarItem = new ToolbarItem()
             {
                 Text = "Settings",
-                Icon = "Settings.png"
+                Icon = "Setting.png"
             };
 
-            ToolbarItems.Add(toolbarItem);
-            toolbarItem.Clicked += toolbartItem_Clicked; 
+            toolbarItem.Clicked += toolbartItem_Clicked;
+            ToolbarItems.Add(toolbarItem); 
+            
 
             var fitnessChartView = new FitnessChartView()
             {

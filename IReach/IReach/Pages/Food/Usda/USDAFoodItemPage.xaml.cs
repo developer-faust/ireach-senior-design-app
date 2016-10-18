@@ -19,8 +19,7 @@ namespace IReach.Pages.Food.Usda
         async void SaveClicked(object sender, EventArgs e)
         {
             // Call the base viewModel object.
-            ViewModel.Save();
-
+            ViewModel.Save(); 
             await this.Navigation.PopToRootAsync();
         }
          

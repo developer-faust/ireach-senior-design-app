@@ -1,21 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView" />
-    <Button
-        android:id="@+id/myButton"
+<ireach.droid.controls.ProgressView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/progressView">
+    <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello Android" />
-</LinearLayout>
+        android:layout_height="fill_parent"
+        android:background="@color/blue_background"
+        android:id="@+id/top_layer"
+        android:visibility="invisible" />
+  
+    <FrameLayout
+        android:id="@+id/counter_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="@dimen/standard_padding"
+        android:layout_marginTop="?android:attr/actionBarSize">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal">
+            <TextView
+                android:text="@string/today"
+                android:id="@+id/today"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white" />
+            <ireach.droid.controls.FontFitTextView
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="fill_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/stepcount"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:minHeight="100dp"
+                android:textColor="@color/white" />
+            <TextView
+                android:text="@string/steps"
+                android:id="@+id/steps"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_gravity="right"
+                android:textColor="@color/white" />
+            <ImageView
+                android:layout_marginTop="50dp"
+                android:id="@+id/high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_highscore"
+                android:visibility="invisible" />
+            <TextView
+                android:text="@string/percent_complete"
+                android:id="@+id/percentage"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <FrameLayout
+            android:fitsSystemWindows="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+            <TextView
+                android:text="@string/calories"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/calories"
+                android:layout_gravity="bottom|left"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:src="@drawable/ic_warning"
+                android:layout_gravity="bottom|center_horizontal"
+                android:alpha="0.2" />
+            <TextView
+                android:text="@string/miles"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/distance"
+                android:layout_gravity="bottom|right"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/white" />
+        </FrameLayout>
+    </FrameLayout>
+</ireach.droid.controls.ProgressView>
