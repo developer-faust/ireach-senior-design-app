@@ -70,8 +70,9 @@ namespace IReach
                 // The User is authenticated. We Navigated to the RootPage.
                 GoToRoot ( ); 
             }
-        } 
+        }
 
+        public const string NativeNavigationMessage = "IReach.NativeNavigationMessage";
 
         public static void GoToRoot()
         {

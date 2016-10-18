@@ -48,7 +48,10 @@
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
     <Compile Include="Interfaces\IStepService.cs" />
     <Compile Include="Models\StepCount.cs" />
+    <Compile Include="NativeNavigationArgs.cs" />
+    <Compile Include="Pages\FitnessLogPage.cs" />
     <Compile Include="Pages\Fitness\FitnessDashboardPage.cs" />
+    <Compile Include="Pages\Fitness\MyFitnessPage.cs" />
     <Compile Include="Services\StepService.cs" />
     <Compile Include="Services\UserFoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />

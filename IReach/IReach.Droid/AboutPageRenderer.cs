@@ -39,9 +39,7 @@ namespace IReach.Droid
             view = o;
             
             var label = view.FindViewById<TextView> ( Resource.Id.textView1 );
-            label.Text = page.Heading;
-
-          
+            label.Text = page.Heading; 
 
             AddView ( view );
         }

@@ -175,6 +175,8 @@
     <Compile Include="Localization\Localize.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="AboutPageRenderer.cs" />
+    <Compile Include="MyFitnessActivity.cs" />
+    <Compile Include="Renderers\FitnessPageRenderer.cs" />
     <Compile Include="Renderers\FloatingActionButtonViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +199,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\raw\usda.sql3" />
+    <AndroidResource Include="Resources\layout\FitnessLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />

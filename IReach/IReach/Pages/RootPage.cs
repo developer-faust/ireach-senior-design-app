@@ -80,7 +80,7 @@ namespace IReach.Pages
 						break;
 
                     case MenuType.Fitness:
-                        page = new IReachNavigationPage(new FitnessDashboardPage());
+                        page = new IReachNavigationPage(new FitnessLogPage());
                         SetDetailIfNull(page);
                         Pages.Add(id, page);
 				        break;

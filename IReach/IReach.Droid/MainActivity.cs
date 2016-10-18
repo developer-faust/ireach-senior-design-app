@@ -1,7 +1,10 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
+using IReach.Pages.Fitness;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 namespace IReach.Droid
@@ -11,13 +14,15 @@ namespace IReach.Droid
 	{
 		protected override void OnCreate ( Bundle bundle )
 		{
-		    FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
-			base.OnCreate ( bundle );
+            base.OnCreate(bundle); 
+            FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
 
 			global::Xamarin.Forms.Forms.Init ( this, bundle );
             ImageCircleRenderer.Init();
-			LoadApplication ( new App ( ) );
-		}
-	}
+			LoadApplication ( new App ( ) ); 
+        } 
+
+        
+    }
 }
 
