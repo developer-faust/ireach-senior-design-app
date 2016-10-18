@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
 using CrossPieCharts.FormsPlugin.Abstractions;
-using DeviceMotion.Plugin;
-using DeviceMotion.Plugin.Abstractions;
+//using DeviceMotion.Plugin;
+//using DeviceMotion.Plugin.Abstractions;
 using Xamarin.Forms;
 
 namespace IReach.Pages.Diary
 {
     public partial class HomePage : ContentPage
     {
-        private IDeviceMotion motion = CrossDeviceMotion.Current;
+        //private IDeviceMotion motion = CrossDeviceMotion.Current;
         private Label totalCalories;
         private Entry TargetEntry;
         private CrossPieChartView chartView;
@@ -108,13 +108,16 @@ namespace IReach.Pages.Diary
 
         private void OnStartActivated(object sender, EventArgs e)
         {
+            /*
             motion.Start(MotionSensorType.Accelerometer, MotionSensorDelay.Default);
             if (motion.IsActive(MotionSensorType.Accelerometer))
             {
                 motion.SensorValueChanged += Motion_SensorValueChanged; 
             }
+            */
         }
 
+        /*
         private void Motion_SensorValueChanged ( object sender, SensorValueChangedEventArgs e )
         {
             System.Diagnostics.Debug.WriteLine("X:{0}, Y:{1}, Z:{2}", 
@@ -131,12 +134,12 @@ namespace IReach.Pages.Diary
 
             } );
         }
-
+       
         private void OnStopActivated(object sender, EventArgs e)
         {
             motion.Stop(MotionSensorType.Accelerometer);
         }
-
+         */
         private void HomePage_OnAppearing(object sender, EventArgs e)
         {
 
@@ -148,8 +151,7 @@ namespace IReach.Pages.Diary
             _progress = (_totalCalories/target)* 100;
 
             ChartLabel.Text = string.Format("{0}", _progress);
-            chartView.Progress = (float)_progress;
-
+            chartView.Progress = (float)_progress; 
 
             totalCalories.Text = string.Format("Your total calories = {0} Target = {1} Progress = {2}", _totalCalories, target, _progress);
              
