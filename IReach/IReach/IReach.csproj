@@ -46,7 +46,10 @@
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
+    <Compile Include="Interfaces\IStepService.cs" />
+    <Compile Include="Models\StepCount.cs" />
     <Compile Include="Pages\Fitness\FitnessDashboardPage.cs" />
+    <Compile Include="Services\StepService.cs" />
     <Compile Include="Services\UserFoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IListExtensions.cs" />

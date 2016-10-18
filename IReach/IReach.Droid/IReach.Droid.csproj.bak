@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -109,13 +109,13 @@
       <HintPath>..\..\libs\android\Syncfusion.SfChart.XForms.Android.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfGauge.Android">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.2.0.26\Xamarin\lib\android\Syncfusion.SfGauge.Android.dll</HintPath>
+      <HintPath>..\..\libs\android\Syncfusion.SfGauge.Android.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfGauge.XForms">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.2.0.26\Xamarin\lib\android\Syncfusion.SfGauge.XForms.dll</HintPath>
+      <HintPath>..\..\libs\android\Syncfusion.SfGauge.XForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfGauge.XForms.Android">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\14.2.0.26\Xamarin\lib\android\Syncfusion.SfGauge.XForms.Android.dll</HintPath>
+      <HintPath>..\..\libs\android\Syncfusion.SfGauge.XForms.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
