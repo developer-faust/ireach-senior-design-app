@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using IReach.Pages.Fitness;
+using IReach.ViewModels.Fitness;
 using Xamarin.Forms;
 
 namespace IReach.Pages
@@ -13,9 +14,10 @@ namespace IReach.Pages
         public FitnessLogPage()
         {
             this.Children.Add(new FitnessDashboardPage());
-            this.Children.Add(new MyFitnessPage()
+            this.Children.Add(new  StepCountFitnessPage()
             {
-                Title = "Fitness Page"
+                Title = "Steps Today",
+                BindingContext = new StepCountViewModel(Navigation)
             });
         }
          

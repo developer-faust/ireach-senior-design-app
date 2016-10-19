@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -172,7 +172,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="AboutPageRenderer.cs" />
     <Compile Include="MyFitnessActivity.cs" />
-    <Compile Include="Renderers\FitnessPageRenderer.cs" />
     <Compile Include="Renderers\FloatingActionButtonViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,6 +251,14 @@
     <AndroidResource Include="Resources\drawable\home.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\libs\Motion\DeviceMotion.Plugin.Abstractions\DeviceMotion.Plugin.Abstractions.csproj">
+      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
+      <Name>DeviceMotion.Plugin.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libs\Motion\DeviceMotion.Plugin.Android\DeviceMotion.Plugin.Android.csproj">
+      <Project>{56a56f17-7de1-4ca1-9617-bf32e971ac84}</Project>
+      <Name>DeviceMotion.Plugin.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IReach\IReach.csproj">
       <Project>{b31350d9-18c2-4a28-8214-8e37da64b711}</Project>
       <Name>IReach</Name>

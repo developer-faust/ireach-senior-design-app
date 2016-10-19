@@ -26,7 +26,7 @@ namespace DeviceMotion.Plugin.Abstractions
         /// <summary>
         /// Step Detector Sensor
         /// </summary>
-        StepCounter
+        StepCounter = 19
     }
 }
 

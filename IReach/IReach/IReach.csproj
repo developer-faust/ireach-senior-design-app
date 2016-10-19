@@ -54,7 +54,9 @@
     <Compile Include="Pages\Diary\DietDashboardPage.cs" />
     <Compile Include="Pages\FitnessLogPage.cs" />
     <Compile Include="Pages\Fitness\FitnessDashboardPage.cs" />
-    <Compile Include="Pages\Fitness\MyFitnessPage.cs" />
+    <Compile Include="Pages\Fitness\StepCountFitnessPage.xaml.cs">
+      <DependentUpon>StepCountFitnessPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\StepService.cs" />
     <Compile Include="Services\UserFoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Diary\DietDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Fitness\FitnessChartViewModel.cs" />
+    <Compile Include="ViewModels\Fitness\StepCountViewModel.cs" />
     <Compile Include="ViewModels\Foods\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\Diary\DiaryDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Diary\DiaryDashboardFoodsViewModel.cs" />
@@ -304,6 +307,22 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Fitness\StepCountFitnessPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\Motion\DeviceMotion.Plugin.Abstractions\DeviceMotion.Plugin.Abstractions.csproj">
+      <Project>{6edb0588-ffc5-4ef5-8a99-9e241d0f878d}</Project>
+      <Name>DeviceMotion.Plugin.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libs\Motion\DeviceMotion.Plugin\DeviceMotion.Plugin.csproj">
+      <Project>{A6FCEF44-D2BA-42C7-B3CB-13667BCD7B54}</Project>
+      <Name>DeviceMotion.Plugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
