@@ -75,8 +75,8 @@ namespace IReach.ViewModels.Diary
 
             WeeklyCaloriesChartDataPoints =
                 (await _ChartDataService.GetWeeklyCaloriesDataPointsAsync(Foods))
-                    .OrderBy(x => x.StartDate)
-                    .Select(x => new ChartDataPoint(FormatDateRange(x.StartDate, x.EndDate), x.Amount))
+                    .OrderBy(x => x.Date)
+                    .Select(x => new ChartDataPoint(FormatDate(x.Date), x.Amount))
                     .ToObservableCollection();
 
             
@@ -96,9 +96,9 @@ namespace IReach.ViewModels.Diary
                 OnPropertyChanged("AverageWeeklyCalories");
             }
         }
-        static string FormatDateRange(DateTime start, DateTime end)
+        static string FormatDate(DateTime date)
         {
-            return $"{start.ToString("d MMM")}-\n{end.AddDays(-1).ToString("d MMM")}"; 
+            return $"{date.ToString("ddd dd MMM")}"; 
         }
     }
 }

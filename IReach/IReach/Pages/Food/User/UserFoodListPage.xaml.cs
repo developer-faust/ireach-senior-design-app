@@ -2,6 +2,7 @@
 using IReach.Models;
 using IReach.Pages.Base;
 using IReach.ViewModels;
+using IReach.ViewModels.Foods;
 using Xamarin.Forms;
 
 namespace IReach.Pages.Food.User
@@ -19,7 +20,7 @@ namespace IReach.Pages.Food.User
             var tbi = new ToolbarItem ( "+", null, ( ) =>
             {
                 var foodItem = new FoodItem ( );
-                var foodPage =  new FoodItemPage(foodItem);
+                var foodPage =  new FoodItemPage(foodItem );
 
                 ViewModel.Navigation.PushAsync ( foodPage );
             }, 0, 0 );
@@ -29,9 +30,11 @@ namespace IReach.Pages.Food.User
                 tbi = new ToolbarItem("+", "plus", () =>
                 {
                     var foodItem = new FoodItem();
-                    var foodPage = new FoodItemPage(foodItem);
-
-                    ViewModel.Navigation.PushAsync(foodPage);
+                    var foodPage = new FoodItemPage(foodItem)
+                    {
+                        
+                    };  
+                    ViewModel.Navigation.PushAsync(foodPage); 
                 },0,0); 
             }
 
@@ -51,8 +54,7 @@ namespace IReach.Pages.Food.User
             base.OnAppearing(); 
             Debug.WriteLine("User Food List Page Appearing"); 
             ViewModel.LoadItemsCommand.Execute(null); 
-        }
-
+        } 
        
     }
 

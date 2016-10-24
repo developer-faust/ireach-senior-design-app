@@ -11,77 +11,77 @@ namespace IReach.ViewModels.Foods
 {
     public class UserFoodItemViewModel : BaseViewModel
     {
-        private FoodItem item;
+        private FoodItem foodItem;
         public UserFoodItemViewModel(FoodItem item, INavigation navigation = null) : base(navigation)
         {
-            this.item = item; 
+            this.Navigation = navigation;
+            
+            foodItem = item; 
         }
-
+         
+         
         public string FoodName
         {
-            get { return item.Name; }
-        }
-
-        public double _calories = 100; 
-        public double Calories
-        {
-            get { return _calories; }
+            get { return foodItem.Name; }
             set
             {
-                _calories = value;
-                OnPropertyChanged("Calories");
-                
+                foodItem.Name = value;
+                OnPropertyChanged("FoodName");
             }
         }
 
-        private int _servings = 1; 
+        private double _calories; 
+        public double Calories
+        {
+            get
+            {
+                return foodItem.Calories;
+            }
+            set
+            { 
+                foodItem.Calories = value;
+                OnPropertyChanged("Calories"); 
+            }
+        }
+         
         public int Servings
         {
             get
             {
-                if (_servings == 0)
-                {
-                    return 1;
-                }
-
-                return _servings;
+                return foodItem.Servings;
             }
             set
             {
-                if (_servings != value)
-                {
-                    _servings = value;
-                    OnPropertyChanged("Servings");
-                    Recalculate();
-                }
+                foodItem.Servings = value;
+                OnPropertyChanged("Servings");
             }
         }
 
-        public DateTime DateCreated{ get; set; }
+        public DateTime DateCreated
+        {
+            get
+            {
+                return foodItem.DateCreated;
+            }
+            set
+            {
+                foodItem.DateCreated = value;
+                OnPropertyChanged("DateCreated");
+            }
+        }
 
+        public async void GetCalories()
+        {
+            
+        }
         public async void Save()
         {
-            var foodEntry = new FoodItem();
-            foodEntry.Name = FoodName;
-            foodEntry.DateCreated = DateTime.UtcNow;
-            foodEntry.Calories = Calories;
-            foodEntry.Servings = Servings;
-
-            await App.UserUserAsyncDataService.SaveFoodAsync(foodEntry); 
+            await App.UserUserAsyncDataService.SaveFoodAsync(foodItem); 
         }
 
         public async void Delete( )
         {
-            await App.UserUserAsyncDataService.DeleteFoodAsync(item.ID); 
-
-        }
-
-        private double previousCalories;
-        public void Recalculate()
-        {
-            previousCalories = Calories;
-            Calories = previousCalories*Servings;
-        }
-
+             
+        }  
     }
 }

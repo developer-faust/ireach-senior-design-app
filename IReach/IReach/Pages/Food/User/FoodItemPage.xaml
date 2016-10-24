@@ -7,9 +7,9 @@
   <user:FoodItemPageXaml.Content>
     <StackLayout VerticalOptions="StartAndExpand">
       <Label Text="Name"/>
-      <Entry x:Name= "nameEntry" Text="{Binding FoodName}" Placeholder="Food Name"/>
+      <Entry x:Name= "nameEntry" Text="{Binding FoodName, &#xA; Mode=TwoWay,&#xA;}" Placeholder="Food Name"/>
       <Label Text="Date Created: "/>
-      <Label x:Name= "dateEntry" Text="{Binding DateCreated, StringFormat='{0:d MMM}'}"/>
+      <Label x:Name= "dateEntry" Text="{Binding DateCreated, StringFormat='{0:ddd MMM dd}'}"/>
      <Grid>
        <Grid.RowDefinitions>
          <RowDefinition Height="Auto"/>
