@@ -55,7 +55,7 @@ namespace IReach.Services
 
                 string foodName;
                 dailyTotal =  GetCalorieTotalForDay(enumerableFoods, day);
-                Debug.WriteLine("{0} Total {1}", day.DayOfWeek, dailyTotal);
+                // Debug.WriteLine("{0} Total {1}", day.DayOfWeek, dailyTotal);
 
                 dailyCaloriesDataPoints.Add(
                     new DietChartModel(day.DayOfWeek.ToString(), dailyTotal));
@@ -70,9 +70,9 @@ namespace IReach.Services
             IEnumerable<FoodItem> results;
             results = enumerableFoods.Where(
                             food =>
-                                food.DateCreated == day);
+                                food.DateCreated.CompareTo(day) == 0);
 
-            Debug.WriteLine("Date: {0} Number of foods {1}", day.ToString("ddd MMM dd"), results.Count());
+            // Debug.WriteLine("Date: {0} Number of foods {1}", day.ToString("ddd MMM dd"), results.Count());
             foreach (var foodItem in results)
             {
                 total += foodItem.Calories;
@@ -81,98 +81,41 @@ namespace IReach.Services
             return total;
         }
 
-        public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6,
+        public async Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfDays = 7,
             MealTypeOption mealOption = MealTypeOption.All)
         {
-            var weeklyCaloriesDataPoints = new List<WeeklyCaloriesDataPoint>();
-
+            var weeklyCaloriesDataPoints = new List<WeeklyCaloriesDataPoint>(); 
             var now = DateTime.Now;
 
             // TODO: Change Hard Coded Sample Today's Date from 6 * 7 (six weeks * 7 DaysPer Week) to its Default 
             // The data is calculated backwords it will get 6 weeks worth of data upto current week.
             var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc); 
-            Debug.WriteLine("Todays Date : {0}", today.ToString("ddd MMM dd"));
+            // Debug.WriteLine("Todays Date : {0}", today.ToString("ddd MMM dd"));
+            // Debug.WriteLine("Number of Days to go back = {0}", numberOfDays);
             int delta = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - today.DayOfWeek;
 
             if (delta > 0)
                 delta -= 7;
 
-            var previous = today.AddDays(-7);
+            var past = today.AddDays(-1.0 * numberOfDays);
+            // Debug.WriteLine("Past: {0}", past.ToString("ddd dd MMM"));
             var enumerableFoods = foods as IList<FoodItem> ?? foods.ToList();
+            double dayTotal = 0;
 
-            double weekTotal = 0;
-            
-            weekTotal = GetCalorieTotalForDay(enumerableFoods, today);
-            Debug.WriteLine("Total = {0}", weekTotal);
-            /*  var firstDayOfCurrentWeek = today.AddDays(delta);
-              Debug.WriteLine("First day of week {0}", firstDayOfCurrentWeek.ToString("ddd dd-mmm"));
-              var weekStart = firstDayOfCurrentWeek; 
-              var weekEnd = weekStart.AddDays(-7);
-              Debug.WriteLine("1 Week {0}", weekEnd.ToString("ddd dd-mmm"));
-
-              var enumerableFoods = foods as IList<FoodItem> ?? foods.ToList();
-
-              double weekTotal = 0;
-
-              for (int i = 0; i < 7; i++)
-              { 
-                  weekTotal = GetCalorieTotalForPeriod(enumerableFoods, weekStart, weekEnd);
-                  Debug.WriteLine("WeekTotal = {0}", weekTotal);
-
-                  weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-                  {
-                      StartDate = weekStart,
-                      EndDate = weekEnd, 
-                      Amount = weekTotal
-                  });
-              } 
-
-              */
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
+            for (DateTime date = past; date <= today; date = date.AddDays(1.0))
             {
-                Date = today, 
-                Amount = 1600
-            });
+                dayTotal = GetCalorieTotalForDay(enumerableFoods, date);
+                // Debug.WriteLine("Date: {0} Total = {1}", date.ToString("ddd dd MMM"), dayTotal);
+                weeklyCaloriesDataPoints.Add( new WeeklyCaloriesDataPoint()
+                {
+                    Date = today,
+                    Amount = dayTotal
+                });
+            }
 
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-1),
-                Amount = 800
-            });
-
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-2),
-                Amount = 1400
-            });
-
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-3),
-                Amount = 1200
-            });
-
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-4),
-                Amount = 1600
-            });
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-5),
-                Amount = 1600
-            });
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-6),
-                Amount = 1600
-            });
-
-            weeklyCaloriesDataPoints.Add(new WeeklyCaloriesDataPoint()
-            {
-                Date = today.AddDays(-7),
-                Amount = 1600
-            });
+            // weekTotal = GetCalorieTotalForDay(enumerableFoods, today);
+            // Debug.WriteLine("Total = {0}", weekTotal);
+ 
             return weeklyCaloriesDataPoints;
 
         }

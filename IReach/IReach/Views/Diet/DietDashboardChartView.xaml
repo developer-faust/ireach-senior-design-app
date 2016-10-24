@@ -37,7 +37,7 @@
            <chart:SfChart.Series>
              <chart:StackingColumnSeries Color="Green" ItemsSource="{Binding CalorieItems}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True">
              </chart:StackingColumnSeries>
-             <chart:StackingColumnSeries Color="Red" ItemsSource="{Binding CalorieItems}" XBindingPath="Name" YBindingPath="Deficit" Label="Caloric Deficit" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+             <chart:StackingColumnSeries Color="Red" ItemsSource="{Binding CalorieTargets}" XBindingPath="Name" YBindingPath="Deficit" Label="Caloric Deficit" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
              </chart:StackingColumnSeries>
  
            </chart:SfChart.Series>

@@ -22,7 +22,7 @@ namespace IReach.Pages.Diary
             var dietChartView = new DietDashboardChartView()
             {
                 BindingContext = DietChartViewModel = new DietDashboardChartViewModel(Navigation)
-            };  
+            };
 
             Content = dietChartView;
         }
@@ -30,10 +30,8 @@ namespace IReach.Pages.Diary
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            Content.IsVisible = true;
-             
-            await DietChartViewModel.ExecuteLoadSeedDataCommand(); 
-             
+            Content.IsVisible = true; 
+            await DietChartViewModel.ExecuteLoadSeedDataCommand();  
         }
     }
 }

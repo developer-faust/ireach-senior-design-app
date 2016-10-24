@@ -10,8 +10,8 @@ namespace IReach.Models
         {
             var now = DateTime.UtcNow;
             MealType = MealTypeOption.All; 
-            DateCreated = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);  
-
+            DateCreated = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+            Target = 1000; 
         }
 
         [PrimaryKey, AutoIncrement]
@@ -20,6 +20,7 @@ namespace IReach.Models
         public DateTime DateCreated { get; set; }
         public MealTypeOption MealType { get; set; }
         public double Calories { get; set; }
+        public double Target { get; set; }
         public int Servings { get; set; }
     }       
 }

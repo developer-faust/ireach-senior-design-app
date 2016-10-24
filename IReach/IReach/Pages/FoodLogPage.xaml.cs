@@ -9,7 +9,7 @@ namespace IReach.Pages
         {
             InitializeComponent();
 
-            this.Children.Add(new DiaryDashboardPage());
+            this.Children.Add(new DietDashboardPage());
             this.Children.Add(new Food.User.UserFoodListPage());
             this.Children.Add(new Food.Usda.UsdaSearchFoodPage());
             this.Children.Add(new Food.Usda.BrowseFoodsPage());

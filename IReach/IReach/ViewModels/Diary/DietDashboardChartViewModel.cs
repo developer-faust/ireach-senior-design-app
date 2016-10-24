@@ -17,7 +17,7 @@ namespace IReach.ViewModels.Diary
     public class DietDashboardChartViewModel : BaseViewModel
     {  
 
-        public ObservableCollection<DietChartModel> CalorieItems { get; set; }
+        public ObservableCollection<ChartDataPoint> CalorieItems { get; set; }
         public ObservableCollection<DietChartModel> CalorieTargets { get; set; }
 
         private IChartDataService _chartDataService;
@@ -35,18 +35,23 @@ namespace IReach.ViewModels.Diary
             IsInitialized = false; 
             _navigation = navigation;
 
-            CalorieItems = new ObservableCollection<DietChartModel>
-            { 
-                new DietChartModel("Tue", 800),
-                new DietChartModel("Wed", 800),
-                new DietChartModel("Thu", 725),
-                new DietChartModel("Fri", 765),
-                new DietChartModel("Sat", 679),
-                new DietChartModel("Sun", 679),
+
+            _dataClient = DependencyService.Get<IUserFoodDataService>();
+            _chartDataService = DependencyService.Get<IChartDataService>();
+
+            /*CalorieItems = new ObservableCollection<DietChartModel>()
+            {
+                new DietChartModel("Tue", 300),
+                new DietChartModel("Wed", 450),
+                new DietChartModel("Thu", 600),
+                new DietChartModel("Fri", 1000),
+                new DietChartModel("Sat", 900),
+                new DietChartModel("Sun", 200),
                 new DietChartModel("Mon", 500),
-                new DietChartModel("Tue", 750),
+                new DietChartModel("Tue", 600)
 
             };
+            */
             CalorieTargets = new ObservableCollection<DietChartModel>
             {
                 new DietChartModel("Tue", 700),
@@ -63,6 +68,16 @@ namespace IReach.ViewModels.Diary
             //DailyCalorieChartDataPoints = CalorieItems.Select(x=> new ChartDataPoint(x.Name, x.Value)).ToObservableCollection();
         }
 
+        private ObservableCollection<FoodItem> _foods;
+        public ObservableCollection<FoodItem> Foods
+        {
+            get { return _foods; }
+            set
+            {
+                _foods = value;
+                OnPropertyChanged("Foods");
+            }
+        }
         public Command LoadSeedDataCommand
         {
             get
@@ -78,12 +93,18 @@ namespace IReach.ViewModels.Diary
             {
                 return;
             }
+
+            IsBusy = true;
+            Foods = (await _dataClient.GetFoodsAsync()).ToObservableCollection();
+            CalorieItems = (await _chartDataService.GetWeeklyCaloriesDataPointsAsync(Foods))
+                    .OrderBy(x => x.Date)
+                    .Select(x => new ChartDataPoint(x.Date.ToString("ddd").Substring(0, 2), x.Amount))
+                    .ToObservableCollection(); 
  
+
             IsBusy = false;
             IsInitialized = true;
-        }
-        
-    
+        } 
         public string WeekAverageCalories
         {
             get { return _averageDailyCalories; }

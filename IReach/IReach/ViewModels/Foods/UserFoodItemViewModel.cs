@@ -19,7 +19,7 @@ namespace IReach.ViewModels.Foods
             foodItem = item; 
         }
          
-         
+        
         public string FoodName
         {
             get { return foodItem.Name; }
@@ -72,8 +72,9 @@ namespace IReach.ViewModels.Foods
 
         public async void GetCalories()
         {
-            
+
         }
+
         public async void Save()
         {
             await App.UserUserAsyncDataService.SaveFoodAsync(foodItem); 
@@ -81,7 +82,7 @@ namespace IReach.ViewModels.Foods
 
         public async void Delete( )
         {
-             
-        }  
+            await App.UserUserAsyncDataService.DeleteFoodAsync(foodItem.ID);
+        }
     }
 }
