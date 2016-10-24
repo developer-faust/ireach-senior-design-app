@@ -176,8 +176,8 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Authenticator.cs" />
-    <Compile Include="Services\StepCountingService.cs" />
-    <Compile Include="Services\StepServiceBInder.cs" />
+    <None Include="Services\StepCountingService.cs" />
+    <None Include="Services\StepServiceBInder.cs" />
     <Compile Include="StepCountingViewRenderer.cs" />
     <Compile Include="SQLite_Android.cs" />
     <Compile Include="TextToSpeech_Android.cs" />

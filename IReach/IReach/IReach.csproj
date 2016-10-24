@@ -54,6 +54,7 @@
     <Compile Include="Pages\Diary\DietDashboardPage.cs" />
     <Compile Include="Pages\FitnessLogPage.cs" />
     <Compile Include="Pages\Fitness\FitnessDashboardPage.cs" />
+    <Compile Include="Pages\Fitness\FitnessSettingsPage.cs" />
     <Compile Include="Pages\Fitness\StepCountFitnessPage.xaml.cs">
       <DependentUpon>StepCountFitnessPage.xaml</DependentUpon>
     </Compile>
@@ -102,6 +103,7 @@
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Diary\DietDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Fitness\FitnessChartViewModel.cs" />
+    <Compile Include="ViewModels\Fitness\FitnessSettingsViewModel.cs" />
     <Compile Include="ViewModels\Fitness\StepCountViewModel.cs" />
     <Compile Include="ViewModels\Foods\BrowseFoodsViewModel.cs" />
     <Compile Include="ViewModels\Diary\DiaryDashboardChartViewModel.cs" />
@@ -128,6 +130,9 @@
     <Compile Include="Views\Diet\FoodsListView.cs" />
     <Compile Include="Views\Fitness\FitnessChartView.xaml.cs">
       <DependentUpon>FitnessChartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fitness\FitnessSettingsView.xaml.cs">
+      <DependentUpon>FitnessSettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FloatingActionButtonView.cs" />
     <Compile Include="Pages\Food\User\FoodItemPage.xaml.cs">
@@ -323,6 +328,12 @@
       <Project>{A6FCEF44-D2BA-42C7-B3CB-13667BCD7B54}</Project>
       <Name>DeviceMotion.Plugin</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Fitness\FitnessSettingsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

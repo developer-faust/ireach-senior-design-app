@@ -70,6 +70,12 @@ namespace IReach.Pages.Fitness
             if (toolbarItem.Text == "Settings")
             {
                 Debug.WriteLine("Clicked Settings");
+                //new content page
+                //var Settings = new FitnessSettingsPage(FitnessChartViewModel);
+                Navigation.PushAsync(new FitnessSettingsPage() { BindingContext = new FitnessSettingsViewModel(this.Navigation) });
+                //reset steps
+                //SetBinding goal
+                //sensitivity
 
             }
         } 

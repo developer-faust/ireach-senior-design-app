@@ -14,6 +14,8 @@ namespace IReach.Pages.Fitness
         public StepCountFitnessPage()
         {
             InitializeComponent();
+
+            CaloriesBurnedValue.Text = "${50}";
         }
     }
 

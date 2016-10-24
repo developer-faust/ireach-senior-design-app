@@ -35,6 +35,8 @@ namespace IReach.ViewModels.Fitness
             CrossDeviceMotion.Current.Start(MotionSensorType.StepCounter);
             CrossDeviceMotion.Current.SensorValueChanged += Current_SensorValueChanged;
 
+
+
         }
 
         private void Current_SensorValueChanged(object sender, SensorValueChangedEventArgs e)
@@ -45,6 +47,7 @@ namespace IReach.ViewModels.Fitness
             {
                     case MotionSensorType.StepCounter:
                         Steps = e.Value.ToString();
+                    
                     Debug.WriteLine("Steps Count Changed: {0}", e.Value.Value);
                         break;
                     

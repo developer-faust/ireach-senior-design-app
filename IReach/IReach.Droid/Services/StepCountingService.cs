@@ -61,7 +61,7 @@ namespace IReach.Droid.Services
         }
 
         public void OnAccuracyChanged(Sensor s, SensorStatus a) { }
-        public override Android.OS.IBinder OnBind (Android.Content.Intent i) //does nothing for now, can be fixed later if needed
+        public override StepServiceBInder OnBind (Android.Content.Intent i) //does nothing for now, can be fixed later if needed
         {
             binder = new Binder();
             return binder;
