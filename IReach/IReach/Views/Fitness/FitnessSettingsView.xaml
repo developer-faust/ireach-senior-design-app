@@ -16,7 +16,7 @@
       <Label Text="Your Current Goal" HorizontalOptions="Center" TextColor="Black" />
       <Label x:Name="GoalValueLabel" Text="{Binding Goal}" HorizontalOptions="Center" />
       <Label Text="App Sensitivity" HorizontalOptions="Center" />
-      <Slider x:Name="SensitivitySlider" Minimum = "0" Maximum = "4" ValueChanged="ChangeSensitivity" HorizontalOptions="FillAndExpand" TickFrequency="1" TickPlacement="Bottom" />
+      <Slider x:Name="SensitivitySlider" Minimum = "0" Maximum = "4" ValueChanged="ChangeSensitivity" HorizontalOptions="FillAndExpand" />
       <Button x:Name="StepResetButton" Text="Reset Steps" Clicked="ResetButtonClicked" HorizontalOptions="Center"/>
     </StackLayout>
   </fitness:FitnessSettingsViewXaml.Content>
