@@ -41,7 +41,11 @@ namespace IReach.Pages.Fitness
             _stackLayout = new StackLayout()
             {
                 Spacing = 0,
-                Padding = 10
+                Padding = 10,
+                Children =
+                {
+                    fitnessSettingsView
+                }
             };
             Content = _stackLayout;
         }
