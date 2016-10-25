@@ -71,6 +71,15 @@ namespace IReach.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CaloriesChangedMessage.
+        /// </summary>
+        public static string CaloriesChanged {
+            get {
+                return ResourceManager.GetString("CaloriesChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {

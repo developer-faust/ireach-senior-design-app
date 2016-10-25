@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IReach.Localization;
+using IReach.Statics;
 using IReach.ViewModels.Diary;
 using IReach.Views.Diet;
 using Xamarin.Forms;
@@ -25,12 +27,19 @@ namespace IReach.Pages.Diary
             };
 
             Content = dietChartView;
+
+            // Messaging for android devices
+            Device.OnPlatform(
+                Android: () => MessagingCenter.Subscribe<DietDashboardPage>(this, MessagingServiceConstants.UPDATE_DIET_CHART_VIEW,
+                    sender => OnAppearing()));
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            Content.IsVisible = true; 
+            Content.IsVisible = true;  
+
+            
             await DietChartViewModel.ExecuteLoadSeedDataCommand();  
         }
     }

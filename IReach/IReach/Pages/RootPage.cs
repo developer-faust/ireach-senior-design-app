@@ -73,15 +73,9 @@ namespace IReach.Pages
 			if ( !Pages.ContainsKey ( id ) )
 			{
 				switch ( id )
-				{
-					case MenuType.Home:
-                        var page =  new IReachNavigationPage(new DietDashboardPage());
-                        SetDetailIfNull(page);
-                        Pages.Add ( id, page);
-						break;
-
+				{ 
                     case MenuType.Fitness:
-                        page = new IReachNavigationPage(new FitnessLogPage());
+                        var page = new IReachNavigationPage(new FitnessLogPage());
                         SetDetailIfNull(page);
                         Pages.Add(id, page);
 				        break;

@@ -10,8 +10,8 @@
   <usda:FoodGroupItemsPageXaml.Content>
 
     <StackLayout Orientation="Vertical"
-                 VerticalOptions="Start"
-                 Padding="10,20,10,20">
+                 VerticalOptions="FillAndExpand" 
+                 Padding="20">
       <Entry Placeholder="Filter Food Name Or Ingredient" TextChanged="TextFilterChanged"/>
 
       <ListView
@@ -24,8 +24,7 @@
           <DataTemplate>
             <ViewCell>
               <ViewCell.View>
-                <StackLayout Padding="20,0,20,0"
-                             Orientation="Horizontal"
+                <StackLayout  Orientation="Horizontal"
                              HorizontalOptions="FillAndExpand">
 
                   <Label Text="{Binding short_desc}"

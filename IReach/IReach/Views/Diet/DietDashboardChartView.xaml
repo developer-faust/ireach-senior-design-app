@@ -7,12 +7,18 @@
     <diet:DietDashboardChartViewXaml.Content>
  
        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+         <StackLayout 
+           Orientation="Horizontal"
+           HorizontalOptions="EndAndExpand">
+           <Label Text="Average: "/>
+           <Label Text="{Binding AverageCalories}"></Label>
+         </StackLayout>
          <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-           <chart:SfChart.Title>
-             <chart:ChartTitle Text="Weekly Calorie Intake" />
-           </chart:SfChart.Title>
-
+           <chart:SfChart.Title> 
+             <chart:ChartTitle Text="Calorie Intake Summary" />
+             
+           </chart:SfChart.Title> 
            <chart:SfChart.PrimaryAxis>
              <chart:CategoryAxis LabelPlacement="BetweenTicks">
                <chart:CategoryAxis.Title>
@@ -35,9 +41,9 @@
            </chart:SfChart.Legend>
 
            <chart:SfChart.Series>
-             <chart:StackingColumnSeries Color="Green" ItemsSource="{Binding CalorieItems}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True">
+             <chart:StackingColumnSeries x:Name="CalConsumedSeries" Color="Green" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True">
              </chart:StackingColumnSeries>
-             <chart:StackingColumnSeries Color="Red" ItemsSource="{Binding CalorieTargets}" XBindingPath="Name" YBindingPath="Deficit" Label="Caloric Deficit" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+             <chart:StackingColumnSeries Color="Red" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Size" Label="Caloric Deficit" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
              </chart:StackingColumnSeries>
  
            </chart:SfChart.Series>

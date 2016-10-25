@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using IReach.Interfaces;
 using IReach.Models;
 using IReach.Services;
@@ -22,7 +23,18 @@ namespace IReach.ViewModels.Usda
 
         public string FoodName
         {
-            get { return item.short_desc; }
+            get { return UseRegex(item.short_desc); }
+        }
+        public static string UseRegex(string strIn)
+        {
+            // Replace invalid characters with empty strings.
+            var result = Regex.Replace(strIn, @"[^\w\.@-]", " ");
+            if (result.Length > 20)
+            {
+                result = result.Substring(0, 20);
+            }
+
+            return result;
         }
 
         private double _calories;
@@ -66,11 +78,18 @@ namespace IReach.ViewModels.Usda
         public async void Save()
         {
             var foodEntry = new FoodItem();
+
+            var now = DateTime.UtcNow;
+
+            // TODO: Change Hard Coded Sample Today's Date from 6 * 7 (six weeks * 7 DaysPer Week) to its Default 
+            // The data is calculated backwords it will get 6 weeks worth of data upto current week.
+            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+
             foodEntry.Name = FoodName;
-            foodEntry.DateCreated = DateTime.UtcNow;
+            foodEntry.DateCreated = today;
             foodEntry.Calories = Calories;
-            foodEntry.Servings = Servings;
-             
+            foodEntry.Servings = Servings; 
+
             App.Database.SaveItem(foodEntry); 
         }
 

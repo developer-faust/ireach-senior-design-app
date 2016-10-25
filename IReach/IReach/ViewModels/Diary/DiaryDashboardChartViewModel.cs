@@ -75,8 +75,8 @@ namespace IReach.ViewModels.Diary
 
             WeeklyCaloriesChartDataPoints =
                 (await _ChartDataService.GetWeeklyCaloriesDataPointsAsync(Foods))
-                    .OrderBy(x => x.Date)
-                    .Select(x => new ChartDataPoint(FormatDate(x.Date), x.Amount))
+                    .OrderBy(x => x.Name)
+                    .Select(x => new ChartDataPoint(x.Name, x.Value))
                     .ToObservableCollection();
 
             

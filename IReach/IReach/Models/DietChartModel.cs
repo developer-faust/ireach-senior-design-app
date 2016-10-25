@@ -13,10 +13,10 @@ namespace IReach.Models
         public double Size { get; set; }
 
 
-        public DietChartModel(string name, double value)
+        public DietChartModel( )
         {
-            Name = name;
-            Value = value;
+            Name = "";
+            Value = 0.0;
             Size = 1800;
         }
 

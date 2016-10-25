@@ -77,6 +77,13 @@ namespace IReach.ViewModels.Foods
 
         public async void Save()
         {
+            var now = DateTime.UtcNow;
+
+            // TODO: Change Hard Coded Sample Today's Date from 6 * 7 (six weeks * 7 DaysPer Week) to its Default 
+            // The data is calculated backwords it will get 6 weeks worth of data upto current week.
+            var today = DateTime.SpecifyKind(new DateTime(now.Year, now.Month, now.Day, 0, 0, 0), DateTimeKind.Utc);
+            foodItem.DateCreated = today;
+
             await App.UserUserAsyncDataService.SaveFoodAsync(foodItem); 
         }
 

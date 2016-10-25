@@ -204,7 +204,7 @@ namespace IReach.Pages.Diary
 
 
         protected override async void OnAppearing()
-        {
+        {   
             base.OnAppearing();
             Content.IsVisible = true;
 

@@ -11,7 +11,7 @@ namespace IReach.Interfaces
 {
     public interface IChartDataService
     {
-        Task<IEnumerable<WeeklyCaloriesDataPoint>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6, MealTypeOption mealOption = MealTypeOption.All);
+        Task<IEnumerable<DietChartModel>> GetWeeklyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6, MealTypeOption mealOption = MealTypeOption.All);
         Task <ObservableCollection<DietChartModel>> GetDailyCaloriesDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfDays = 7);
         Task<IEnumerable<IGrouping<string, CategoryFoodDataPoint>>> GetCategoryFoodDataPointsAsync(IEnumerable<FoodItem> foods, int numberOfWeeks = 6, MealTypeOption mealOption = MealTypeOption.All);
     }

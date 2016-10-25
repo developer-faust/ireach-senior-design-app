@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace IReach
 {
 	public enum MenuType
-	{
-		Home,
+	{ 
         Fitness,
         FoodLog, 
         About
@@ -17,7 +16,7 @@ namespace IReach
 	{
 		public HomeMenuItem ( )
 		{
-			MenuType = MenuType.Home;
+			MenuType = MenuType.FoodLog;
 		}
 
 		public string Icon { get; set; }

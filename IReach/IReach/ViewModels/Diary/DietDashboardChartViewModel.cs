@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +17,28 @@ using Xamarin.Forms;
 namespace IReach.ViewModels.Diary
 {
     public class DietDashboardChartViewModel : BaseViewModel
-    {  
+    {
+        public ObservableCollection<DietChartModel> _calorieItems; 
+        public ObservableCollection<DietChartModel> CalorieItems
+        {
+            get
+            {
+                return _calorieItems;
+            }
+            set
+            {
+                _calorieItems = value;
+                OnPropertyChanged("CalorieItems");
+            }
+        }
 
-        public ObservableCollection<ChartDataPoint> CalorieItems { get; set; }
         public ObservableCollection<DietChartModel> CalorieTargets { get; set; }
 
         private IChartDataService _chartDataService;
         private IUserFoodDataService _dataClient;
         private Command _loadSeedDataCommand;
 
-        private string _averageDailyCalories;
+        private double _averageDailyCalories;
 
 
         private INavigation _navigation;
@@ -34,39 +48,9 @@ namespace IReach.ViewModels.Diary
             IsBusy = false;
             IsInitialized = false; 
             _navigation = navigation;
-
-
-            _dataClient = DependencyService.Get<IUserFoodDataService>();
-            _chartDataService = DependencyService.Get<IChartDataService>();
-
-            /*CalorieItems = new ObservableCollection<DietChartModel>()
-            {
-                new DietChartModel("Tue", 300),
-                new DietChartModel("Wed", 450),
-                new DietChartModel("Thu", 600),
-                new DietChartModel("Fri", 1000),
-                new DietChartModel("Sat", 900),
-                new DietChartModel("Sun", 200),
-                new DietChartModel("Mon", 500),
-                new DietChartModel("Tue", 600)
-
-            };
-            */
-            CalorieTargets = new ObservableCollection<DietChartModel>
-            {
-                new DietChartModel("Tue", 700),
-                new DietChartModel("Wed", 700),
-                new DietChartModel("Thu", 775),
-                new DietChartModel("Fri", 1000),
-                new DietChartModel("Sat", 900),
-                new DietChartModel("Sun", 600), 
-                new DietChartModel("Mon", 500),
-                new DietChartModel("Tue", 600)
-
-            };
-
-            //DailyCalorieChartDataPoints = CalorieItems.Select(x=> new ChartDataPoint(x.Name, x.Value)).ToObservableCollection();
-        }
+           
+            ExecuteLoadSeedDataCommand(); 
+        } 
 
         private ObservableCollection<FoodItem> _foods;
         public ObservableCollection<FoodItem> Foods
@@ -94,24 +78,38 @@ namespace IReach.ViewModels.Diary
                 return;
             }
 
+
+            _dataClient = DependencyService.Get<IUserFoodDataService>();
+            _chartDataService = DependencyService.Get<IChartDataService>();
+             
             IsBusy = true;
             Foods = (await _dataClient.GetFoodsAsync()).ToObservableCollection();
-            CalorieItems = (await _chartDataService.GetWeeklyCaloriesDataPointsAsync(Foods))
-                    .OrderBy(x => x.Date)
-                    .Select(x => new ChartDataPoint(x.Date.ToString("ddd").Substring(0, 2), x.Amount))
-                    .ToObservableCollection(); 
- 
+            CalorieItems = (await _chartDataService.GetWeeklyCaloriesDataPointsAsync(Foods)).ToObservableCollection();
 
+            var total = 0.0;
+            int days = 0;
+            foreach (var item in CalorieItems)
+            {
+                if (item.Value > 0)
+                {
+                    total += item.Value;
+                    days++;
+                }
+                Debug.WriteLine("datecreated {0} Calories {1} Target {2}", item.Name, item.Value, item.Size); 
+            } 
+
+            AverageCalories = (total/days);
             IsBusy = false;
             IsInitialized = true;
-        } 
-        public string WeekAverageCalories
+        }
+         
+        public double AverageCalories
         {
             get { return _averageDailyCalories; }
             set
             {
                 _averageDailyCalories = value;
-                OnPropertyChanged("WeekAverageCalories");
+                OnPropertyChanged("AverageCalories");
             }
         }
     }

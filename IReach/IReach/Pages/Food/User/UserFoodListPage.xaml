@@ -10,7 +10,8 @@
 
     <StackLayout
          HorizontalOptions="FillAndExpand"
-         VerticalOptions="FillAndExpand">
+         VerticalOptions="FillAndExpand"
+         Padding="10">
 
       <ListView
                     x:Name="UserFoodsListView"

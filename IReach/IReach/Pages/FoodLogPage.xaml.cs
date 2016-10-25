@@ -13,6 +13,13 @@ namespace IReach.Pages
             this.Children.Add(new Food.User.UserFoodListPage());
             this.Children.Add(new Food.Usda.UsdaSearchFoodPage());
             this.Children.Add(new Food.Usda.BrowseFoodsPage());
+
+          
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }
