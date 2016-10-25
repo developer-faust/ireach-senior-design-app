@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Android.Support.V4.App;
 using IReach.ViewModels.Fitness;
 using IReach.Views.Base;
+using DeviceMotion.Plugin;
+using DeviceMotion.Plugin.Abstractions;
 using Xamarin.Forms;
 using System.Threading;
 
@@ -29,6 +31,8 @@ namespace IReach.Views.Fitness
         public void ChangeSensitivity(object sender, EventArgs e)
         {
             ViewModel.Sensitivity =(int) SensitivitySlider.Value;
+            SensitivitySlider.Value = ViewModel.Sensitivity;
+            sensativityLabel.Text = ViewModel.Sensitivity.ToString();
         }
 
         public void ResetButtonClicked(object sender, EventArgs e)

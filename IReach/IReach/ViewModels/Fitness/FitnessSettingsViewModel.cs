@@ -1,33 +1,29 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
+using DeviceMotion.Plugin;
+using DeviceMotion.Plugin.Abstractions;
 using IReach.Pages.Fitness;
 using IReach.ViewModels.Base;
+using IReach.Models;
 using Xamarin.Forms;
 
 namespace IReach.ViewModels.Fitness
 {
     public class FitnessSettingsViewModel : BaseViewModel
     {
+        
         private INavigation _navigation;
-        private FitnessChartViewModel FitnessChartViewModel;
         public FitnessSettingsViewModel(INavigation nav) : base(nav)
         {
             _navigation = nav;
-            //FitnessChartViewModel = new FitnessChartViewModel(this.Navigation);
         }
 
-        private double _goal;
         public double Goal
         {
-            get { return _goal; }//FitnessChartViewModel.TargetSteps; }
+            get { return StepCount.Steps.GetStepsGoal(); }
             set
             {
-                /*if (FitnessChartViewModel.TargetSteps != value)
-                {
-                    FitnessChartViewModel.TargetSteps = value;
-                    FitnessChartViewModel.Recalculate();
-                }*/
-                _goal = value;
+                StepCount.Steps.SetStepsGoal(value);
             }
         }
 
@@ -35,21 +31,41 @@ namespace IReach.ViewModels.Fitness
         public int Sensitivity
         {
             get { return _sensitivity; }
-            set { _sensitivity = value; }
-        }
-
-        private double _steps;
-        public double CurrentSteps
-        {
-            get { return _steps; }//FitnessChartViewModel.StepsCount; }
             set
             {
-                /*if (FitnessChartViewModel.StepsCount != value)
+                if (_sensitivity != value)
                 {
-                    FitnessChartViewModel.TargetSteps = value;
-                    FitnessChartViewModel.Recalculate();
-                }*/
-                _steps = value;
+                    _sensitivity = value;
+                    CrossDeviceMotion.Current.Stop(MotionSensorType.StepCounter);
+                    switch (value)
+                    {
+                        case 0:
+                            CrossDeviceMotion.Current.Start(MotionSensorType.StepCounter);
+                            break;
+                        case 1:
+                            CrossDeviceMotion.Current.Start(MotionSensorType.StepCounter, MotionSensorDelay.Default);
+                            break;
+                        case 2:
+                            CrossDeviceMotion.Current.Start(MotionSensorType.StepCounter, MotionSensorDelay.Ui);
+                            break;
+                        case 3:
+                            CrossDeviceMotion.Current.Start(MotionSensorType.StepCounter, MotionSensorDelay.Game);
+                            break;
+                        case 4:
+                            CrossDeviceMotion.Current.Start(MotionSensorType.StepCounter, MotionSensorDelay.Fastest);
+                            break;
+                    }
+                }               
+                //OnPropertyChanged("Sensitivity");
+            }
+        }
+
+        public double CurrentSteps
+        {
+            get { return StepCount.Steps.GetTotalSteps(); }
+            set
+            {
+                StepCount.Steps.SetTotalSteps(value);
             }
         } 
     }

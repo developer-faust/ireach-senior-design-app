@@ -12,11 +12,15 @@
     </ResourceDictionary>
   </fitness:FitnessSettingsViewXaml.Resources>
   <fitness:FitnessSettingsViewXaml.Content>
-    <StackLayout x:Name="settings_layout" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+    <StackLayout x:Name="settings_layout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
       <Label Text="Your Current Goal" HorizontalOptions="Center" TextColor="Black" />
-      <Label x:Name="GoalValueLabel" Text="{Binding Goal}" HorizontalOptions="Center" />
+      <Label x:Name="GoalValueLabel" Text="{Binding Goal, Mode=TwoWay}" HorizontalOptions="Center" />
       <Label Text="App Sensitivity" HorizontalOptions="Center" />
-      <Slider x:Name="SensitivitySlider" Minimum = "0" Maximum = "4" ValueChanged="ChangeSensitivity" HorizontalOptions="FillAndExpand" />
+      <Slider x:Name="SensitivitySlider" Maximum = "4" Minimum="0" ValueChanged="ChangeSensitivity" HorizontalOptions="FillAndExpand" Value="{Binding Sensitivity, Mode=TwoWay}" />
+      <StackLayout x:Name="sensitivity_layout" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text="Current sensitivity selected: "/>
+        <Label x:Name="sensativityLabel" />
+      </StackLayout>
       <Button x:Name="StepResetButton" Text="Reset Steps" Clicked="ResetButtonClicked" HorizontalOptions="Center"/>
     </StackLayout>
   </fitness:FitnessSettingsViewXaml.Content>

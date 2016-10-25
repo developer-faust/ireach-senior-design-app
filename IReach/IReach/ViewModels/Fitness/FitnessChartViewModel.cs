@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using IReach.Pages.Fitness;
 using IReach.ViewModels.Base;
 using Xamarin.Forms;
+using IReach.Models;
 
 namespace IReach.ViewModels.Fitness
 {
@@ -16,17 +17,15 @@ namespace IReach.ViewModels.Fitness
         {
             _navigation = navigation; 
         }
-
-        // For testing
-        private double _stepsCount; 
+        // For testing 
         public double StepsCount
         {
-            get { return _stepsCount; }
+            get { return StepCount.Steps.GetTotalSteps(); }
             set
             {
-                if (_stepsCount != value)
+                if (StepCount.Steps.GetTotalSteps() != value)
                 {
-                    _stepsCount = value;
+                    StepCount.Steps.SetTotalSteps(value);
                     OnPropertyChanged("StepsCount");
                     Recalculate();
                 }
@@ -54,18 +53,17 @@ namespace IReach.ViewModels.Fitness
             }
         }
 
-        private double _target; 
         public double TargetSteps
         {
             get
             {
-                return _target;
+                return StepCount.Steps.GetStepsGoal();
             }
             set
             {
-                if (_target != value)
+                if (StepCount.Steps.GetStepsGoal() != value)
                 {
-                    _target = value;
+                    StepCount.Steps.SetStepsGoal(value);
                     OnPropertyChanged("TargetSteps");
                     Recalculate();
                 }
@@ -74,7 +72,5 @@ namespace IReach.ViewModels.Fitness
         }
 
         public string TodaysDate => DateTime.UtcNow.Date.ToString("D");
-
-        
     }
 }

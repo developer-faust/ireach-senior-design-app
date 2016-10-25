@@ -46,8 +46,9 @@
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsSample.cs" />
     <Compile Include="CrossPieCharts\CrossPieChartsView.cs" />
-    <Compile Include="Interfaces\IStepService.cs" />
+    <Compile Include="Interfaces\IFitness.cs" />
     <Compile Include="Models\DietChartModel.cs" />
+    <Compile Include="Models\FitnessSteps.cs" />
     <Compile Include="Models\Local\DailyCaloriesDataPoint.cs" />
     <Compile Include="Models\StepCount.cs" />
     <Compile Include="NativeNavigationArgs.cs" />
@@ -58,7 +59,6 @@
     <Compile Include="Pages\Fitness\StepCountFitnessPage.xaml.cs">
       <DependentUpon>StepCountFitnessPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Services\StepService.cs" />
     <Compile Include="Services\UserFoodAsyncDataService.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\IListExtensions.cs" />

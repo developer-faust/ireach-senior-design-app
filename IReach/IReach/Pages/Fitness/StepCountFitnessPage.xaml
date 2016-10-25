@@ -7,10 +7,10 @@
     <StackLayout HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand"
                  Padding="10">
-      <Label Text="Today you have Take" VerticalOptions="Center" HorizontalOptions="Center" />
-      <Label Text="{Binding Steps, Mode=TwoWay}"></Label>
+      <Label Text="Today you have Taken" VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label x:Name="StepsCounted" Text="{Binding Steps, Mode=TwoWay}"></Label>
     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-      <Label Text="Calories burned: 50"/>
+      <Label Text="Calories burned: "/>
       <Label x:Name="CaloriesBurnedValue"/>
     </StackLayout>  
     

@@ -5,20 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using IReach.Models.Local;
 using SQLite.Net.Attributes;
+using IReach.Interfaces;
+using IReach.ViewModels.Fitness;
 
 namespace IReach.Models
 {
-    public class StepCount
+    public static class StepCount
     {
-        public StepCount()
+        static Lazy<IFitness> _stepcount = new Lazy<IFitness>(() => CreateSteps());
+        public static IFitness Steps
         {
-            var today = DateTime.UtcNow;
-            date = DateTime.SpecifyKind(new DateTime(today.Year, today.Month, today.Day, 0, 0, 0), DateTimeKind.Utc);
-            stepCount = 0;
+            get
+            {
+                IFitness val = _stepcount.Value;
+                return val;
+            }
         }
 
-        public int ID { get; set; }
-        public int stepCount { get; set; }
-        public DateTime date { get; set; }
+        static IFitness CreateSteps()
+        {
+            return new FitnessSteps();
+        }
+
     }
+    
 }

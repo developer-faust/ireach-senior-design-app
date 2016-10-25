@@ -14,8 +14,11 @@ namespace IReach.Pages.Fitness
         public StepCountFitnessPage()
         {
             InitializeComponent();
-
-            CaloriesBurnedValue.Text = "${50}";
+            double weight = 200; //average number for purposes of this (will have to get users actual weight to implement this
+            double stepsperMile = 2000; //average number of steps per mile
+            double calorieConverion = weight * 1.28 / stepsperMile; //1.28 is the average calories/pound/mile at casual walking speed (2mph); 1.96 is for brisk walking (3mph)
+            double caloriesBurned = calorieConverion * Convert.ToDouble(StepsCounted.Text);
+            CaloriesBurnedValue.Text = caloriesBurned.ToString();
         }
     }
 
