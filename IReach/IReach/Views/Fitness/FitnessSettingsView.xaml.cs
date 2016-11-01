@@ -11,9 +11,7 @@ using IReach.Views.Base;
 using DeviceMotion.Plugin;
 using DeviceMotion.Plugin.Abstractions;
 using Xamarin.Forms;
-using System.Threading;
-
-using Xamarin.Forms;
+using System.Threading; 
 
 namespace IReach.Views.Fitness
 {
@@ -26,7 +24,9 @@ namespace IReach.Views.Fitness
             BindingContext = ViewModel = new FitnessSettingsViewModel(this.Navigation);
             GoalValueLabel.Text = ViewModel.Goal.ToString();
             SensitivitySlider.BindingContext = ViewModel;
+
         }
+         
 
         public void ChangeSensitivity(object sender, EventArgs e)
         {
@@ -40,7 +40,11 @@ namespace IReach.Views.Fitness
             ViewModel.CurrentSteps = 0;
         }
 
-        
+
+        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            ViewModel.Goal = (int)e.NewValue;
+        }
     }
 
     public abstract class FitnessSettingsViewXaml : ModelBoundContentView<FitnessSettingsViewModel>

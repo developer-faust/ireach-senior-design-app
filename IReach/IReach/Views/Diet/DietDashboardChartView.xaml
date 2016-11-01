@@ -28,7 +28,7 @@
            </chart:SfChart.PrimaryAxis>
 
            <chart:SfChart.SecondaryAxis>
-             <chart:NumericalAxis Maximum="1800" Minimum="0" Interval="200">
+             <chart:NumericalAxis Maximum="5000" Minimum="0" Interval="200">
                <chart:NumericalAxis.Title>
                  <chart:ChartAxisTitle Text="Calories (kcal)"/>
                </chart:NumericalAxis.Title>
@@ -43,7 +43,7 @@
            <chart:SfChart.Series>
              <chart:StackingColumnSeries x:Name="CalConsumedSeries" Color="Green" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True">
              </chart:StackingColumnSeries>
-             <chart:StackingColumnSeries Color="Red" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Size" Label="Caloric Deficit" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+             <chart:StackingColumnSeries Color="Gray" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Deficit" Label="Calorie Target" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
              </chart:StackingColumnSeries>
  
            </chart:SfChart.Series>

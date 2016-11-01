@@ -38,6 +38,7 @@ namespace IReach.Pages.Fitness
                 BindingContext = FitnessSettingsViewModel = new FitnessSettingsViewModel(this.Navigation)
             };
 
+    
             _stackLayout = new StackLayout()
             {
                 Spacing = 0,
@@ -49,6 +50,6 @@ namespace IReach.Pages.Fitness
             };
             Content = _stackLayout;
         }
-
+ 
     }
 }
