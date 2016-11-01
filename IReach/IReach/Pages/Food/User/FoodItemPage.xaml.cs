@@ -13,7 +13,7 @@ namespace IReach.Pages.Food.User
         public FoodItemPage (FoodItem item)
         {
             InitializeComponent ( );
-            BindingContext = new UserFoodItemViewModel(item);  
+            BindingContext = new UserFoodItemViewModel(item, this.Navigation);  
         } 
         private async void SaveClicked(object sender, EventArgs e)
         {
@@ -26,10 +26,17 @@ namespace IReach.Pages.Food.User
             ViewModel.Delete();
             await Navigation.PopAsync();
         }
-
-        private void SpeakClicked(object sender, EventArgs e)
+          
+        private async void NutritionInfoClicked(object sender, EventArgs e)
         {
-            
+
+            var nutritionInfoPage = new FoodDetailPage()
+            {
+                BindingContext = new FoodDetailViewModel(this.Navigation),
+                Title = "Food Nutrition Info"
+            };
+
+            await Navigation.PushAsync(nutritionInfoPage);
         }
     }
 

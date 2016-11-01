@@ -41,11 +41,8 @@
            </chart:SfChart.Legend>
 
            <chart:SfChart.Series>
-             <chart:StackingColumnSeries x:Name="CalConsumedSeries" Color="Green" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True">
-             </chart:StackingColumnSeries>
-             <chart:StackingColumnSeries Color="Gray" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Deficit" Label="Calorie Target" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
-             </chart:StackingColumnSeries>
- 
+             <chart:StackingColumnSeries x:Name="CalConsumedSeries" Color="Green" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Value" Label="Consumed" LegendIcon="Circle" EnableTooltip="True" EnableAnimation="True"/>
+             <chart:StackingColumnSeries Color="Gray" ItemsSource="{Binding CalorieItems, &#xA; Mode=TwoWay,&#xA;}" XBindingPath="Name" YBindingPath="Deficit" Label="Calorie Target" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>
            </chart:SfChart.Series>
 
          </chart:SfChart>

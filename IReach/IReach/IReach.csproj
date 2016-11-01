@@ -110,6 +110,7 @@
     <Compile Include="ViewModels\Diary\DiaryDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Diary\DiaryDashboardFoodsViewModel.cs" />
     <Compile Include="ViewModels\Foods\FoodDetailViewModel.cs" />
+    <Compile Include="ViewModels\Foods\FoodNutritionChartViewModel.cs" />
     <Compile Include="ViewModels\Foods\FoodsView.cs" />
     <Compile Include="ViewModels\Foods\FoodGroupItemsViewModel.cs" />
     <Compile Include="ViewModels\Foods\UserFoodItemViewModel.cs" />
@@ -129,6 +130,9 @@
     </Compile>
     <Compile Include="Views\Diet\FoodListHeaderView.cs" />
     <Compile Include="Views\Diet\FoodsListView.cs" />
+    <Compile Include="Views\Diet\NutritionInfoChartView.xaml.cs">
+      <DependentUpon>NutritionInfoChartView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Fitness\FitnessChartView.xaml.cs">
       <DependentUpon>FitnessChartView.xaml</DependentUpon>
     </Compile>
@@ -340,6 +344,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Fitness\FitnessSettingsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Diet\NutritionInfoChartView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

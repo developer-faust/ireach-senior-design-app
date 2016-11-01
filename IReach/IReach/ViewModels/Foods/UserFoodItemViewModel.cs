@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IReach.Models;
+using IReach.Pages.Food.User;
 using IReach.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -91,5 +92,7 @@ namespace IReach.ViewModels.Foods
         {
             await App.UserUserAsyncDataService.DeleteFoodAsync(foodItem.ID);
         }
+
+       
     }
 }

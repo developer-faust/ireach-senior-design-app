@@ -73,6 +73,7 @@ namespace IReach.Helpers
                 get { return AppSettings.GetValueOrDefault<string>(UserNameKey, UserNameDefault); }
                 set { AppSettings.AddOrUpdateValue<string>(UserNameKey, value); }
         }
+
         public static string Password
         {
             get { return AppSettings.GetValueOrDefault<string>(PasswordKey, PasswordDefault); }

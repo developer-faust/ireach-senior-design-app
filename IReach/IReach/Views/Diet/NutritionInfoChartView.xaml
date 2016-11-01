@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<diet:NutritionInfoChartViewXaml xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:diet="clr-namespace:IReach.Views.Diet;assembly=IReach"
+             x:Class="IReach.Views.Diet.NutritionInfoChartView"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms">
+   
+  <diet:NutritionInfoChartViewXaml.Content>
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+      <Label Text="This is Pie Chart View"/>
+      
+    </StackLayout>
+  </diet:NutritionInfoChartViewXaml.Content> 
+  </diet:NutritionInfoChartViewXaml>

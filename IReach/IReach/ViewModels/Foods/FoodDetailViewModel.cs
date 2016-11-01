@@ -13,14 +13,16 @@ namespace IReach.ViewModels.Foods
     {
         private readonly IUserFoodDataService _DataClient;
         public FoodItem Food { get; set; }
-        public FoodDetailViewModel(INavigation navigation, FoodItem food = null)
+
+        private INavigation AppNavigation;
+        public FoodDetailViewModel(INavigation navigation = null, FoodItem food = null)
         {
             if (navigation == null)
             {
                 throw new ArgumentNullException("navigation", "An instance of INavigation must be passed to the FoodDetailViewModel constructor");
             }
 
-            Navigation = navigation;
+            AppNavigation = navigation;
             if (food == null)
             {
                 Food = new FoodItem();
@@ -35,8 +37,7 @@ namespace IReach.ViewModels.Foods
             _DataClient = DependencyService.Get<IUserFoodDataService>();  
         }
 
-        Command saveFoodCommand;
-
+        Command saveFoodCommand; 
         public Command SaveFoodCommand
         {
             get { return saveFoodCommand ?? (saveFoodCommand ?? new  Command(async () => await ExecuteSaveFoodCommand())); }

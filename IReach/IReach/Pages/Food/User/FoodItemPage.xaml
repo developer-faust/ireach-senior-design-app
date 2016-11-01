@@ -36,8 +36,8 @@
         </StackLayout> 
    
       <Button Text="Save" Clicked="SaveClicked"/>
-      <Button Text="Delete" Clicked="DeleteClicked"></Button>
-      <Button Text="Speak" Clicked="SpeakClicked"></Button>
+      <Button Text="Delete" Clicked="DeleteClicked"/>
+      <Button Text="Nutrition Fact" Clicked="NutritionInfoClicked"/>
 
     </StackLayout>
   </user:FoodItemPageXaml.Content>

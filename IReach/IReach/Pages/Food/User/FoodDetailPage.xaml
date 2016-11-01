@@ -1,9 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<user:FoodDetailPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+<nutritionInfo:FoodDetailPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IReach.Pages.Food.User.FoodDetailPage"
-             xmlns:detail="clr-namespace:IReach.Pages.Food;assembly=IReach"
-             xmlns:user="clr-namespace:IReach.Pages.Food.User;assembly=IReach">
-   
-  <Label Text="Food Detail Page" VerticalOptions="Center" HorizontalOptions="Center" />
-</user:FoodDetailPageXaml>
+             xmlns:nutritionInfo="clr-namespace:IReach.Pages.Food.User;assembly=IReach">
+
+  <nutritionInfo:FoodDetailPage.Content>
+    <StackLayout x:Name="content">
+      <Label Text="Food Name Goes Here"/>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text="Calories: "/>
+        <Label Text="Calories Amount Here"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text="Calcium: "/>
+        <Label Text="Calcium Amount Here"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text="Iron: "/>
+        <Label Text="Iron Amount Here"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text="Magnesium: "/>
+        <Label Text="Magnesium Amount Here"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text="Potassium: "/>
+        <Label Text="Potassium Amount Here"/>
+      </StackLayout> 
+    </StackLayout> 
+    
+  </nutritionInfo:FoodDetailPage.Content>
+
+</nutritionInfo:FoodDetailPageXaml>
