@@ -10,7 +10,7 @@
       <Label x:Name="yLabel" Text="y = "/>
       <Label x:Name="zLabel" Text="z = "/>
       <Button Text= " Start " VerticalOptions="Center" HorizontalOptions="Center" Clicked="OnStartActivated"/>
-      <Button Text=" Stop " VerticalOptions="Center" HorizontalOptions="Center" Clicked="OnStopActivated"/>
+      <Button Text=" Stop " VerticalOptions="Center" HorizontalOptions="Center" />
 
     </StackLayout>
   </ContentPage.Content>

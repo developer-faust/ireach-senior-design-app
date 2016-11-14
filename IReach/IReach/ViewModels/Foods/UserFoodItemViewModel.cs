@@ -70,11 +70,7 @@ namespace IReach.ViewModels.Foods
                 OnPropertyChanged("DateCreated");
             }
         }
-
-        public async void GetCalories()
-        {
-
-        }
+         
 
         public async void Save()
         {

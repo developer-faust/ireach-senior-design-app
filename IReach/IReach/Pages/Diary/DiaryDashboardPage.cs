@@ -160,9 +160,8 @@ namespace IReach.Pages.Diary
         {
             FoodDetailViewModel viewModel = new FoodDetailViewModel(Navigation, food);
 
-            var foodDetailPage = new FoodDetailPage()
-            {
-                BindingContext = viewModel,
+            var foodDetailPage = new FoodDetailPage(food.UsdaFoodId)
+            { 
                 Title = TextResources.Details
             };
 
@@ -223,11 +222,6 @@ namespace IReach.Pages.Diary
             }
             // TODO: Insight tracking  
         }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            GC.Collect();
-        }
+ 
     }
 }

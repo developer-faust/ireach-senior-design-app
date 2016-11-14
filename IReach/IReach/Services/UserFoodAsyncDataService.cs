@@ -16,7 +16,7 @@ namespace IReach.Services
     public class UserFoodAsyncDataService : IUserFoodDataService
     {
         private static readonly AsyncLock Locker = new AsyncLock();
-        private SQLiteAsyncConnection Database { get; } = DependencyService.Get<ISQLite>().GetAsyncConnection(); 
+        private SQLiteAsyncConnection Database { get; } = DependencyService.Get<ISQLite>().GetAsyncConnection();
 
         public UserFoodAsyncDataService()
         {
@@ -29,7 +29,7 @@ namespace IReach.Services
         }
 
 
-        public async Task<ObservableCollection< FoodItem>> GetFoodsAsync()
+        public async Task<ObservableCollection<FoodItem>> GetFoodsAsync()
         {
             using (await Locker.LockAsync())
             {
@@ -54,7 +54,7 @@ namespace IReach.Services
 
                 return result;
             }
-           
+
         }
 
         public async Task SaveFoodAsync(FoodItem food)
@@ -89,7 +89,7 @@ namespace IReach.Services
             _IsSeeded = true;
         }
 
-       
+
         public double TotalCalories()
         {
             double total = 0;

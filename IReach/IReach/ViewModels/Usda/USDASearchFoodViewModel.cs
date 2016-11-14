@@ -11,18 +11,22 @@ namespace IReach.ViewModels.Usda
     public class UsdaSearchFoodViewModel : BaseViewModel
     {
         private static IUsdaFoodService FoodService { get; } =
-            DependencyService.Get<IUsdaFoodService> ( );
+            DependencyService.Get<IUsdaFoodService>();
 
-        public UsdaSearchFoodViewModel()
+
+        public UsdaSearchFoodViewModel(string searchText = null)
         {
             Title = "Search USDA database";
+            Debug.WriteLine("VieModel Searching {0}", searchText);
+            SearchText = searchText;
         }
 
         private IList<food> _foods;
         public IList<food> Foods
         {
             get { return _foods; }
-            set {
+            set
+            {
                 _foods = value;
                 OnPropertyChanged("Foods");
             }
@@ -54,30 +58,30 @@ namespace IReach.ViewModels.Usda
         {
             get
             {
-                return _searchCommand ?? ( _searchCommand = new Command ( async ( ) => await ExecuteSearchCommand ( ) ) );
+                return _searchCommand ?? (_searchCommand = new Command(async () => await ExecuteSearchCommand()));
             }
         }
 
-        private async Task ExecuteSearchCommand ( )
+        private async Task ExecuteSearchCommand()
         {
-          
-            if ( IsBusy )
+
+            if (IsBusy)
             {
                 return;
             }
 
             IsBusy = true;
 
-            if ( string.IsNullOrWhiteSpace ( SearchText ) )
+            if (string.IsNullOrWhiteSpace(SearchText))
             {
                 IsBusy = false;
-                Debug.WriteLine ( "Search String is Empty!" ); 
+                Debug.WriteLine("Search String is Empty!");
             }
-                 
-            Debug.WriteLine ( "Searching for {0}", SearchText );
-            Foods = await FoodService.SearchFoods ( SearchText );
-            
-            Debug.WriteLine("Foods Count = {0}", Foods.Count);  
+
+            Debug.WriteLine("Searching for {0}", SearchText);
+            Foods = await FoodService.SearchFoods(SearchText);
+
+            Debug.WriteLine("Foods Count = {0}", Foods.Count);
             IsBusy = false;
         }
 

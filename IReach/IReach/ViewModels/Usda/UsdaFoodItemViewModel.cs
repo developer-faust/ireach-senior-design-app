@@ -11,7 +11,7 @@ namespace IReach.ViewModels.Usda
 {
     public class UsdaFoodItemViewModel : BaseViewModel
     {
-       
+
         private static IUsdaFoodService FoodService { get; } = DependencyService.Get<IUsdaFoodService>();
         private food item;
         private double _caloriesFromDB;
@@ -41,14 +41,15 @@ namespace IReach.ViewModels.Usda
         public double Calories
         {
             get { return _calories; }
-            set {
+            set
+            {
                 _calories = value;
                 OnPropertyChanged("Calories");
             }
         }
 
         public async void GetCalories()
-        { 
+        {
             var cal = await App.NutritionDataService.GetNutrition(item.id);
             _caloriesFromDB = cal.amount;
             Debug.WriteLine("Calories From DB = {0}", (_caloriesFromDB / 1000));
@@ -70,10 +71,10 @@ namespace IReach.ViewModels.Usda
                     _servings = value;
                     OnPropertyChanged("Servings");
                     Recalculate();
-                } 
+                }
             }
-        } 
-         
+        }
+
 
         public async void Save()
         {
@@ -88,13 +89,19 @@ namespace IReach.ViewModels.Usda
             foodEntry.Name = FoodName;
             foodEntry.DateCreated = today;
             foodEntry.Calories = Calories;
-            foodEntry.Servings = Servings; 
+            foodEntry.UsdaFoodId = item.id;
 
-            App.Database.SaveItem(foodEntry); 
+            if (Servings == 0)
+            {
+                Servings = 1;
+            }
+            foodEntry.Servings = Servings;
+
+            App.Database.SaveItem(foodEntry);
         }
 
         public void Recalculate()
-        {  
+        {
             Calories = _caloriesFromDB * Servings;
         }
     }

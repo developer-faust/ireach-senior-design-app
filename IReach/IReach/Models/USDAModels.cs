@@ -49,6 +49,15 @@ namespace IReach.Models
         public int nutrient_id { get; set; }
         public double amount { get; set; } 
     }
-     
+
+
+    public class FoodNutrients
+    {
+        public string name { get; set; }
+        public double amount { get; set; }
+        public string units { get; set; }
+
+    }
+
 
 }

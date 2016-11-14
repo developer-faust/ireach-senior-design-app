@@ -1,34 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<nutritionInfo:FoodDetailPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+<user:FoodDetailPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IReach.Pages.Food.User.FoodDetailPage"
-             xmlns:nutritionInfo="clr-namespace:IReach.Pages.Food.User;assembly=IReach">
+             xmlns:detail="clr-namespace:IReach.Pages.Food;assembly=IReach"
+             xmlns:user="clr-namespace:IReach.Pages.Food.User;assembly=IReach">
+  <user:FoodDetailPageXaml.Content>
 
-  <nutritionInfo:FoodDetailPage.Content>
-    <StackLayout x:Name="content">
-      <Label Text="Food Name Goes Here"/>
-      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-        <Label Text="Calories: "/>
-        <Label Text="Calories Amount Here"/>
-      </StackLayout>
-      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-        <Label Text="Calcium: "/>
-        <Label Text="Calcium Amount Here"/>
-      </StackLayout>
-      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-        <Label Text="Iron: "/>
-        <Label Text="Iron Amount Here"/>
-      </StackLayout>
-      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-        <Label Text="Magnesium: "/>
-        <Label Text="Magnesium Amount Here"/>
-      </StackLayout>
-      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-        <Label Text="Potassium: "/>
-        <Label Text="Potassium Amount Here"/>
-      </StackLayout> 
-    </StackLayout> 
-    
-  </nutritionInfo:FoodDetailPage.Content>
+    <StackLayout
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand"
+         Padding="10">
 
-</nutritionInfo:FoodDetailPageXaml>
+      <ListView
+                    x:Name="FoodNutritionLists"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    ItemsSource="{Binding FoodNutritionsInfo}"
+                    HasUnevenRows="True" >
+        <ListView.Header>
+          <StackLayout Padding="10,5,0,5"
+                       BackgroundColor="#cccccc">
+            <Label Text="Nutrition Information" FontAttributes="Bold" FontSize="Medium"></Label>
+          </StackLayout>
+        </ListView.Header>
+
+        <x:Arguments>
+          <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+        </x:Arguments>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout
+                  Padding="0,5,0,5"
+                  Orientation="Horizontal"
+                  HorizontalOptions="FillAndExpand">
+                  <Label
+                    Text="{Binding name}"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="Start" />
+                  <Label
+                    Text="{Binding amount}"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="EndAndExpand"/>
+                  <Label
+                    Text="{Binding units}"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="End"/>
+                </StackLayout>
+
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </StackLayout>
+
+  </user:FoodDetailPageXaml.Content>
+
+</user:FoodDetailPageXaml>

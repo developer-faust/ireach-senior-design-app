@@ -137,6 +137,33 @@ namespace IReach.Services
 
             return nutrition.FirstOrDefault();
         }
+        public async Task<ObservableCollection<FoodNutrients>> GetFoodNutritions(int foodId)
+        {
+            using (await Locker.LockAsync())
+            {
+                Debug.WriteLine($"Get nutritions for foodID = {foodId}");
+                var nutritions = await Database.QueryAsync<nutrition>($"SELECT * FROM nutrition WHERE food_id = {foodId}");
 
+                ObservableCollection<FoodNutrients> nutritionsInfo = new ObservableCollection<FoodNutrients>();
+                foreach (var item in nutritions)
+                {
+                    var nutrient = await (from s in Database.Table<nutrient>()
+                                          where s.id == item.nutrient_id
+                                          select s).FirstOrDefaultAsync();
+
+                    if (!char.IsDigit(nutrient.name[0]))
+                    {
+                        nutritionsInfo.Add(new FoodNutrients()
+                        {
+                            name = nutrient.name,
+                            amount = item.amount,
+                            units = nutrient.units
+                        });
+                    }
+                }
+
+                return nutritionsInfo;
+            }
+        }
     }
 }

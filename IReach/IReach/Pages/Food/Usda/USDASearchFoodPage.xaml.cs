@@ -9,15 +9,16 @@ namespace IReach.Pages.Food.Usda
 {
     public partial class UsdaSearchFoodPage : SearchFoodPageXaml
     {
-        
-        public UsdaSearchFoodPage ( )
+        public UsdaSearchFoodPage(string searchText = null)
         {
-            InitializeComponent ( );
-            BindingContext = new UsdaSearchFoodViewModel ( );
-        } 
+            InitializeComponent();
+            Debug.WriteLine("Usda Search for food: {0}", searchText);
+            BindingContext = new UsdaSearchFoodViewModel(searchText);
+        }
+
         private void TextFilterChanged(object sender, TextChangedEventArgs e)
-        { 
-            Debug.WriteLine ( "{0}", e.NewTextValue );
+        {
+            Debug.WriteLine("{0}", e.NewTextValue);
             ViewModel.SearchText = e.NewTextValue + " ";
             ViewModel.SearchCommand.Execute(null);
         }
@@ -25,13 +26,17 @@ namespace IReach.Pages.Food.Usda
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ViewModel.SearchText = string.Empty;
+
+            if (!string.IsNullOrEmpty(ViewModel.SearchText))
+            {
+                SearchEntry.Text = ViewModel.SearchText;
+            }
         }
 
         private void FoodItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var foodItem = (food)e.SelectedItem;
-            var foodPage = new Pages.Food.Usda.UsdaFoodItemPage(foodItem);  
+            var foodPage = new Pages.Food.Usda.UsdaFoodItemPage(foodItem);
             Navigation.PushAsync(foodPage);
         }
     }

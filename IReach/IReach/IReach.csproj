@@ -113,6 +113,7 @@
     <Compile Include="ViewModels\Foods\FoodNutritionChartViewModel.cs" />
     <Compile Include="ViewModels\Foods\FoodsView.cs" />
     <Compile Include="ViewModels\Foods\FoodGroupItemsViewModel.cs" />
+    <Compile Include="ViewModels\Foods\NutritionInfoViewModel.cs" />
     <Compile Include="ViewModels\Foods\UserFoodItemViewModel.cs" />
     <Compile Include="ViewModels\Splash\SplashViewModel.cs" />
     <Compile Include="ViewModels\Usda\UsdaFoodItemViewModel.cs" />

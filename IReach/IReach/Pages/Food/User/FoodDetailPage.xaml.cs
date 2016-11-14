@@ -1,4 +1,6 @@
-﻿using IReach.Pages.Base;
+﻿using System;
+using System.Diagnostics;
+using IReach.Pages.Base;
 using IReach.ViewModels.Foods;
 using IReach.Views.Diet;
 using Xamarin.Forms;
@@ -7,27 +9,17 @@ namespace IReach.Pages.Food.User
 {
     public partial class FoodDetailPage : FoodDetailPageXaml
     {
-
         private StackLayout contentFrame;
         private FoodNutritionChartViewModel NutritionChartViewModel { get; set; }
-        public FoodDetailPage()
+        public FoodDetailPage(int foodId)
         {
             InitializeComponent();
-            BindingContext = new FoodDetailViewModel(this.Navigation);
-
-            var nutritionInfoChartView = new NutritionInfoChartView()
-            {
-                BindingContext = NutritionChartViewModel = new FoodNutritionChartViewModel(this.Navigation)
-            }; 
-            
-            content.Children.Insert(0, nutritionInfoChartView);
-            
+            BindingContext = new NutritionInfoViewModel(foodId, this.Navigation);
+            Debug.WriteLine("Food ID = {0}", foodId);
         }
-
-
     }
 
-    public abstract class FoodDetailPageXaml : ModelBoundContentPage<FoodDetailViewModel>
+    public abstract class FoodDetailPageXaml : ModelBoundContentPage<NutritionInfoViewModel>
     {
     }
 }
