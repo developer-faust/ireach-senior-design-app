@@ -19,6 +19,7 @@ namespace IReach.Pages
                 Title = "Steps Today",
                 BindingContext = new StepCountViewModel(Navigation)
             });
+            this.Children.Add(new FitnessGraphPage());
         }
          
     }

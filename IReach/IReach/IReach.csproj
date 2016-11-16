@@ -55,6 +55,7 @@
     <Compile Include="NativeNavigationArgs.cs" />
     <Compile Include="Pages\Diary\DietDashboardPage.cs" />
     <Compile Include="Pages\FitnessLogPage.cs" />
+    <Compile Include="Pages\Fitness\FitnessGraphPage.cs" />
     <Compile Include="Pages\Fitness\FitnessDashboardPage.cs" />
     <Compile Include="Pages\Fitness\FitnessSettingsPage.cs" />
     <Compile Include="Pages\Fitness\StepCountFitnessPage.xaml.cs">
@@ -104,6 +105,7 @@
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Diary\DietDashboardChartViewModel.cs" />
     <Compile Include="ViewModels\Fitness\FitnessChartViewModel.cs" />
+    <Compile Include="ViewModels\Fitness\FitnessGraphViewModel.cs" />
     <Compile Include="ViewModels\Fitness\FitnessSettingsViewModel.cs" />
     <Compile Include="ViewModels\Fitness\StepCountViewModel.cs" />
     <Compile Include="ViewModels\Foods\BrowseFoodsViewModel.cs" />
@@ -136,6 +138,9 @@
     </Compile>
     <Compile Include="Views\Fitness\FitnessChartView.xaml.cs">
       <DependentUpon>FitnessChartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fitness\FitnessGraphView.xaml.cs">
+      <DependentUpon>FitnessGraphView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Fitness\FitnessSettingsView.xaml.cs">
       <DependentUpon>FitnessSettingsView.xaml</DependentUpon>
@@ -351,6 +356,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Diet\NutritionInfoChartView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Fitness\FitnessGraphView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
